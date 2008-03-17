@@ -27,11 +27,10 @@ sub _tal {
 1;
 __DATA__
 __NOTICE__
-This program is free software; you can redistribute
-it and/or modify it under the same terms as Perl itself.
+This software is copyright (C) {{$self->year}} by {{$self->holder}}.
 
-The full text of the license can be found in the
-LICENSE file included with this module.
+This is free software; you can redistribute it and/or modify it under
+the same terms as perl itself.
 __FULLTEXT__
 Terms of Perl itself
 

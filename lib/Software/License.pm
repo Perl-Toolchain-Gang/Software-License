@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-package Data::LicenseText::License;
+package Software::License;
 
 use Class::ISA ();
 use Sub::Install ();

@@ -1,16 +1,16 @@
 use strict;
 use warnings;
-package Data::LicenseText::License::Perl_5;
-use base 'Data::LicenseText::License';
+package Software::License::Perl_5;
+use base 'Software::License';
 
-require Data::LicenseText::License::GPL_1;
-require Data::LicenseText::License::Artistic_1_0;
+require Software::License::GPL_1;
+require Software::License::Artistic_1_0;
 
 sub name { 'the same terms as perl 5 itself' }
 
 sub _gpl {
   my ($self) = @_;
-  return $self->{_gpl} ||= Data::LicenseText::License::GPL_1->new({
+  return $self->{_gpl} ||= Software::License::GPL_1->new({
     year   => $self->year,
     holder => $self->holder,
   });
@@ -18,7 +18,7 @@ sub _gpl {
 
 sub _tal {
   my ($self) = @_;
-  return $self->{_tal} ||= Data::LicenseText::License::Artistic_1_0->new({
+  return $self->{_tal} ||= Software::License::Artistic_1_0->new({
     year   => $self->year,
     holder => $self->holder,
   });

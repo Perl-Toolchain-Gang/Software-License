@@ -1,7 +1,7 @@
 use strict;
 use warnings;
-package Data::LicenseText::License::MIT;
-use base 'Data::LicenseText::License';
+package Software::License::MIT;
+use base 'Software::License';
 
 sub name { 'The MIT License' }
 

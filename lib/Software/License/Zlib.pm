@@ -1,7 +1,7 @@
 use strict;
 use warnings;
-package Data::LicenseText::License::Zlib;
-use base 'Data::LicenseText::License';
+package Software::License::Zlib;
+use base 'Software::License';
 
 sub name { 'zlib/libpng License' }
 

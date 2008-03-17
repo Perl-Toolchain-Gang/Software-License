@@ -1,7 +1,7 @@
 use strict;
 use warnings;
-package Data::LicenseText::License::Mozilla_1_1;
-use base 'Data::LicenseText::License';
+package Software::License::Mozilla_1_1;
+use base 'Software::License';
 
 sub name { 'The Mozilla Public License (1.1)' }
 

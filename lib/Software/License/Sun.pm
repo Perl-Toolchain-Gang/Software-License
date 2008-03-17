@@ -1,7 +1,7 @@
 use strict;
 use warnings;
-package Data::LicenseText::License::Sun;
-use base 'Data::LicenseText::License';
+package Software::License::Sun;
+use base 'Software::License';
 
 sub name { 'Sun Internet Standards Source License (SISSL)' }
 

@@ -1,7 +1,7 @@
 use strict;
 use warnings;
-package Data::LicenseText::License::Artistic_2_0;
-use base 'Data::LicenseText::License';
+package Software::License::Artistic_2_0;
+use base 'Software::License';
 
 sub name { 'The Artistic License 2.0' }
 

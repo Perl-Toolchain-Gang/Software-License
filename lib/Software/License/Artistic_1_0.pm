@@ -1,7 +1,7 @@
 use strict;
 use warnings;
-package Data::LicenseText::License::Artistic_1_0;
-use base 'Data::LicenseText::License';
+package Software::License::Artistic_1_0;
+use base 'Software::License';
 
 sub aggregation_clause { 1 }
 

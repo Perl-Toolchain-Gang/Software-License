@@ -1,7 +1,7 @@
 use strict;
 use warnings;
-package Data::LicenseText::License::LGPL_2_1;
-use base 'Data::LicenseText::License';
+package Software::License::LGPL_2_1;
+use base 'Software::License';
 
 sub name { 'The GNU Lesser General Public License, Version 2.1, February 1999' }
 

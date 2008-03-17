@@ -1,7 +1,7 @@
 use strict;
 use warnings;
-package Data::LicenseText::License::Apache_1_1;
-use base 'Data::LicenseText::License';
+package Software::License::Apache_1_1;
+use base 'Software::License';
 
 sub name { 'Apache Software License (1.1)' }
 

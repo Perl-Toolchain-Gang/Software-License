@@ -1,7 +1,7 @@
 use strict;
 use warnings;
-package Data::LicenseText::License::BSD;
-use base 'Data::LicenseText::License';
+package Software::License::BSD;
+use base 'Software::License';
 
 sub name { 'BSD License' }
 

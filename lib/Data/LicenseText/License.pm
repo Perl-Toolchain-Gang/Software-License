@@ -11,14 +11,27 @@ sub new {
 
   Carp::croak "no copyright holder specified" unless $arg->{holder};
 
-  bless { holder => $arg->{holder} } => $class;
+  my $guts = {
+    holder => $arg->{holder},
+    year   => $arg->{year},
+  };
+
+  bless $guts => $class;
 }
 
-sub year   { (localtime)[5]+1900 }
+sub year   { defined $_[0]->{year} ? $_[0]->{year} : (localtime)[5]+1900 }
 sub holder { $_[0]->{holder}     }
 
 sub fulltext { shift->_fill_in('FULLTEXT') }
 sub notice   { shift->_fill_in('NOTICE')   }
+
+sub version  {
+  my ($self) = @_;
+  my $pkg = ref $self ? ref $self : $self;
+  $pkg =~ s/.+:://;
+  my (undef, @vparts) = split /_/, $pkg;
+  return join '.', @vparts;
+}
 
 sub _fill_in {
   my ($self, $which) = @_;

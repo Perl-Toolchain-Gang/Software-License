@@ -1,12 +1,12 @@
 use strict;
 use warnings;
-package Data::LicenseText::License::Perl;
+package Data::LicenseText::License::Perl_5;
 use base 'Data::LicenseText::License';
 
 require Data::LicenseText::License::GPL_1;
 require Data::LicenseText::License::Artistic_1_0;
 
-sub name { 'the same terms as perl itself' }
+sub name { 'the same terms as perl 5 itself' }
 
 sub _gpl {
   my ($self) = @_;

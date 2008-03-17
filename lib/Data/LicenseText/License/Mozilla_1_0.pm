@@ -3,7 +3,7 @@ use warnings;
 package Data::LicenseText::License::Mozilla_1_0;
 use base 'Data::LicenseText::License';
 
-sub name { 'Mozilla Public License (1.0)' }
+sub name { 'The Mozilla Public License (1.0)' }
 
 1;
 __DATA__

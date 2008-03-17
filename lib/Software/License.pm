@@ -36,11 +36,13 @@ sub version  {
 sub _fill_in {
   my ($self, $which) = @_;
 
-  my $template = $self->_templates->{$which};
+  Carp::confess "couldn't build $which section" unless
+    my $template = $self->_templates->{$which};
 
   return Text::Template->fill_this_in(
     $template,
-    HASH => { self => \$self }
+    HASH => { self => \$self },
+    DELIMITERS => [ qw({{ }}) ],
   );
 }
 

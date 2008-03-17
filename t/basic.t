@@ -4,7 +4,7 @@ use warnings;
 
 use Test::More 'no_plan';
 
-my $class = 'Data::LicenseText::License::Perl_5';
+my $class = 'Software::License::Perl_5';
 require_ok($class);
 
 my $license = $class->new({ holder => 'X. Ample' });

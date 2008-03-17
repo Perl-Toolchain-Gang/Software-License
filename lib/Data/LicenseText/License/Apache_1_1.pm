@@ -7,18 +7,11 @@ sub name { 'Apache Software License (1.1)' }
 
 1;
 __DATA__
-__NOTICE__
-This program is free software licensed under the...
-
-	Apache Software License (Version 1.1)
-
-The full text of the license can be found in the
-LICENSE file included with this module.
 __FULLTEXT__
 Apache Software License
 Version 1.1
 
-Copyright (c) {{$year}} {{$holder}}.  All rights reserved.
+Copyright (c) {{$self->year}} {{$self->holder}}.  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:

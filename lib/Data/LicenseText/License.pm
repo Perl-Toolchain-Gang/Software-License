@@ -46,6 +46,8 @@ sub _templates {
   if (@super_path != 1 or $super_path[0] ne __PACKAGE__) {
     my $super_method = "$super_path[0]\::templates";
     %template = %{ $self->$super_method };
+  } elsif (@super_path == 1 and $super_path[0] eq __PACKAGE__) {
+    %template = $self->_root_templates;
   }
 
   my $current;
@@ -54,6 +56,7 @@ sub _templates {
 
     if ($line =~ /\A__([^_]+)__\z/) {
       $current = $1;
+      $template{$current} = '';
       next;
     }
  
@@ -61,7 +64,7 @@ sub _templates {
 
     $line =~ s/\A\\//;
 
-    ($template{$current} ||= '') .= "$line\n";
+    $template{$current} .= "$line\n";
   }
 
   my $new_code = sub { \%template };
@@ -72,6 +75,17 @@ sub _templates {
   });
 
   return $self->_templates;
+}
+
+sub _root_templates {
+  return (NOTICE => <<'END_NOTICE');
+This program is free software, licensed under:
+
+  {{ $self->name }}
+
+The full text of the license can be found in the LICENSE file included with
+this distribution.
+END_NOTICE
 }
 
 1;

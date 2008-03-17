@@ -1,35 +1,16 @@
+use strict;
+use warnings;
+package Data::LicenseText::License::MIT;
+use base 'Data::LicenseText::License';
 
-    mit             => { function => \&License_MIT,
-                         fullname => 'MIT License'
-                       },
+sub name { 'The MIT License' }
 
-
-################################################ subroutine header begin ##
-
-=head2 License_MIT
-
- Purpose   : Get the copyright pod text and LICENSE file text for this license
-
-=cut
-
-################################################## subroutine header end ##
-
-sub License_MIT {
-    my %license;
-
-    $license{COPYRIGHT} = <<EOFCOPYRIGHT;
-This program is free software licensed under the...
-
-	The MIT License
-
-The full text of the license can be found in the
-LICENSE file included with this module.
-EOFCOPYRIGHT
-
-    $license{LICENSETEXT} = <<EOFLICENSETEXT;
+1;
+__DATA__
+__FULLTEXT__
 The MIT License
 
-Copyright (c) <year> <copyright holders>
+Copyright (c) {{$self->year}} {{$self->holder}}
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated
@@ -55,7 +36,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
-EOFLICENSETEXT
-
-    return (\%license);
-}

@@ -1,33 +1,38 @@
+use strict;
+use warnings;
+package Data::LicenseText::License::Perl;
+use base 'Data::LicenseText::License';
 
-    perl            => { function => \&License_Perl,
-                         fullname =>'Same terms as Perl itself',
-                       },
+require Data::LicenseText::License::GPL_1;
+require Data::LicenseText::License::Artistic_1_0;
 
-################################################ subroutine header begin ##
+sub name { 'the same terms as perl itself' }
 
-=head2 License_Perl
+sub _gpl {
+  my ($self) = @_;
+  return $self->{_gpl} ||= Data::LicenseText::License::GPL_1->new({
+    year   => $self->year,
+    holder => $self->holder,
+  });
+}
 
- Purpose   : Get the copyright pod text and LICENSE file text for this license
+sub _tal {
+  my ($self) = @_;
+  return $self->{_tal} ||= Data::LicenseText::License::Artistic_1_0->new({
+    year   => $self->year,
+    holder => $self->holder,
+  });
+}
 
-=cut
-
-################################################## subroutine header end ##
-
-sub License_Perl {
-    my %license;
-
-    my $gpl         = License_GPL_2 ();
-    my $artistic    = License_Artistic_w_Aggregation ();
-
-    $license{COPYRIGHT} = <<EOFCOPYRIGHT;
+1;
+__DATA__
+__NOTICE__
 This program is free software; you can redistribute
 it and/or modify it under the same terms as Perl itself.
 
 The full text of the license can be found in the
 LICENSE file included with this module.
-EOFCOPYRIGHT
-
-    $license{LICENSETEXT} = <<EOFLICENSETEXT;
+__FULLTEXT__
 Terms of Perl itself
 
 a) the GNU General Public License as published by the Free
@@ -35,15 +40,9 @@ a) the GNU General Public License as published by the Free
    later version, or
 b) the "Artistic License"
 
----------------------------------------------------------------------------
 
-$gpl->{LICENSETEXT}
+--- {{ $self->_gpl->name }} ---
+{{$self->_gpl->fulltext}}
 
----------------------------------------------------------------------------
-
-$artistic->{LICENSETEXT}
-
-EOFLICENSETEXT
-
-    return (\%license);
-}
+--- {{ $self->_tal->name }} ---
+{{$self->_tal->fulltext}}

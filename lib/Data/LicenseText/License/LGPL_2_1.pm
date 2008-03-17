@@ -1,30 +1,17 @@
+use strict;
+use warnings;
+package Data::LicenseText::License::LGPL_2_1;
+use base 'Data::LicenseText::License';
 
-    lgpl_2_1        => { function => \&License_LGPL_2_1,
-                         fullname => 'LGPL - GNU Lesser General Public License (2.1)'
-                       },
+sub name { 'The GNU Lesser General Public License, Version 2.1, February 1999' }
 
-
-################################################## subroutine header end ##
-
-sub License_LGPL_2_1 {
-    my %license;
-
-    $license{COPYRIGHT} = <<EOFCOPYRIGHT;
-This program is free software licensed under the...
-
-	The GNU Lesser General Public License (LGPL)
-	Version 2.1, February 1999
-
-The full text of the license can be found in the
-LICENSE file included with this module.
-EOFCOPYRIGHT
-
-    $license{LICENSETEXT} = <<EOFLICENSETEXT;
+1;
+__DATA__
+__FULLTEXT__
 The GNU Lesser General Public License (LGPL)
 Version 2.1, February 1999
 
-     (The master copy of this license lives
-     on the GNU website.)
+  (The master copy of this license lives on the GNU website.)
 
 Copyright (C) 1991, 1999 Free Software Foundation, Inc. 59
 Temple Place, Suite 330, Boston, MA 02111-1307 USA
@@ -555,8 +542,3 @@ EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN
 ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
 END OF TERMS AND CONDITIONS
-EOFLICENSETEXT
-
-    return (\%license);
-}
-

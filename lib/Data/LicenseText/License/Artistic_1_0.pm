@@ -8,7 +8,7 @@ sub aggregation_clause { 1 }
 sub name {
   my ($self) = @_;
 
-  my $name = 'Artistic License 1.0';
+  my $name = 'The Artistic License 1.0';
   if (ref $self and not $self->aggregation_clause) {
     $name .= ' without Aggregation Clause';
   }
@@ -18,13 +18,6 @@ sub name {
 
 1;
 __DATA__
-__NOTICE__
-This program is free software licensed under the...
-
-	{{ $self->name }}
-
-The full text of the license can be found in the
-LICENSE file included with this module.
 __FULLTEXT__
 The Artistic License
 

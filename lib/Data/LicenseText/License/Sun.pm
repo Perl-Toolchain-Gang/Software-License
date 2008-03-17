@@ -1,31 +1,13 @@
+use strict;
+use warnings;
+package Data::LicenseText::License::Sun;
+use base 'Data::LicenseText::License';
 
-    sun             => { function => \&License_Sun,
-                         fullname => ''
-                       },
+sub name { 'Sun Internet Standards Source License (SISSL)' }
 
-################################################ subroutine header begin ##
-
-=head2 License_Sun
-
- Purpose   : Get the copyright pod text and LICENSE file text for this license
-
-=cut
-
-################################################## subroutine header end ##
-
-sub License_Sun {
-    my %license;
-
-    $license{COPYRIGHT} = <<EOFCOPYRIGHT;
-This program is free software licensed under the...
-
-	Sun Internet Standards Source License (SISSL)
-
-The full text of the license can be found in the
-LICENSE file included with this module.
-EOFCOPYRIGHT
-
-    $license{LICENSETEXT} = <<EOFLICENSETEXT;
+1;
+__DATA__
+__FULLTEXT__
 Sun Internet Standards Source License (SISSL)
 
 1.0 DEFINITIONS 
@@ -371,8 +353,3 @@ http://xml.openoffice.org
 OpenOffice.org Application Programming Interface Specification,
 located at 
 http://api.openoffice.org
-EOFLICENSETEXT
-
-    return (\%license);
-}
-

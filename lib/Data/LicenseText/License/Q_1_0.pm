@@ -1,32 +1,13 @@
+use strict;
+use warnings;
+package Data::LicenseText::License::Q_1_0;
+use base 'Data::LicenseText::License';
 
-    q_1_0           => { function => \&License_Q_1_0,
-                         fullname => 'Q Public License (1.0)'
-                       },
+sub name { 'The Q Public License (1.0)' }
 
-################################################ subroutine header begin ##
-
-=head2 License_Q
-
- Purpose   : Get the copyright pod text and LICENSE file text for this license
-
-=cut
-
-################################################## subroutine header end ##
-
-sub License_Q_1_0 {
-    my %license;
-
-    $license{COPYRIGHT} = <<EOFCOPYRIGHT;
-This program is free software licensed under the...
-
-	The Q Public License
-	Version 1.0
-
-The full text of the license can be found in the
-LICENSE file included with this module.
-EOFCOPYRIGHT
-
-    $license{LICENSETEXT} = <<EOFLICENSETEXT;
+1;
+__DATA__
+__FULLTEXT__
 The Q Public License
 Version 1.0
 
@@ -147,8 +128,3 @@ FITNESS FOR A PARTICULAR PURPOSE.
 
 This license is governed by the Laws of Norway. Disputes
 shall be settled by Oslo City Court.
-EOFLICENSETEXT
-
-    return (\%license);
-}
-

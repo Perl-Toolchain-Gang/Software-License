@@ -5,6 +5,7 @@ use base 'Data::LicenseText::License';
 
 sub name { 'Apache Software License (1.1)' }
 
+1;
 __DATA__
 __NOTICE__
 This program is free software licensed under the...

@@ -4,8 +4,34 @@ package Data::LicenseText::License;
 
 use Class::ISA ();
 use Sub::Install ();
+use Text::Template ();
 
-sub templates {
+sub new {
+  my ($class, $arg) = @_;
+
+  Carp::croak "no copyright holder specified" unless $arg->{holder};
+
+  bless { holder => $arg->{holder} } => $class;
+}
+
+sub year   { (localtime)[5]+1900 }
+sub holder { $_[0]->{holder}     }
+
+sub fulltext { shift->_fill_in('FULLTEXT') }
+sub notice   { shift->_fill_in('NOTICE')   }
+
+sub _fill_in {
+  my ($self, $which) = @_;
+
+  my $template = $self->_templates->{$which};
+
+  return Text::Template->fill_this_in(
+    $template,
+    HASH => { self => \$self }
+  );
+}
+
+sub _templates {
   my ($self) = @_;
   my $pkg = ref $self ? ref $self : $self;
 
@@ -27,7 +53,7 @@ sub templates {
     chomp $line;
 
     if ($line =~ /\A__([^_]+)__\z/) {
-      my $filename = $1;
+      $current = $1;
       next;
     }
  
@@ -42,10 +68,10 @@ sub templates {
   Sub::Install::install_sub({
     code => $new_code,
     into => $pkg,
-    as   => 'templates',
+    as   => '_templates',
   });
 
-  return $self->templates;
+  return $self->_templates;
 }
 
 1;

@@ -1,25 +1,23 @@
-    zlib            => { function => \&License_ZLIB,
-                         fullname => 'zlib/libpng License'
-                       },
+use strict;
+use warnings;
+package Data::LicenseText::License::Zlib;
+use base 'Data::LicenseText::License';
 
-################################################## subroutine header end ##
+sub name { 'zlib/libpng License' }
 
-sub License_ZLIB {
-    my %license;
-
-    $license{COPYRIGHT} = <<EOFCOPYRIGHT;
+1;
+__DATA__
+__NOTICE__
 This program is free software licensed under the...
 
 	The zlib/libpng License
 
 The full text of the license can be found in the
 LICENSE file included with this module.
-EOFCOPYRIGHT
-
-    $license{LICENSETEXT} = <<EOFLICENSETEXT;
+__FULLTEXT__
 The zlib/libpng License
 
-Copyright (c) <year> <copyright holders>
+Copyright (c) {{$year}} {{$holder}}
 
 This software is provided 'as-is', without any express or
 implied warranty. In no event will the authors be held liable
@@ -42,7 +40,3 @@ and redistribute it freely, subject to the following restrictions:
 
      3. This notice may not be removed or altered
      from any source distribution.
-EOFLICENSETEXT
-
-    return (\%license);
-}

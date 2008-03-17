@@ -1,32 +1,19 @@
+use strict;
+use warnings;
+package Data::LicenseText::License::Sleepycat;
+use base 'Data::LicenseText::License';
 
-    sleepycat       => { function => \&License_Sleepycat,
-                         fullname => 'The Sleepycat License'
-                       },
+sub name { 'The Sleepycat License' }
 
-
-################################################ subroutine header begin ##
-
-=head2 License_Sleepycat
-
- Purpose   : Get the copyright pod text and LICENSE file text for this license
-
-=cut
-
-################################################## subroutine header end ##
-
-sub License_Sleepycat {
-    my %license;
-
-    $license{COPYRIGHT} = <<EOFCOPYRIGHT;
+__DATA__
+__NOTICE__
 This program is free software licensed under the...
 
 	The Sleepycat License
 
 The full text of the license can be found in the
 LICENSE file included with this module.
-EOFCOPYRIGHT
-
-    $license{LICENSETEXT} = <<EOFLICENSETEXT;
+__FULLTEXT__
 The Sleepycat License
 
 Copyright (c) 1990-1999 Sleepycat Software. All
@@ -173,8 +160,3 @@ OTHERWISE) ARISING IN ANY WAY OUT OF
 THE USE OF THIS SOFTWARE, EVEN IF
 ADVISED OF THE POSSIBILITY OF SUCH
 DAMAGE.
-EOFLICENSETEXT
-
-    return (\%license);
-}
-

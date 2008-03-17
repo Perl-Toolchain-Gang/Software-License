@@ -5,19 +5,15 @@ use base 'Data::LicenseText::License';
 
 sub name { 'Apache Software License (1.1)' }
 
-sub notice {
-  return <<'END_TEXT';
+__DATA__
+__NOTICE__
 This program is free software licensed under the...
 
 	Apache Software License (Version 1.1)
 
 The full text of the license can be found in the
 LICENSE file included with this module.
-END_TEXT
-}
-
-sub fulltext {
-  return <<'END_TEXT';
+__FULLTEXT__
 Apache Software License
 Version 1.1
 
@@ -69,5 +65,3 @@ Software Foundation, please see <http://www.apache.org/>.
 Portions of this software are based upon public domain software originally
 written at the National Center for Supercomputing Applications, University of
 Illinois, Urbana-Champaign.
-END_TEXT
-}

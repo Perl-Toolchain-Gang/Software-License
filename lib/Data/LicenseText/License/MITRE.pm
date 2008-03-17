@@ -1,31 +1,20 @@
+use strict;
+use warnings;
+package Data::LicenseText::License::MITRE;
+use base 'Data::LicenseText::License';
 
-    mitre           => { function => \&License_MITRE,
-                         fullname => 'CVW - MITRE Collaborative Virtual Workspace'
-                       },#mitre includes gpl 2.0 and mozilla 1.0
+#mitre includes gpl 2.0 and mozilla 1.0
+sub name { 'CVW - MITRE Collaborative Virtual Workspace' }
 
-################################################ subroutine header begin ##
-
-=head2 License_MITRE
-
- Purpose   : Get the copyright pod text and LICENSE file text for this license
-
-=cut
-
-################################################## subroutine header end ##
-
-sub License_MITRE {
-    my %license;
-
-    $license{COPYRIGHT} = <<EOFCOPYRIGHT;
+__DATA__
+__NOTICE__
 This program is free software licensed under the...
 
 	MITRE Collaborative Virtual Workspace License (CVW License)
 
 The full text of the license can be found in the
 LICENSE file included with this module.
-EOFCOPYRIGHT
-
-    $license{LICENSETEXT} = <<EOFLICENSETEXT;
+__FULLTEXT__
 MITRE Collaborative Virtual Workspace License (CVW License)
 
    Collaborative Virtual Workspace License (CVW)
@@ -894,7 +883,3 @@ Portions created by The MITRE Corporation
 Reserved.
 
 Contributor(s): ______________________________________.''
-EOFLICENSETEXT
-
-    return (\%license);
-}

@@ -3,6 +3,12 @@ use warnings;
 package Software::License::Zlib;
 use base 'Software::License';
 
+=head1 NAME
+
+Software::License::Zlib - The zlib License
+
+=cut
+
 sub name { 'The zlib License' }
 
 1;

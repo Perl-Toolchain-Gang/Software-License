@@ -3,6 +3,12 @@ use warnings;
 package Software::License::Artistic_2_0;
 use base 'Software::License';
 
+=head1 NAME
+
+Software::License::Artistic_2_0 - The Artistic License 2.0
+
+=cut
+
 sub name { 'The Artistic License 2.0' }
 
 1;

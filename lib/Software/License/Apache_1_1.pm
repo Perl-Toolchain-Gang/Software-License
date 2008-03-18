@@ -3,7 +3,13 @@ use warnings;
 package Software::License::Apache_1_1;
 use base 'Software::License';
 
-sub name { 'Apache Software License (1.1)' }
+=head1 NAME
+
+Software::License::Apache_1_1 - The Apache Software License, Version 1.1
+
+=cut
+
+sub name { 'The Apache Software License, Version 1.1' }
 
 1;
 __DATA__

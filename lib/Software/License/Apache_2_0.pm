@@ -3,6 +3,12 @@ use warnings;
 package Software::License::Apache_2_0;
 use base 'Software::License';
 
+=head1 NAME
+
+Software::License::Apache_2_0 - The Apache License, Version 2.0
+
+=cut
+
 sub name { 'The Apache License, Version 2.0, January 2004' }
 
 1;

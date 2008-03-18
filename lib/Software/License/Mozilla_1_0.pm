@@ -3,7 +3,13 @@ use warnings;
 package Software::License::Mozilla_1_0;
 use base 'Software::License';
 
-sub name { 'The Mozilla Public License (1.0)' }
+=head1 NAME
+
+Software::License::Mozilla_1_0 - Mozilla Public License 1.0
+
+=cut
+
+sub name { 'The Mozilla Public License 1.0' }
 
 1;
 __DATA__

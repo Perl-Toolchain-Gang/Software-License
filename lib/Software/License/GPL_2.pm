@@ -3,6 +3,12 @@ use warnings;
 package Software::License::GPL_2;
 use base 'Software::License';
 
+=head1 NAME
+
+Software::License::GPL_2 - GNU General Public License, Version 2
+
+=cut
+
 sub name { 'The GNU General Public License, Version 2, June 1991' }
 
 1;

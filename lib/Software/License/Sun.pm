@@ -3,6 +3,12 @@ use warnings;
 package Software::License::Sun;
 use base 'Software::License';
 
+=head1 NAME
+
+Software::License::Sun - Sun Internet Standards Source License (SISSL)
+
+=cut
+
 sub name { 'Sun Internet Standards Source License (SISSL)' }
 
 1;

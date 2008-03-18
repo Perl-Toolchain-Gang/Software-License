@@ -48,12 +48,7 @@ sub new {
 
   Carp::croak "no copyright holder specified" unless $arg->{holder};
 
-  my $guts = {
-    holder => $arg->{holder},
-    year   => $arg->{year},
-  };
-
-  bless $guts => $class;
+  bless $arg => $class;
 }
 
 =head1 year

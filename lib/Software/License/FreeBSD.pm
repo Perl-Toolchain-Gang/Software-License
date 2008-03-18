@@ -3,6 +3,12 @@ use warnings;
 package Software::License::FreeBSD;
 use base 'Software::License';
 
+=head1 NAME
+
+Software::License::FreeBSD - The FreeBSD License (aka two-clause BSD)
+
+=cut
+
 sub name { 'The (two-clause) FreeBSD License' }
 
 1;

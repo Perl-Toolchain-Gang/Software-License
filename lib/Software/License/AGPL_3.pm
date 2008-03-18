@@ -3,6 +3,12 @@ use warnings;
 package Software::License::AGPL_3;
 use base 'Software::License';
 
+=head1 NAME
+
+Software::License::AGPL_3 - GNU Affero General Public License, Version 3
+
+=cut
+
 sub name { 'The GNU Affero General Public License, Version 3, November 2007' }
 
 1;

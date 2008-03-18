@@ -2,17 +2,14 @@
 use strict;
 use warnings;
 
-use Test::More 'no_plan';
+use Test::More tests => 5;
 
 my $class = 'Software::License::Perl_5';
 require_ok($class);
 
 my $license = $class->new({ holder => 'X. Ample' });
 
-diag $license->name;
-diag '--';
-diag $license->notice;
-diag '--';
-diag $license->fulltext;
-diag '--';
-diag $license->version;
+is($license->holder, 'X. Ample', '(c) holder');
+is($license->year, (localtime)[5]+1900, '(c) year');
+like($license->name, qr/perl 5/i, "license name");
+like($license->fulltext, qr/general public/i, 'license text');

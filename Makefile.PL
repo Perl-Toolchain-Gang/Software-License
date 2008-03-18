@@ -3,7 +3,7 @@ use warnings;
 
 use inc::Module::Install;
 
-name          ('CPAN-Faker');
+name          ('Software-License');
 author        ('Ricardo Signes <rjbs@cpan.org>');
 license       ('perl');
 all_from      ('lib/Software/License.pm');

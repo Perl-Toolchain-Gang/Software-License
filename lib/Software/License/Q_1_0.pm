@@ -7,7 +7,7 @@ sub name { 'The Q Public License (1.0)' }
 
 1;
 __DATA__
-__FULLTEXT__
+__LICENSE__
 The Q Public License
 Version 1.0
 

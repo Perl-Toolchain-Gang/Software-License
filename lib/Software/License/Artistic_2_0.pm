@@ -7,7 +7,7 @@ sub name { 'The Artistic License 2.0' }
 
 1;
 __DATA__
-__FULLTEXT__
+__LICENSE__
 		       The Artistic License 2.0
 
 	    Copyright (c) 2000-2006, The Perl Foundation.

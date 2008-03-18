@@ -7,7 +7,7 @@ sub name { 'The MIT (X11) License' }
 
 1;
 __DATA__
-__FULLTEXT__
+__LICENSE__
 The MIT License
 
 Permission is hereby granted, free of charge, to any person

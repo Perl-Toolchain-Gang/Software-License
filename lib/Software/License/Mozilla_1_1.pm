@@ -7,7 +7,7 @@ sub name { 'The Mozilla Public License (1.1)' }
 
 1;
 __DATA__
-__FULLTEXT__
+__LICENSE__
 Mozilla Public License 1.1 (MPL 1.1)
 
 1. Definitions. 

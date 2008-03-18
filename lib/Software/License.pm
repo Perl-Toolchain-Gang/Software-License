@@ -76,6 +76,14 @@ under which the software is distributed.
 
 sub notice { shift->_fill_in('NOTICE') }
 
+=head2 license
+
+This method returns the full text of the license.
+
+=cut
+
+sub license { shift->_fill_in('LICENSE') }
+
 =head2 fulltext
 
 This method returns the complete text of the license, preceded by the copyright
@@ -85,7 +93,7 @@ notice.
 
 sub fulltext {
   my ($self) = @_;
-  return join "\n", $self->notice, $self->_fill_in('FULLTEXT')
+  return join "\n", $self->notice, $self->_fill_in('LICENSE')
 }
 
 =head2 version

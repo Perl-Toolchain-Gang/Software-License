@@ -7,7 +7,7 @@ sub name { 'Sun Internet Standards Source License (SISSL)' }
 
 1;
 __DATA__
-__FULLTEXT__
+__LICENSE__
 Sun Internet Standards Source License (SISSL)
 
 1.0 DEFINITIONS 

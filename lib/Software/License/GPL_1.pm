@@ -7,7 +7,7 @@ sub name { 'The GNU General Public License, Version 1, February 1989' }
 
 1;
 __DATA__
-__FULLTEXT__
+__LICENSE__
 		    GNU GENERAL PUBLIC LICENSE
 		     Version 1, February 1989
 

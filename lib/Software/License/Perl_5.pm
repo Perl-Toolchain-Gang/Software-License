@@ -27,11 +27,11 @@ sub _tal {
 1;
 __DATA__
 __NOTICE__
-This software is copyright (C) {{$self->year}} by {{$self->holder}}.
+This software is copyright (c) {{$self->year}} by {{$self->holder}}.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as perl itself.
-__FULLTEXT__
+__LICENSE__
 Terms of Perl itself
 
 a) the GNU General Public License as published by the Free

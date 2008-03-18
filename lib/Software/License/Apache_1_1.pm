@@ -7,7 +7,7 @@ sub name { 'Apache Software License (1.1)' }
 
 1;
 __DATA__
-__FULLTEXT__
+__LICENSE__
 Apache Software License
 Version 1.1
 

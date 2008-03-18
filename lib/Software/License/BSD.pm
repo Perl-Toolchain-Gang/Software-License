@@ -7,7 +7,7 @@ sub name { 'BSD License' }
 
 1;
 __DATA__
-__FULLTEXT__
+__LICENSE__
 The BSD License
 
 This license applies to software Copyright (C) {{$self->year}},

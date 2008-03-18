@@ -7,7 +7,7 @@ sub name { 'zlib/libpng License' }
 
 1;
 __DATA__
-__FULLTEXT__
+__LICENSE__
 The zlib/libpng License
 
 This software is provided 'as-is', without any express or

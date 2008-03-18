@@ -40,7 +40,9 @@ a) the GNU General Public License as published by the Free
 b) the "Artistic License"
 
 --- {{ $self->_gpl->name }} ---
+
 {{$self->_gpl->fulltext}}
 
 --- {{ $self->_tal->name }} ---
+
 {{$self->_tal->fulltext}}

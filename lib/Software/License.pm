@@ -78,11 +78,15 @@ sub notice { shift->_fill_in('NOTICE') }
 
 =head2 fulltext
 
-This method returns the complete text of the license.
+This method returns the complete text of the license, preceded by the copyright
+notice.
 
 =cut
 
-sub fulltext { shift->_fill_in('FULLTEXT') }
+sub fulltext {
+  my ($self) = @_;
+  return join "\n", $self->notice, $self->_fill_in('FULLTEXT')
+}
 
 =head2 version
 

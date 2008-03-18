@@ -11,6 +11,9 @@ my $license = $class->new({ holder => 'X. Ample' });
 
 diag "fulltext length: " . length $license->_templates->{FULLTEXT};
 diag $license->name;
+diag '--';
 diag $license->notice;
+diag '--';
 diag $license->fulltext;
+diag '--';
 diag $license->version;

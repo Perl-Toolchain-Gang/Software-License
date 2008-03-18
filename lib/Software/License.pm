@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+use 5.006; # warnings
 package Software::License;
 
 =head1 NAME
@@ -181,6 +182,14 @@ This is free software, licensed under:
   {{ $self->name }}
 END_NOTICE
 }
+
+=head1 TODO
+
+=over
+
+=item * register licenses with aliases to allow $registry->get('gpl', 2);
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

@@ -172,6 +172,8 @@ END_NOTICE
 
 =head1 COPYRIGHT AND LICENSE
 
+This software is Copyright (c) 2008 by Ricardo SIGNES.
+
 This program is free software; you can redistribute it and/or modify it under
 the same terms as Perl itself.
 

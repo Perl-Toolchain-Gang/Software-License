@@ -3,14 +3,12 @@ use warnings;
 package Software::License::MIT;
 use base 'Software::License';
 
-sub name { 'The MIT License' }
+sub name { 'The MIT (X11) License' }
 
 1;
 __DATA__
 __FULLTEXT__
 The MIT License
-
-Copyright (c) {{$self->year}} {{$self->holder}}
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated

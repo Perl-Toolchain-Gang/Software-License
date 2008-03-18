@@ -10,7 +10,9 @@ __DATA__
 __FULLTEXT__
 The BSD License
 
-Copyright (c) {{$self->year}}, {{$self->holder}}
+This license applies to software Copyright (C) {{$self->year}},
+{{$self->holder}}
+
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

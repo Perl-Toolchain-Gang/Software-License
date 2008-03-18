@@ -7,17 +7,8 @@ sub name { 'zlib/libpng License' }
 
 1;
 __DATA__
-__NOTICE__
-This program is free software licensed under the...
-
-	The zlib/libpng License
-
-The full text of the license can be found in the
-LICENSE file included with this module.
 __FULLTEXT__
 The zlib/libpng License
-
-Copyright (c) {{$year}} {{$holder}}
 
 This software is provided 'as-is', without any express or
 implied warranty. In no event will the authors be held liable

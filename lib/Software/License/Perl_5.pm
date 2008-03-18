@@ -39,7 +39,6 @@ a) the GNU General Public License as published by the Free
    later version, or
 b) the "Artistic License"
 
-
 --- {{ $self->_gpl->name }} ---
 {{$self->_gpl->fulltext}}
 

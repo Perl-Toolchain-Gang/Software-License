@@ -5,7 +5,7 @@ use base 'Software::License';
 
 =head1 NAME
 
-Software::License::Mozilla - The Mozilla Public License 1.1
+Software::License::Mozilla_1_1 - The Mozilla Public License 1.1
 
 =cut
 

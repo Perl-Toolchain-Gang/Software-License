@@ -10,6 +10,7 @@ Software::License::MIT - The MIT (aka X11) License
 =cut
 
 sub name { 'The MIT (X11) License' }
+sub url  { 'http://www.opensource.org/licenses/mit-license.php' }
 
 1;
 __DATA__

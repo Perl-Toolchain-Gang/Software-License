@@ -27,6 +27,8 @@ sub aggregation_clause {
   exists $_[0]->{aggregation_clause} ? $_[0]->{aggregation_clause} : 1
 }
 
+sub url { 'http://www.perlfoundation.org/artistic_license_1_0' }
+
 sub name {
   my ($self) = @_;
 

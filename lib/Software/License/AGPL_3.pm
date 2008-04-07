@@ -10,6 +10,7 @@ Software::License::AGPL_3 - GNU Affero General Public License, Version 3
 =cut
 
 sub name { 'The GNU Affero General Public License, Version 3, November 2007' }
+sub url  { 'http://www.gnu.org/licenses/agpl-3.0.txt' }
 
 1;
 __DATA__

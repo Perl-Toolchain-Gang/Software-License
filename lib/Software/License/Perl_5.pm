@@ -13,6 +13,7 @@ require Software::License::GPL_1;
 require Software::License::Artistic_1_0;
 
 sub name { 'the same terms as perl 5 itself' }
+sub url  { 'http://dev.perl.org/licenses/' }
 
 sub _gpl {
   my ($self) = @_;

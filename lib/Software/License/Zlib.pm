@@ -10,6 +10,7 @@ Software::License::Zlib - The zlib License
 =cut
 
 sub name { 'The zlib License' }
+sub url  { 'http://www.zlib.net/zlib_license.html' }
 
 1;
 __DATA__

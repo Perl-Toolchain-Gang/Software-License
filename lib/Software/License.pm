@@ -62,6 +62,12 @@ These methods are attribute readers.
 sub year   { defined $_[0]->{year} ? $_[0]->{year} : (localtime)[5]+1900 }
 sub holder { $_[0]->{holder}     }
 
+=head2 url
+
+This method returns the URL at which a canonical text of the license can be
+found, if one is available.  If possible, this will point at plain text, but it
+may point to an HTML resource.
+
 =head2 notice
 
 This method returns a snippet of text, usually a few lines, indicating the

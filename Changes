@@ -1,7 +1,12 @@
 Revision history for Software-License
 
-0.002     2008-04-??
+0.002     2008-04-09
+          added Software::LicenseUtils (by request)
           fix POD for Mozilla 1.1
+          add LGPL 3
+
+0.001     2008-03-18
+          minor packaging fixes
 
 0.000     2008-03-18
           pre-release for public evaluation

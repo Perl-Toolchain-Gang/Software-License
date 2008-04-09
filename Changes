@@ -2,6 +2,7 @@ Revision history for Software-License
 
 0.002     2008-04-09
           added Software::LicenseUtils (by request)
+          added ->url method to licenses
           fix POD for Mozilla 1.1
           add LGPL 3
 

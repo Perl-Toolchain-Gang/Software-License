@@ -8,7 +8,7 @@ Software::LicenseUtils - little useful bits of code for licensey things
 
 =head1 METHODS
 
-=head2 license_from_pm
+=head2 guess_license_from_pod
 
   my @guesses = Software::LicenseUtils->guess_license_from_pm($pm_text);
 
@@ -94,7 +94,7 @@ my %yaml_keys = (
   mozilla      => [ map { "Mozilla_$_" } qw(1_0 1_1) ],
 );
 
-=head2 license_from_meta_yml
+=head2 guess_license_from_meta_yml
 
   my @guesses = Software::LicenseUtils->guess_license_from_meta_yml($yaml_str);
 

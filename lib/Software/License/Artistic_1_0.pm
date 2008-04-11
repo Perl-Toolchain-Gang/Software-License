@@ -21,6 +21,13 @@ pair when instantiating the license:
 
   aggregation_clause => 0
 
+=head1 METHODS
+
+=head2 aggregation_clause
+
+This method returns whether the aggregation clause is allowed on this instance.
+By default this method returns true on instances and dies on the class.
+
 =cut
 
 sub aggregation_clause {

@@ -12,6 +12,6 @@ requires('Class::ISA'          => '0.000'); # minimum unknown
 requires('Sub::Install'        => '0.000'); # minimum unknown
 requires('Text::Template'      => '0.000'); # minimum unknown
 
-author_tests('xt');
+extra_tests;
 
 WriteAll();

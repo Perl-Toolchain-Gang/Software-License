@@ -1,5 +1,13 @@
 Revision history for Software-License
 
+0.003     2008-04-11
+          [CHANGES THAT WILL BREAK YOUR CODE]
+          _from_pm is now _from_pod
+          "guess" methods return a list
+
+          [ENHANCEMENTS]
+          guess_license_from_meta_yml (thanks, Brian Cassidy!)
+
 0.002     2008-04-09
           added Software::LicenseUtils (by request)
           added ->url method to licenses

@@ -24,6 +24,7 @@ my $_v = qr/(?:v(?:er(?:sion|\.))(?: |\.)?)/i;
 my @phrases = (
   "under the same (?:terms|license) as perl $_v?6" => [],
   'under the same (?:terms|license) as perl' => 'Perl_5',
+  'affero g'                                 => 'AGPL_3',
   "GNU public license $_v?([123])"           => sub { "GPL_$_[0]_0" },
   'GNU public license'                       => [ map {"GPL_$_\_0"} (1..3) ],
   "GNU lesser public license $_v?([23])\\D"  => sub {

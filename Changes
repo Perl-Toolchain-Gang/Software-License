@@ -1,5 +1,8 @@
 Revision history for Software-License
 
+0.004     2008-04-12
+          documentation fixes
+
 0.003     2008-04-11
           [CHANGES THAT WILL BREAK YOUR CODE]
           _from_pm is now _from_pod

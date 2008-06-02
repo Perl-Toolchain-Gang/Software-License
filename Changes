@@ -1,5 +1,8 @@
 Revision history for Software-License
 
+0.005     2008-06-01
+          add meta_yml_name method
+
 0.004     2008-04-12
           documentation fixes
 

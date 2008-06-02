@@ -11,6 +11,7 @@ Software::License::LGPL_3_0 - GNU Lesser General Public License, Version 3
 
 sub name { 'The GNU Lesser General Public License, Version 3, June 2007' }
 sub url  { 'http://www.gnu.org/licenses/lgpl-3.0.txt' }
+sub meta_yml_name { 'lgpl' }
 
 1;
 __DATA__

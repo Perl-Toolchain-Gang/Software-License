@@ -47,6 +47,8 @@ sub name {
   return $name;
 }
 
+sub meta_yml_name { 'artistic' }
+
 1;
 __DATA__
 __LICENSE__

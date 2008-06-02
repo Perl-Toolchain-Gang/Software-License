@@ -11,6 +11,7 @@ Software::License::Apache_2_0 - The Apache License, Version 2.0
 
 sub name { 'The Apache License, Version 2.0, January 2004' }
 sub url  { 'http://www.apache.org/licenses/LICENSE-2.0.txt' }
+sub meta_yml_name { 'apache' }
 
 1;
 __DATA__

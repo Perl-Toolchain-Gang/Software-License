@@ -11,6 +11,7 @@ Software::License::GPL_1 - GNU General Public License, Version 1
 
 sub name { 'The GNU General Public License, Version 1, February 1989' }
 sub url  { 'http://www.gnu.org/licenses/old-licenses/gpl-1.0.txt' }
+sub meta_yml_name { 'gpl' }
 
 1;
 __DATA__

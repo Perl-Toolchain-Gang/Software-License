@@ -14,6 +14,7 @@ require Software::License::Artistic_1_0;
 
 sub name { 'the same terms as perl 5 itself' }
 sub url  { 'http://dev.perl.org/licenses/' }
+sub meta_yml_name { 'perl' }
 
 sub _gpl {
   my ($self) = @_;

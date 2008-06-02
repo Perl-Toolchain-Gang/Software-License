@@ -10,6 +10,7 @@ Software::License::BSD - The (three-clause) BSD License
 =cut
 
 sub name { 'The (three-clause) BSD License' }
+sub meta_yml_name { 'bsd' }
 
 1;
 __DATA__

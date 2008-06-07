@@ -9,13 +9,13 @@ Software::License - packages that provide templated software licenses
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =cut
 
-our $VERSION = '0.005';
+our $VERSION = '0.006';
 
-use Class::ISA ();
+use Data::Section -setup => { header_re => qr/\A__([^_]+)__\Z/ };
 use Sub::Install ();
 use Text::Template ();
 
@@ -133,69 +133,13 @@ sub _fill_in {
   my ($self, $which) = @_;
 
   Carp::confess "couldn't build $which section" unless
-    my $template = $self->_templates->{$which};
+    my $template = $self->section_data($which);
 
   return Text::Template->fill_this_in(
-    $template,
+    $$template,
     HASH => { self => \$self },
     DELIMITERS => [ qw({{ }}) ],
   );
-}
-
-sub _templates {
-  my ($self) = @_;
-  my $pkg = ref $self ? ref $self : $self;
-
-  Carp::croak "the templates method must be called on a subclass"
-    if $pkg eq __PACKAGE__;
-
-  my $dh  = do { no strict 'refs'; \*{"$pkg\::DATA"} };
-
-  my %template;
-
-  my @super_path = Class::ISA::super_path($pkg);
-  if (@super_path != 1 or $super_path[0] ne __PACKAGE__) {
-    my $super_method = "$super_path[0]\::templates";
-    %template = %{ $self->$super_method };
-  } elsif (@super_path == 1 and $super_path[0] eq __PACKAGE__) {
-    %template = $self->_root_templates;
-  }
-
-  my $current;
-  while (my $line = <$dh>) {
-    chomp $line;
-
-    if ($line =~ /\A__([^_]+)__\z/) {
-      $current = $1;
-      $template{$current} = '';
-      next;
-    }
- 
-    Carp::confess "bogus data section: text outside of file" unless $current;
-
-    $line =~ s/\A\\//;
-
-    $template{$current} .= "$line\n";
-  }
-
-  my $new_code = sub { \%template };
-  Sub::Install::install_sub({
-    code => $new_code,
-    into => $pkg,
-    as   => '_templates',
-  });
-
-  return $self->_templates;
-}
-
-sub _root_templates {
-  return (NOTICE => <<'END_NOTICE');
-This software is Copyright (c) {{$self->year}} by {{$self->holder}}.
-
-This is free software, licensed under:
-
-  {{ $self->name }}
-END_NOTICE
 }
 
 =head1 TODO
@@ -216,3 +160,11 @@ the same terms as Perl itself.
 =cut
 
 1;
+
+__DATA__
+__NOTICE__
+This software is Copyright (c) {{$self->year}} by {{$self->holder}}.
+
+This is free software, licensed under:
+
+  {{ $self->name }}

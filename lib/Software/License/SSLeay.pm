@@ -18,8 +18,8 @@ __DATA__
 __LICENSE__
   Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com) All rights reserved.
 
-  Redistribution and use in source and binary forms, with or without modification,
-  are permitted provided that the following conditions are met:
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
 
   This library is free for commercial and non-commercial use as long as
   the following conditions are aheared to.  The following conditions
@@ -28,14 +28,14 @@ __LICENSE__
   included with this distribution is covered by the same copyright terms
   except that the holder is Tim Hudson (tjh@cryptsoft.com).
 
-  Copyright remains Eric Young’s, and as such any Copyright notices in
-  the code are not to be removed. If this package is used in a product,
-  Eric Young should be given attribution as the author of the parts of the library used.
-  This can be in the form of a textual message at program startup or
-  in documentation (online or textual) provided with the package.
+  Copyright remains Eric Young’s, and as such any Copyright notices in the code
+  are not to be removed. If this package is used in a product, Eric Young
+  should be given attribution as the author of the parts of the library used.
+  This can be in the form of a textual message at program startup or in
+  documentation (online or textual) provided with the package.
 
-  Redistribution and use in source and binary forms, with or without modification,
-  are permitted provided that the following conditions are met:
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
 
     1. Redistributions of source code must retain the copyright
        notice, this list of conditions and the following disclaimer.
@@ -49,8 +49,9 @@ __LICENSE__
        The word ‘cryptographic’ can be left out if the rouines from the library
        being used are not cryptographic related :-).
     4. If you include any Windows specific code (or a derivative thereof) from
-       the apps directory (application code) you must include an acknowledgement:
-       “This product includes software written by Tim Hudson (tjh@cryptsoft.com)”
+       the apps directory (application code) you must include an
+       acknowledgement: “This product includes software written by Tim Hudson
+       (tjh@cryptsoft.com)”
 
   THIS SOFTWARE IS PROVIDED BY ERIC YOUNG ‘‘AS IS’’ AND
   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE

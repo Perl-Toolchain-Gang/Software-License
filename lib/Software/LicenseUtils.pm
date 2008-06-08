@@ -20,25 +20,25 @@ Calling this method in scalar context is a fatal error.
 
 =cut
 
-my $_v = qr/(?:, )?(?:v(?:er(?:sion|\.))(?: |\.)?)/i;
+my $_v = qr/(?:v(?:er(?:sion|\.))(?: |\.)?)/i;
 my @phrases = (
   "under the same (?:terms|license) as perl $_v?6" => [],
   'under the same (?:terms|license) as perl'    => 'Perl_5',
   'affero g'                                    => 'AGPL_3',
-  "GNU (?:general )?public license $_v?([123])" => sub { "GPL_$_[0]_0" },
-  'GNU (?:general )?public license'             => [ map {"GPL_$_\_0"} (1..3) ],
-  "GNU (?:lesser|library) (?:general )?public license $_v?([23])\\D"  => sub {
+  "GNU (?:general )?public license,? $_v?([123])" => sub { "GPL_$_[0]" },
+  'GNU (?:general )?public license'             => [ map {"GPL_$_"} (1..3) ],
+  "GNU (?:lesser|library) (?:general )?public license,? $_v?([23])\\D"  => sub {
     $_[0] == 2 ? 'LGPL_2_1' : $_[0] == 3 ? 'LGPL_3_0' : ()
   },
   'GNU (?:lesser|library) (?:general )?public license'  => [ qw(LGPL_2_1 LGPL_3_0) ],
   'BSD license'                => 'BSD',
   "Artistic license $_v?(\\d)" => sub { "Artistic_$_[0]_0" },
   'Artistic license'           => [ map { "Artistic_$_\_0" } (1..2) ],
-  "LGPL $_v?(\\d)"             => sub {
+  "LGPL,? $_v?(\\d)"             => sub {
     $_[0] == 2 ? 'LGPL_2_1' : $_[0] == 3 ? 'LGPL_3_0' : ()
   },
   'LGPL'                       => [ qw(LGPL_2_1 LGPL_3_0) ],
-  "GPL $_v?(\\d)"              => sub { "GPL_$_[0]_0" },
+  "GPL,? $_v?(\\d)"              => sub { "GPL_$_[0]_0" },
   'GPL'                        => [ map { "GPL_$_\_0" } (1..3) ],
   'BSD'                        => 'BSD',
   'Artistic'                   => [ map { "Artistic_$_\_0" } (1..2) ],

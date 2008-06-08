@@ -1,5 +1,8 @@
 Revision history for Software-License
 
+0.007     2008-06-08
+          fix detection of the various GNU licences
+
 0.006     2008-06-07
           refactor inline template logic out to Data::Section
 

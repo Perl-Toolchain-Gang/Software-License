@@ -1,5 +1,9 @@
 Revision history for Software-License
 
+0.008     2008-06-16
+          fix behavior when guessing multiple items from meta.yml
+          (RT #36805, thanks bricas!)
+
 0.007     2008-06-08
           fix detection of the various GNU licences
 

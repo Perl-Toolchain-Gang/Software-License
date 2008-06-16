@@ -90,7 +90,7 @@ my %yaml_keys = (
   artistic_2   => 'Artistic_2_0',
   lgpl         => [ map { "LGPL_$_" } qw(2_1 3_0) ],
   bsd          => 'BSD',
-  gpl          => [ map { "GPL_$_" } qw(1_0 2_0 3_0) ],
+  gpl          => [ map { "GPL_$_" } qw(1 2 3) ],
   mit          => 'MIT',
   mozilla      => [ map { "Mozilla_$_" } qw(1_0 1_1) ],
 );
@@ -112,7 +112,8 @@ sub guess_license_from_meta_yml {
   my ($license_text) = $yaml_text =~ m{^license: (.+)}gm;
 
   return unless $license_text and my $license = $yaml_keys{ $license_text };
-  return "Software::License::$license";
+
+  return map { "Software::License::$_" } ref $license ? @$license : $license;
 }
 
 1;

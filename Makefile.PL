@@ -14,4 +14,7 @@ requires('Text::Template'      => '0.000'); # minimum unknown
 
 extra_tests;
 
+repository('http://github.com/rjbs/software-license');
+auto_manifest;
+
 WriteAll();

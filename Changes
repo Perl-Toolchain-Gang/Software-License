@@ -1,5 +1,8 @@
 Revision history for Software-License
 
+0.009     2009-01-16
+          add repo loc to metadata
+
 0.008     2008-06-16
           fix behavior when guessing multiple items from meta.yml
           (RT #36805, thanks bricas!)

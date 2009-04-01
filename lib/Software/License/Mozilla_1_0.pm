@@ -10,6 +10,7 @@ Software::License::Mozilla_1_0 - Mozilla Public License 1.0
 =cut
 
 sub name { 'The Mozilla Public License 1.0' }
+sub url  { 'http://www.mozilla.org/MPL/MPL-1.0.txt' }
 sub meta_yml_name { 'mozilla' }
 
 1;

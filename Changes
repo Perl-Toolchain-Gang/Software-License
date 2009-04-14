@@ -1,5 +1,8 @@
 Revision history for Software-License
 
+0.010     2009-04-14
+          add url methods where they were missing (Shlomi Fish)
+
 0.009     2009-01-16
           add repo loc to metadata
 

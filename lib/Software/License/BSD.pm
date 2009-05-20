@@ -11,7 +11,7 @@ Software::License::BSD - The (three-clause) BSD License
 
 sub name { 'The (three-clause) BSD License' }
 sub url  { 'http://www.opensource.org/licenses/bsd-license.php' }
-sub meta_yml_name { 'bsd' }
+sub meta_name { 'bsd' }
 
 1;
 __DATA__

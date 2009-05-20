@@ -11,7 +11,7 @@ Software::License::GPL_2 - GNU General Public License, Version 2
 
 sub name { 'The GNU General Public License, Version 2, June 1991' }
 sub url  { 'http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt' }
-sub meta_yml_name { 'gpl' }
+sub meta_name { 'gpl' }
 
 1;
 __DATA__

@@ -47,7 +47,7 @@ sub name {
   return $name;
 }
 
-sub meta_yml_name { 'artistic' }
+sub meta_name { 'artistic' }
 
 1;
 __DATA__

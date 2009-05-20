@@ -11,7 +11,7 @@ Software::License::Apache_1_1 - The Apache Software License, Version 1.1
 
 sub name { 'The Apache Software License, Version 1.1' }
 sub url  { 'http://www.apache.org/licenses/LICENSE-1.1' }
-sub meta_yml_name { 'apache' }
+sub meta_name { 'apache' }
 
 1;
 __DATA__

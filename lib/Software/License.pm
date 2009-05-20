@@ -120,14 +120,18 @@ sub version  {
   return join '.', @vparts;
 }
 
-=head2 meta_yml_name
+=head2 meta_name
 
 This method returns the string that should be used for this license in the CPAN
-META.yml file, or undef if there is no known string to use.
+META.json or META.yml file, or undef if there is no known string to use.
+
+This method may also be invoked as C<meta_yml_name> for legacy reasons.
 
 =cut
 
-sub meta_yml_name { return undef; }
+sub meta_name { return undef; }
+
+sub meta_yml_name { $_[0]->meta_name }
 
 sub _fill_in {
   my ($self, $which) = @_;

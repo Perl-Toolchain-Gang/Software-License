@@ -13,7 +13,7 @@ require Software::License::SSLeay;
 
 sub name { 'OpenSSL License' }
 sub url  { 'http://www.openssl.org/source/license.html' }
-sub meta_yml_name { 'unrestricted' }
+sub meta_name { 'unrestricted' }
 
 sub _ssleay {
   my ($self) = @_;

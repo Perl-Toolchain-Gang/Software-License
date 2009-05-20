@@ -12,9 +12,9 @@ Software::License::Perl_5 - The Perl 5 License (Artistic 1 & GPL 1)
 require Software::License::GPL_1;
 require Software::License::Artistic_1_0;
 
-sub name { 'the same terms as perl 5 itself' }
+sub name { 'the same terms as the perl 5 programming language system itself' }
 sub url  { 'http://dev.perl.org/licenses/' }
-sub meta_yml_name { 'perl' }
+sub meta_name { 'perl' }
 
 sub _gpl {
   my ($self) = @_;
@@ -38,9 +38,9 @@ __NOTICE__
 This software is copyright (c) {{$self->year}} by {{$self->holder}}.
 
 This is free software; you can redistribute it and/or modify it under
-the same terms as perl itself.
+the same terms as the Perl programming language system itself.
 __LICENSE__
-Terms of Perl itself
+Terms of the Perl programming language system itself
 
 a) the GNU General Public License as published by the Free
    Software Foundation; either version 1, or (at your option) any

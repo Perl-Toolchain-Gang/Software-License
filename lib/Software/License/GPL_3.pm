@@ -11,7 +11,7 @@ Software::License::GPL_3 - GNU General Public License, Version 3
 
 sub name { 'The GNU General Public License, Version 3, June 2007' }
 sub url  { 'http://www.gnu.org/licenses/gpl-3.0.txt' }
-sub meta_yml_name { 'gpl' }
+sub meta_name { 'gpl' }
 
 1;
 __DATA__

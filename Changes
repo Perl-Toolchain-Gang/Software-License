@@ -1,5 +1,8 @@
 Revision history for Software-License
 
+0.XXX     XXX
+          added guess_license_from_meta which is both JSON and YAML compatible
+
 0.011     2009-05-19
           clarify references to Perl in Perl_5 license
           rename things that were YAML-specific to just be "meta"

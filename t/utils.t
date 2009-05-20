@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use Test::More tests => 3;
+use Test::More tests => 4;
 use Software::LicenseUtils;
 
 {
@@ -89,7 +89,7 @@ tests: 't/*.t xt/*.t'
 version: 0.002
 END_YAML
 
-    my @guesses = Software::LicenseUtils->guess_license_from_meta_yml(
+    my @guesses = Software::LicenseUtils->guess_license_from_meta(
       $fake_yaml
     );
 
@@ -103,3 +103,64 @@ END_YAML
       "guessed okay"
     );
 }
+
+{
+    my $fake_json = <<'END_JSON';
+{
+   "resources" : {
+      "repository" : "http://github.com/rjbs/dist-zilla"
+   },
+   "generated_by" : "Dist::Zilla::Plugin::MetaJSON version 1.091370",
+   "version" : "1.091370",
+   "name" : "Dist-Zilla",
+   "requires" : {
+      "DateTime" : "0.44",
+      "Config::INI::MVP::Reader" : "0.018",
+      "Pod::Eventual" : "0",
+      "App::Cmd" : "0.200",
+      "String::RewritePrefix" : "0.002",
+      "Data::Section" : "0.004",
+      "File::chdir" : "0",
+      "YAML::XS" : "0",
+      "String::Format" : "0",
+      "Perl::Version" : "0",
+      "autobox" : "2.53",
+      "Software::License" : "0",
+      "Archive::Tar" : "0",
+      "MooseX::ClassAttribute" : "0",
+      "List::MoreUtils" : "0",
+      "Moose" : "0.65",
+      "ExtUtils::Manifest" : "1.54",
+      "String::Flogger" : "1",
+      "File::Find::Rule" : "0",
+      "Mixin::ExtraFields::Param" : "0",
+      "File::HomeDir" : "0",
+      "ExtUtils::MakeMaker" : "0",
+      "CPAN::Uploader" : "0",
+      "Moose::Autobox" : "0.09",
+      "Test::More" : "0",
+      "MooseX::Types::Path::Class" : "0",
+      "Hash::Merge::Simple" : "0",
+      "File::Temp" : "0",
+      "Path::Class" : "0",
+      "Text::Template" : "0"
+   },
+   "abstract" : "distribution builder; installer not included!",
+   "author" : [
+      "Ricardo SIGNES <rjbs@cpan.org>"
+   ],
+   "license" : "perl"
+}
+END_JSON
+
+    my @guesses = Software::LicenseUtils->guess_license_from_meta(
+      $fake_json
+    );
+
+    is_deeply(
+      \@guesses,
+      [ 'Software::License::Perl_5' ],
+      "guessed okay"
+    );
+}
+

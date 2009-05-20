@@ -95,25 +95,27 @@ my %meta_keys = (
   mozilla      => [ map { "Mozilla_$_" } qw(1_0 1_1) ],
 );
 
-=head2 guess_license_from_meta_yml
+=head2 guess_license_from_meta
 
-  my @guesses = Software::LicenseUtils->guess_license_from_meta_yml($yaml_str);
+  my @guesses = Software::LicenseUtils->guess_license_from_meta($meta_str);
 
-Given the content of the META.yml file found in a CPAN distribution, this
+Given the content of the META.(yml|json) file found in a CPAN distribution, this
 method makes a guess as to which licenses may apply to the distribution.  It
 will return a list of zero or more Software::License instances or classes.
 
 =cut
 
-sub guess_license_from_meta_yml {
-  my ($class, $yaml_text) = @_;
+sub guess_license_from_meta {
+  my ($class, $meta_text) = @_;
   die "can't call guess_license_* in scalar context" unless wantarray;
 
-  my ($license_text) = $yaml_text =~ m{^license: (.+)}gm;
+  my ($license_text) = $meta_text =~ m{\b["']?license["']?\s*:\s*["']?([a-z_]+)["']?}gm;
 
   return unless $license_text and my $license = $meta_keys{ $license_text };
 
   return map { "Software::License::$_" } ref $license ? @$license : $license;
 }
+
+*guess_license_from_meta_yml = \&guess_license_from_meta;
 
 1;

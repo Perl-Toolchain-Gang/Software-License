@@ -83,7 +83,7 @@ sub guess_license_from_pod {
 	return;
 }
 
-my %yaml_keys = (
+my %meta_keys = (
   perl         => 'Perl_5',
   apache       => [ map { "Apache_$_" } qw(1_1 2_0) ],
   artistic     => 'Artistic_1_0',
@@ -111,7 +111,7 @@ sub guess_license_from_meta_yml {
 
   my ($license_text) = $yaml_text =~ m{^license: (.+)}gm;
 
-  return unless $license_text and my $license = $yaml_keys{ $license_text };
+  return unless $license_text and my $license = $meta_keys{ $license_text };
 
   return map { "Software::License::$_" } ref $license ? @$license : $license;
 }

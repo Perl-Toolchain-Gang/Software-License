@@ -154,6 +154,58 @@ sub _fill_in {
 
 =back
 
+=head1 SEE ALSO
+
+The specific license:
+
+=over
+
+=item * L<Software::License::AGPL_3>
+
+=item * L<Software::License::Apache_1_1>
+
+=item * L<Software::License::Apache_2_0>
+
+=item * L<Software::License::Artistic_1_0>
+
+=item * L<Software::License::Artistic_2_0>
+
+=item * L<Software::License::BSD>
+
+=item * L<Software::License::FreeBSD>
+
+=item * L<Software::License::GFDL_1_2>
+
+=item * L<Software::License::GPL_1>
+
+=item * L<Software::License::GPL_2>
+
+=item * L<Software::License::GPL_3>
+
+=item * L<Software::License::LGPL_2_1>
+
+=item * L<Software::License::LGPL_3_0>
+
+=item * L<Software::License::MIT>
+
+=item * L<Software::License::Mozilla_1_0>
+
+=item * L<Software::License::Mozilla_1_1>
+
+=item * L<Software::License::OpenSSL>
+
+=item * L<Software::License::Perl_5>
+
+=item * L<Software::License::QPL_1_0>
+
+=item * L<Software::License::SSLeay>
+
+=item * L<Software::License::Sun>
+
+=item * L<Software::License::Zlib>
+
+=back
+
 =head1 COPYRIGHT AND LICENSE
 
 This software is Copyright (c) 2008 by Ricardo SIGNES.

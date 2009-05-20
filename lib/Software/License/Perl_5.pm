@@ -38,7 +38,7 @@ __NOTICE__
 This software is copyright (c) {{$self->year}} by {{$self->holder}}.
 
 This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl programming language system itself.
+the same terms as the Perl 5 programming language system itself.
 __LICENSE__
 Terms of the Perl programming language system itself
 

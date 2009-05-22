@@ -1,7 +1,8 @@
 Revision history for Software-License
 
-0.XXX     XXX
+0.012     2009-05-22
           added guess_license_from_meta which is both JSON and YAML compatible
+            (BRICAS)
 
 0.011     2009-05-19
           clarify references to Perl in Perl_5 license

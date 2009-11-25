@@ -122,7 +122,7 @@ END_YAML
       "Data::Section" : "0.004",
       "File::chdir" : "0",
       "YAML::XS" : "0",
-      "String::Format" : "0",
+      "String::Formatter" : "0",
       "Perl::Version" : "0",
       "autobox" : "2.53",
       "Software::License" : "0",

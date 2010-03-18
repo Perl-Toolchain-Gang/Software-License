@@ -11,7 +11,7 @@ Software::License::Artistic_2_0 - The Artistic License 2.0
 
 sub name { 'The Artistic License 2.0' }
 sub url  { 'http://www.perlfoundation.org/artistic_license_2_0' }
-sub meta_name { 'artistic' }
+sub meta_name { 'artistic_2' }
 
 1;
 __DATA__

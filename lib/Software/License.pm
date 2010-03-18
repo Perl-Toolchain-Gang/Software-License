@@ -9,11 +9,11 @@ Software::License - packages that provide templated software licenses
 
 =head1 VERSION
 
-version 0.012
+version 0.013
 
 =cut
 
-our $VERSION = '0.012';
+our $VERSION = '0.013';
 
 use Data::Section -setup => { header_re => qr/\A__([^_]+)__\Z/ };
 use Sub::Install ();

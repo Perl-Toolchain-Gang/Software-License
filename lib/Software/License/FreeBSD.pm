@@ -12,6 +12,8 @@ Software::License::FreeBSD - The FreeBSD License (aka two-clause BSD)
 sub name { 'The (two-clause) FreeBSD License' }
 sub url  { 'http://www.freebsd.org/copyright/freebsd-license.html' }
 
+sub meta_name { 'bsd' }
+
 1;
 __DATA__
 __LICENSE__

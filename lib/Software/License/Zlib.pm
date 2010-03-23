@@ -12,6 +12,8 @@ Software::License::Zlib - The zlib License
 sub name { 'The zlib License' }
 sub url  { 'http://www.zlib.net/zlib_license.html' }
 
+sub meta_name { 'open_source' }
+
 1;
 __DATA__
 __LICENSE__

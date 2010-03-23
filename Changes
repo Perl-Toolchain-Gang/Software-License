@@ -1,5 +1,8 @@
 Revision history for Software-License
 
+0.014     2010-03-23
+          add meta_name to almost all remaining licenses, and add a test
+
 0.013     2010-03-18
           add meta_name to Artistic 2 (thanks, Bernardo Rechea)
 

@@ -1,5 +1,8 @@
 Revision history for Software-License
 
+0.015     2010-03-26
+          up the Test::More prereq
+
 0.014     2010-03-23
           add meta_name to almost all remaining licenses, and add a test
 

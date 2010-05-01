@@ -1,5 +1,9 @@
 Revision history for Software-License
 
+0.016     2010-05-01
+          added the None and CC0_1_0 licenses for the far ends of the spectrum
+          (thanks to Brian Phillips for None)
+
 0.015     2010-03-26
           up the Test::More prereq
 

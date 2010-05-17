@@ -4,8 +4,6 @@ use 5.006; # warnings
 package Software::License;
 # ABSTRACT: packages that provide templated software licenses
 
-our $VERSION = '0.017';
-
 use Data::Section -setup => { header_re => qr/\A__([^_]+)__\Z/ };
 use Sub::Install ();
 use Text::Template ();

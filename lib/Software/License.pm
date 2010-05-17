@@ -187,6 +187,8 @@ The specific license:
 * L<Software::License::Sun>
 * L<Software::License::Zlib>
 
+=cut
+
 1;
 
 __DATA__

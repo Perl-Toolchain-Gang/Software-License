@@ -23,7 +23,8 @@ it.
 sub name      { q(CC0 License) }
 sub url       { q{http://creativecommons.org/publicdomain/zero/1.0/} }
 
-sub meta_name { 'unrestricted' }
+sub meta_name  { 'unrestricted' }
+sub meta2_name { 'unrestricted' }
 
 1;
 __DATA__

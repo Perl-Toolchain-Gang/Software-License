@@ -9,11 +9,11 @@ Software::License - packages that provide templated software licenses
 
 =head1 VERSION
 
-version 0.016
+version 0.017
 
 =cut
 
-our $VERSION = '0.016';
+our $VERSION = '0.017';
 
 use Data::Section -setup => { header_re => qr/\A__([^_]+)__\Z/ };
 use Sub::Install ();
@@ -123,15 +123,36 @@ sub version  {
 =head2 meta_name
 
 This method returns the string that should be used for this license in the CPAN
-META.json or META.yml file, or undef if there is no known string to use.
+META.yml file, according to the CPAN Meta spec v1, or undef if there is no
+known string to use.
 
 This method may also be invoked as C<meta_yml_name> for legacy reasons.
 
+=head2 meta2_name
+
+This method returns the string that should be used for this license in the CPAN
+META.json or META.yml file, according to the CPAN Meta spec v2, or undef if
+there is no known string to use.  If this method does not exist, and
+C<meta_name> returns open_source, restricted, unrestricted, or unknown, that
+value will be used.
+
 =cut
 
-sub meta_name { return undef; }
-
+# sub meta1_name    { return undef; } # sort this out later, should be easy
+sub meta_name     { return undef; }
 sub meta_yml_name { $_[0]->meta_name }
+
+sub meta2_name {
+  my ($self) = @_;
+  my $meta1 = $self->meta_name;
+
+  return undef unless defined $meta1;
+
+  return $meta1
+    if $meta1 =~ /\A(?:open_source|restricted|unrestricted|unknown)\z/;
+
+  return undef;
+}
 
 sub _fill_in {
   my ($self, $which) = @_;

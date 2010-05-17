@@ -12,6 +12,9 @@ Software::License::Sun - Sun Internet Standards Source License (SISSL)
 sub name { 'Sun Internet Standards Source License (SISSL)' }
 sub url  { 'http://www.openoffice.org/licenses/sissl_license.html' }
 
+sub meta_name  { 'open_source' }
+sub meta2_name { 'sun' }
+
 1;
 __DATA__
 __LICENSE__

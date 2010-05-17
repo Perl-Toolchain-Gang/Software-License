@@ -47,7 +47,8 @@ sub name {
   return $name;
 }
 
-sub meta_name { 'artistic' }
+sub meta_name  { 'artistic' }
+sub meta2_name { 'artistic_1_0' }
 
 1;
 __DATA__

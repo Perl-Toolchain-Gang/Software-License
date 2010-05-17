@@ -11,7 +11,8 @@ Software::License::MIT - The MIT (aka X11) License
 
 sub name { 'The MIT (X11) License' }
 sub url  { 'http://www.opensource.org/licenses/mit-license.php' }
-sub meta_name { 'mit' }
+sub meta_name  { 'mit' }
+sub meta2_name { 'mit' }
 
 1;
 __DATA__

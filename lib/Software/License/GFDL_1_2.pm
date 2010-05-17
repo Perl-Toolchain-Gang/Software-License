@@ -11,7 +11,8 @@ Software::License::GFDL_1_2 - The GNU Free Documentation License
 
 sub name { 'GNU Free Documentation License' }
 sub url  { 'http://www.gnu.org/copyleft/fdl.html' }
-sub meta_name { 'unrestricted' }
+sub meta_name  { 'open_source' }
+sub meta2_name { 'gfdl_1_2' }
 
 1;
 __DATA__

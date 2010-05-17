@@ -11,7 +11,8 @@ Software::License::SSLeay - The Original SSLeay License
 
 sub name { 'Original SSLeay License' }
 sub url  { 'http://h71000.www7.hp.com/doc/83final/BA554_90007/apcs02.html' }
-sub meta_name { 'unrestricted' }
+sub meta_name  { 'unrestricted' }
+sub meta2_name { 'ssleay' }
 
 1;
 __DATA__

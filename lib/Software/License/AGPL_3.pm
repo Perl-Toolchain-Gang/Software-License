@@ -2,12 +2,7 @@ use strict;
 use warnings;
 package Software::License::AGPL_3;
 use base 'Software::License';
-
-=head1 NAME
-
-Software::License::AGPL_3 - GNU Affero General Public License, Version 3
-
-=cut
+# ABSTRACT: GNU Affero General Public License, Version 3
 
 sub name { 'The GNU Affero General Public License, Version 3, November 2007' }
 sub url  { 'http://www.gnu.org/licenses/agpl-3.0.txt' }

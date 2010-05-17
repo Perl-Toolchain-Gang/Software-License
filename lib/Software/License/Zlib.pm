@@ -2,12 +2,7 @@ use strict;
 use warnings;
 package Software::License::Zlib;
 use base 'Software::License';
-
-=head1 NAME
-
-Software::License::Zlib - The zlib License
-
-=cut
+# ABSTRACT: The zlib License
 
 sub name { 'The zlib License' }
 sub url  { 'http://www.zlib.net/zlib_license.html' }

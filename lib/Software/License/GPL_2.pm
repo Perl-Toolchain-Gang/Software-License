@@ -2,12 +2,7 @@ use strict;
 use warnings;
 package Software::License::GPL_2;
 use base 'Software::License';
-
-=head1 NAME
-
-Software::License::GPL_2 - GNU General Public License, Version 2
-
-=cut
+# ABSTRACT: GNU General Public License, Version 2
 
 sub name { 'The GNU General Public License, Version 2, June 1991' }
 sub url  { 'http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt' }

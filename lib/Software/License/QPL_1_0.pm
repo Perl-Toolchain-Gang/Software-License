@@ -2,12 +2,7 @@ use strict;
 use warnings;
 package Software::License::QPL_1_0;
 use base 'Software::License';
-
-=head1 NAME
-
-Software::License::QPL_1_0 - The Q Public License, Version 1.0
-
-=cut
+# ABSTRACT: The Q Public License, Version 1.0
 
 sub name { 'The Q Public License, Version 1.0' }
 sub url  { 'http://trolltech.com/products/qt/licenses/licensing/qpl' }

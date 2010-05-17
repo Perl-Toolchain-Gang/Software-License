@@ -2,16 +2,7 @@ use strict;
 use warnings;
 use 5.006; # warnings
 package Software::License;
-
-=head1 NAME
-
-Software::License - packages that provide templated software licenses
-
-=head1 VERSION
-
-version 0.017
-
-=cut
+# ABSTRACT: packages that provide templated software licenses
 
 our $VERSION = '0.017';
 
@@ -27,11 +18,7 @@ use Text::Template ();
 
   print $output_fh $license->fulltext;
 
-=head1 DESCRIPTION
-
-=head1 METHODS
-
-=head2 new
+=method new
 
   my $license = $subclass->new(\%arg);
 
@@ -51,9 +38,9 @@ sub new {
   bless $arg => $class;
 }
 
-=head2 year
+=method year
 
-=head2 holder
+=method holder
 
 These methods are attribute readers.
 
@@ -62,18 +49,18 @@ These methods are attribute readers.
 sub year   { defined $_[0]->{year} ? $_[0]->{year} : (localtime)[5]+1900 }
 sub holder { $_[0]->{holder}     }
 
-=head2 name
+=method name
 
 This method returns the name of the license, suitable for shoving in the middle
 of a sentence, generally with a leading capitalized "The."
 
-=head2 url
+=method url
 
 This method returns the URL at which a canonical text of the license can be
 found, if one is available.  If possible, this will point at plain text, but it
 may point to an HTML resource.
 
-=head2 notice
+=method notice
 
 This method returns a snippet of text, usually a few lines, indicating the
 copyright holder and year of copyright, as well as an indication of the license
@@ -83,7 +70,7 @@ under which the software is distributed.
 
 sub notice { shift->_fill_in('NOTICE') }
 
-=head2 license
+=method license
 
 This method returns the full text of the license.
 
@@ -91,7 +78,7 @@ This method returns the full text of the license.
 
 sub license { shift->_fill_in('LICENSE') }
 
-=head2 fulltext
+=method fulltext
 
 This method returns the complete text of the license, preceded by the copyright
 notice.
@@ -103,7 +90,7 @@ sub fulltext {
   return join "\n", $self->notice, $self->_fill_in('LICENSE')
 }
 
-=head2 version
+=method version
 
 This method returns the version of the license.  If the license is not
 versioned, this method will return false.
@@ -120,7 +107,7 @@ sub version  {
   return join '.', @vparts;
 }
 
-=head2 meta_name
+=method meta_name
 
 This method returns the string that should be used for this license in the CPAN
 META.yml file, according to the CPAN Meta spec v1, or undef if there is no
@@ -128,7 +115,7 @@ known string to use.
 
 This method may also be invoked as C<meta_yml_name> for legacy reasons.
 
-=head2 meta2_name
+=method meta2_name
 
 This method returns the string that should be used for this license in the CPAN
 META.json or META.yml file, according to the CPAN Meta spec v2, or undef if
@@ -169,72 +156,38 @@ sub _fill_in {
 
 =head1 TODO
 
-=over
-
-=item * register licenses with aliases to allow $registry->get('gpl', 2);
-
-=back
+=for :list
+* register licenses with aliases to allow $registry->get('gpl', 2);
 
 =head1 SEE ALSO
 
 The specific license:
 
-=over
-
-=item * L<Software::License::AGPL_3>
-
-=item * L<Software::License::Apache_1_1>
-
-=item * L<Software::License::Apache_2_0>
-
-=item * L<Software::License::Artistic_1_0>
-
-=item * L<Software::License::Artistic_2_0>
-
-=item * L<Software::License::BSD>
-
-=item * L<Software::License::FreeBSD>
-
-=item * L<Software::License::GFDL_1_2>
-
-=item * L<Software::License::GPL_1>
-
-=item * L<Software::License::GPL_2>
-
-=item * L<Software::License::GPL_3>
-
-=item * L<Software::License::LGPL_2_1>
-
-=item * L<Software::License::LGPL_3_0>
-
-=item * L<Software::License::MIT>
-
-=item * L<Software::License::Mozilla_1_0>
-
-=item * L<Software::License::Mozilla_1_1>
-
-=item * L<Software::License::OpenSSL>
-
-=item * L<Software::License::Perl_5>
-
-=item * L<Software::License::QPL_1_0>
-
-=item * L<Software::License::SSLeay>
-
-=item * L<Software::License::Sun>
-
-=item * L<Software::License::Zlib>
-
-=back
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is Copyright (c) 2008 by Ricardo SIGNES.
-
-This program is free software; you can redistribute it and/or modify it under
-the same terms as Perl itself.
-
-=cut
+=for :list
+* L<Software::License::AGPL_3>
+* L<Software::License::Apache_1_1>
+* L<Software::License::Apache_2_0>
+* L<Software::License::Artistic_1_0>
+* L<Software::License::Artistic_2_0>
+* L<Software::License::BSD>
+* L<Software::License::CC0>
+* L<Software::License::FreeBSD>
+* L<Software::License::GFDL_1_2>
+* L<Software::License::GPL_1>
+* L<Software::License::GPL_2>
+* L<Software::License::GPL_3>
+* L<Software::License::LGPL_2_1>
+* L<Software::License::LGPL_3_0>
+* L<Software::License::MIT>
+* L<Software::License::Mozilla_1_0>
+* L<Software::License::Mozilla_1_1>
+* L<Software::License::None>
+* L<Software::License::OpenSSL>
+* L<Software::License::Perl_5>
+* L<Software::License::QPL_1_0>
+* L<Software::License::SSLeay>
+* L<Software::License::Sun>
+* L<Software::License::Zlib>
 
 1;
 

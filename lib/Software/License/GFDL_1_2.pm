@@ -2,12 +2,7 @@ use strict;
 use warnings;
 package Software::License::GFDL_1_2;
 use base 'Software::License';
-
-=head1 NAME
-
-Software::License::GFDL_1_2 - The GNU Free Documentation License
-
-=cut
+# ABSTRACT: The GNU Free Documentation License
 
 sub name { 'GNU Free Documentation License' }
 sub url  { 'http://www.gnu.org/copyleft/fdl.html' }

@@ -1,14 +1,9 @@
 use strict;
 use warnings;
 package Software::LicenseUtils;
+# ABSTRACT: little useful bits of code for licensey things
 
-=head1 NAME
-
-Software::LicenseUtils - little useful bits of code for licensey things
-
-=head1 METHODS
-
-=head2 guess_license_from_pod
+=method guess_license_from_pod
 
   my @guesses = Software::LicenseUtils->guess_license_from_pod($pm_text);
 
@@ -95,7 +90,7 @@ my %meta_keys = (
   mozilla      => [ map { "Mozilla_$_" } qw(1_0 1_1) ],
 );
 
-=head2 guess_license_from_meta
+=method guess_license_from_meta
 
   my @guesses = Software::LicenseUtils->guess_license_from_meta($meta_str);
 

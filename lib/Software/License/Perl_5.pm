@@ -2,12 +2,7 @@ use strict;
 use warnings;
 package Software::License::Perl_5;
 use base 'Software::License';
-
-=head1 NAME
-
-Software::License::Perl_5 - The Perl 5 License (Artistic 1 & GPL 1)
-
-=cut
+# ABSTRACT: The Perl 5 License (Artistic 1 & GPL 1)
 
 require Software::License::GPL_1;
 require Software::License::Artistic_1_0;

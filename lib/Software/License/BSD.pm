@@ -2,12 +2,7 @@ use strict;
 use warnings;
 package Software::License::BSD;
 use base 'Software::License';
-
-=head1 NAME
-
-Software::License::BSD - The (three-clause) BSD License
-
-=cut
+# ABSTRACT: The (three-clause) BSD License
 
 sub name { 'The (three-clause) BSD License' }
 sub url  { 'http://www.opensource.org/licenses/bsd-license.php' }

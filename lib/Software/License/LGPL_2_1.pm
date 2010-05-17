@@ -2,12 +2,7 @@ use strict;
 use warnings;
 package Software::License::LGPL_2_1;
 use base 'Software::License';
-
-=head1 NAME
-
-Software::License::LGPL_2_1 - GNU Lesser General Public License, Version 2.1
-
-=cut
+# ABSTRACT: GNU Lesser General Public License, Version 2.1
 
 sub name { 'The GNU Lesser General Public License, Version 2.1, February 1999' }
 sub url  { 'http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt' }

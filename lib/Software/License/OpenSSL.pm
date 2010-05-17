@@ -2,12 +2,7 @@ use strict;
 use warnings;
 package Software::License::OpenSSL;
 use base 'Software::License';
-
-=head1 NAME
-
-Software::License::OpenSSL - The OpenSSL License
-
-=cut
+# ABSTRACT: The OpenSSL License
 
 require Software::License::SSLeay;
 

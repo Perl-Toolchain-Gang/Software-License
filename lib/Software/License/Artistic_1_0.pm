@@ -2,10 +2,7 @@ use strict;
 use warnings;
 package Software::License::Artistic_1_0;
 use base 'Software::License';
-
-=head1 NAME
-
-Software::License::Artistic_1_0 - The Artistic License
+# ABSTRACT: The Artistic License
 
 =head1 OPTIONS
 

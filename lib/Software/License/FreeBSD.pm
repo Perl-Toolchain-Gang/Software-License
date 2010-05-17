@@ -2,12 +2,7 @@ use strict;
 use warnings;
 package Software::License::FreeBSD;
 use base 'Software::License';
-
-=head1 NAME
-
-Software::License::FreeBSD - The FreeBSD License (aka two-clause BSD)
-
-=cut
+# ABSTRACT: The FreeBSD License (aka two-clause BSD)
 
 sub name { 'The (two-clause) FreeBSD License' }
 sub url  { 'http://www.freebsd.org/copyright/freebsd-license.html' }

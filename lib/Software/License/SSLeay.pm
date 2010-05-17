@@ -2,12 +2,7 @@ use strict;
 use warnings;
 package Software::License::SSLeay;
 use base 'Software::License';
-
-=head1 NAME
-
-Software::License::SSLeay - The Original SSLeay License
-
-=cut
+# ABSTRACT: The Original SSLeay License
 
 sub name { 'Original SSLeay License' }
 sub url  { 'http://h71000.www7.hp.com/doc/83final/BA554_90007/apcs02.html' }

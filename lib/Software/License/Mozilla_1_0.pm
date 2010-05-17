@@ -2,12 +2,7 @@ use strict;
 use warnings;
 package Software::License::Mozilla_1_0;
 use base 'Software::License';
-
-=head1 NAME
-
-Software::License::Mozilla_1_0 - Mozilla Public License 1.0
-
-=cut
+# ABSTRACT: Mozilla Public License 1.0
 
 sub name { 'The Mozilla Public License 1.0' }
 sub url  { 'http://www.mozilla.org/MPL/MPL-1.0.txt' }

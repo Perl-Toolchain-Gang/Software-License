@@ -2,12 +2,7 @@ use strict;
 use warnings;
 package Software::License::None;
 use base 'Software::License';
-
-=head1 NAME
-
-Software::License::None - describes a "license" that gives no license for re-use
-
-=cut
+# ABSTRACT: describes a "license" that gives no license for re-use
 
 sub name      { q("No License" License) }
 sub url       { undef }

@@ -2,12 +2,7 @@ use strict;
 use warnings;
 package Software::License::Apache_1_1;
 use base 'Software::License';
-
-=head1 NAME
-
-Software::License::Apache_1_1 - The Apache Software License, Version 1.1
-
-=cut
+# ABSTRACT: The Apache Software License, Version 1.1
 
 sub name { 'The Apache Software License, Version 1.1' }
 sub url  { 'http://www.apache.org/licenses/LICENSE-1.1' }

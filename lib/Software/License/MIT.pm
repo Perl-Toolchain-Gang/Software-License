@@ -2,12 +2,7 @@ use strict;
 use warnings;
 package Software::License::MIT;
 use base 'Software::License';
-
-=head1 NAME
-
-Software::License::MIT - The MIT (aka X11) License
-
-=cut
+# ABSTRACT: The MIT (aka X11) License
 
 sub name { 'The MIT (X11) License' }
 sub url  { 'http://www.opensource.org/licenses/mit-license.php' }

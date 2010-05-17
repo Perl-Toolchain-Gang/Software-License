@@ -2,12 +2,7 @@ use strict;
 use warnings;
 package Software::License::LGPL_3_0;
 use base 'Software::License';
-
-=head1 NAME
-
-Software::License::LGPL_3_0 - GNU Lesser General Public License, Version 3
-
-=cut
+# ABSTRACT: GNU Lesser General Public License, Version 3
 
 sub name { 'The GNU Lesser General Public License, Version 3, June 2007' }
 sub url  { 'http://www.gnu.org/licenses/lgpl-3.0.txt' }

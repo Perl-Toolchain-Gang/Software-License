@@ -1,6 +1,6 @@
 Revision history for Software-License
 
-0.017     2010-05-17
+{{$NEXT}}
           add the meta2_name method for META.json files in schema v2
 
 0.016     2010-05-01

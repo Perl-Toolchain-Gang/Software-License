@@ -45,7 +45,7 @@ sub name {
 }
 
 sub meta_name  { 'artistic' }
-sub meta2_name { 'artistic_1_0' }
+sub meta2_name { 'artistic_1' }
 
 1;
 __DATA__

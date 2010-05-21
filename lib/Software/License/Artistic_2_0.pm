@@ -7,7 +7,7 @@ use base 'Software::License';
 sub name { 'The Artistic License 2.0' }
 sub url  { 'http://www.perlfoundation.org/artistic_license_2_0' }
 sub meta_name  { 'artistic_2' }
-sub meta2_name { 'artistic_2_0' }
+sub meta2_name { 'artistic_2' }
 
 1;
 __DATA__

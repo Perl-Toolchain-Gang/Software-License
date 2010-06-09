@@ -1,6 +1,7 @@
 Revision history for Software-License
 
 {{$NEXT}}
+          None should be "restrictive" on 1.4, not "restricted"
 
 0.101410  2010-05-21 07:41:57 America/New_York
           Artistic licenses' meta2_name should not have a trailing _0

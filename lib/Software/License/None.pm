@@ -7,8 +7,8 @@ use base 'Software::License';
 sub name      { q("No License" License) }
 sub url       { undef }
 
-sub meta_name  { 'restricted' }
-sub meta2_name { 'restricted' }
+sub meta_name  { 'restrictive' }
+sub meta2_name { 'restricted'  }
 
 1;
 __DATA__

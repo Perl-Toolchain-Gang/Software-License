@@ -1,6 +1,8 @@
 Revision history for Software-License
 
 {{$NEXT}}
+
+0.101620  2010-06-11 19:14:03 America/New_York
           LGPL_3_0 now includes GPL_3 in its fulltext (RT #47135)
 
 0.101600  2010-06-09 07:50:11 America/New_York

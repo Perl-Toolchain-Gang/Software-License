@@ -1,9 +1,10 @@
 Revision history for Software-License
 
 {{$NEXT}}
+          LGPL_3_0 now includes GPL_3 in its fulltext (RT #47135)
 
 0.101600  2010-06-09 07:50:11 America/New_York
-          None should be "restrictive" on 1.4, not "restricted"
+          "None" should be "restrictive" on 1.4, not "restricted"
 
 0.101410  2010-05-21 07:41:57 America/New_York
           Artistic licenses' meta2_name should not have a trailing _0

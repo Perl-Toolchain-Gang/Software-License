@@ -2,6 +2,9 @@ Revision history for Software-License
 
 {{$NEXT}}
 
+0.102250  2010-08-13 09:54:29 America/New_York
+          alter the output of None to look a bit less repetitive (ABRAXXA)
+
 0.101620  2010-06-11 19:14:03 America/New_York
           LGPL_3_0 now includes GPL_3 in its fulltext (RT #47135)
 

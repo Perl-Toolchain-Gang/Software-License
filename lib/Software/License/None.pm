@@ -13,10 +13,7 @@ sub meta2_name { 'restricted'  }
 1;
 __DATA__
 __NOTICE__
-This software is copyright (c) {{$self->year}} by {{$self->holder}}
-
-All rights reserved.
+This software is copyright (c) {{$self->year}} by {{$self->holder}}.  No
+license is granted to other entities.
 __LICENSE__
-This software is copyright (c) {{$self->year}} by {{$self->holder}}
-
 All rights reserved.

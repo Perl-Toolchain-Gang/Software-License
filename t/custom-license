@@ -1,0 +1,20 @@
+__[ NAME ]__
+The Foo-Bar License
+__URL__
+http://www.example.com/foo-bar.txt
+__[ META_NAME ]__
+foo_bar_meta
+__{ META2_NAME }__
+foo_bar_meta2
+__[ NOTICE ]__
+Copyright (C) {{$self->year}} by {{$self->holder}}.
+
+This is free software, licensed under {{$self->name}}.
+
+__[ LICENSE ]__
+              The Foo-Bar License
+
+Well... this is only some sample text. I'm true... only sample text!!!
+
+Yes, spanning more lines and more paragraphs.
+

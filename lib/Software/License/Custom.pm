@@ -53,8 +53,15 @@ sub section_data {
 
 sub name       { shift->_fill_in('NAME') }
 sub url        { shift->_fill_in('URL') }
-sub meta_name  { shift->_fill_in('META_NAME') }
 sub meta2_name { shift->_fill_in('META2_NAME') }
+
+# This is (also) a class method in the other modules, so we stick to this
+# convention and the tests will be happy.
+sub meta_name  {
+   my $self = shift;
+   return 'custom' unless ref $self;
+   return $self->_fill_in('META_NAME')
+}
 
 1;
 __END__
@@ -66,3 +73,5 @@ specifying all aspects related to a software license in a custom file.
 This allows for setting custom dates, notices, etc. while still preserving
 compatibility with all places where L<Software::License> is used, e.g.
 L<Dist::Zilla>.
+
+=cut

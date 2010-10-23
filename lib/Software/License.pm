@@ -85,7 +85,7 @@ notice.
 
 sub fulltext {
   my ($self) = @_;
-  return join "\n", $self->notice, $self->_fill_in('LICENSE')
+  return join "\n", $self->notice, $self->license;
 }
 
 =method version

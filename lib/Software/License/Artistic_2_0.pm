@@ -4,7 +4,7 @@ package Software::License::Artistic_2_0;
 use base 'Software::License';
 # ABSTRACT: The Artistic License 2.0
 
-sub name { 'The Artistic License 2.0' }
+sub name { 'The Artistic License 2.0 (GPL Compatible)' }
 sub url  { 'http://www.perlfoundation.org/artistic_license_2_0' }
 sub meta_name  { 'artistic_2' }
 sub meta2_name { 'artistic_2' }

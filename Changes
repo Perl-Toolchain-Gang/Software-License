@@ -2,6 +2,12 @@ Revision history for Software-License
 
 {{$NEXT}}
 
+0.103000  2011-03-31 22:31:03 America/New_York
+          improve method dependency chains (thanks, Flavio Poletti)
+
+          add Custom license to stick the whole license in a file
+          -- still probably a bit experiemental -- thanks, Flavio Poletti
+
 0.102341  2010-12-11 10:22:56 America/New_York
           add note to Artistic 2 that it's GPL compatible
 

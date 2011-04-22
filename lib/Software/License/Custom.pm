@@ -10,10 +10,10 @@ use Text::Template;
 
 =head1 DESCRIPTION
 
-This module extends L<Software::License> to give the possibility of
-specifying all aspects related to a software license in a custom file.
-This allows for setting custom dates, notices, etc. while still preserving
-compatibility with all places where L<Software::License> is used, e.g. L<Dist::Zilla>.
+This module extends L<Software::License> to give the possibility of specifying
+all aspects related to a software license in a custom file.  This allows for
+setting custom dates, notices, etc. while still preserving compatibility with
+all places where L<Software::License> is used, e.g. L<Dist::Zilla>.
 
 In this way, you should be able to customise some aspects of the licensing
 messages that would otherwise be difficult to tinker, e.g. adding a note

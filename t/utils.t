@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use Test::More tests => 4;
+use Test::More tests => 6;
 use Software::LicenseUtils;
 
 {
@@ -89,7 +89,7 @@ tests: 't/*.t xt/*.t'
 version: 0.002
 END_YAML
 
-    my @guesses = Software::LicenseUtils->guess_license_from_meta(
+    my @guesses = sort Software::LicenseUtils->guess_license_from_meta(
       $fake_yaml
     );
 
@@ -164,3 +164,24 @@ END_JSON
     );
 }
 
+{
+    my @classes = sort Software::LicenseUtils->classes_for_meta_name('gpl');
+    is_deeply(
+      \@classes,
+      [ qw(
+        Software::License::GPL_1
+        Software::License::GPL_2
+        Software::License::GPL_3
+      ) ],
+      "class resolution ok for gpl"
+    );
+}
+
+{
+    my @classes = sort Software::LicenseUtils->classes_for_meta_name('perl');
+    is_deeply(
+      \@classes,
+      [ 'Software::License::Perl_5' ],
+      "class resolution ok for gpl"
+    );
+}

@@ -1,6 +1,8 @@
 use strict;
 use warnings;
 package Software::LicenseUtils;
+use File::Basename qw( dirname );
+use Carp;
 # ABSTRACT: little useful bits of code for licensey things
 
 =method guess_license_from_pod
@@ -78,17 +80,27 @@ sub guess_license_from_pod {
 	return;
 }
 
-my %meta_keys = (
-  perl         => 'Perl_5',
-  apache       => [ map { "Apache_$_" } qw(1_1 2_0) ],
-  artistic     => 'Artistic_1_0',
-  artistic_2   => 'Artistic_2_0',
-  lgpl         => [ map { "LGPL_$_" } qw(2_1 3_0) ],
-  bsd          => 'BSD',
-  gpl          => [ map { "GPL_$_" } qw(1 2 3) ],
-  mit          => 'MIT',
-  mozilla      => [ map { "Mozilla_$_" } qw(1_0 1_1) ],
-);
+
+# Cache for associating one or more classes to a meta_name
+my %classes_for;
+sub _may_load_meta_keys {
+  return if scalar keys %classes_for;
+
+  # Load one of the licenses in order to get its filename in %INC
+  require Software::License::Perl_5; # this surely exists
+  my $dirname = dirname($INC{'Software/License/Perl_5.pm'});
+
+  # Scan the directory for Perl modules, load them and get the meta_name
+  opendir my $dh, $dirname or croak "opendir('$dirname'): $!";
+  for my $file (readdir $dh) {
+    (my $submodule = $file) =~ s/\.pm\z//mxs or next;
+    require "Software/License/$file";
+    my $class = "Software::License::$submodule";
+    push @{$classes_for{$class->meta_name()}}, $class;
+  }
+
+  return;
+}
 
 =method guess_license_from_meta
 
@@ -104,13 +116,31 @@ sub guess_license_from_meta {
   my ($class, $meta_text) = @_;
   die "can't call guess_license_* in scalar context" unless wantarray;
 
-  my ($license_text) = $meta_text =~ m{\b["']?license["']?\s*:\s*["']?([a-z_]+)["']?}gm;
-
-  return unless $license_text and my $license = $meta_keys{ $license_text };
-
-  return map { "Software::License::$_" } ref $license ? @$license : $license;
+  my ($license_text) =
+    $meta_text =~ m{\b["']?license["']?\s*:\s*["']?(\w+)["']?}gm;
+  return unless $license_text;
+  return $class->classes_for_meta_name($license_text);
 }
 
 *guess_license_from_meta_yml = \&guess_license_from_meta;
+
+
+=method classes_for_meta_name
+
+  my @classes = Software::LicenseUtil->classes_for_meta_name($name);
+
+Given the name of a license according to what can be included in
+META.(yml|json) file found in a CPAN distribution, this method returns
+the name of all the classes that may apply to the license name. It will
+return a list of zero or more Software::License instances or classes.
+
+=cut
+
+sub classes_for_meta_name {
+  my ($class, $meta_name) = @_;
+  die "can't call classes_for_meta_name in scalar context" unless wantarray;
+  _may_load_meta_keys();
+  return @{$classes_for{$meta_name} || []};
+}
 
 1;

@@ -2,6 +2,9 @@ Revision history for Software-License
 
 {{$NEXT}}
 
+0.103001  2011-04-28 07:20:39 America/New_York
+          re-import text of GPL 1 and 2 to get new FSF address (RT #67795)
+
 0.103000  2011-03-31 22:31:03 America/New_York
           improve method dependency chains (thanks, Flavio Poletti)
 

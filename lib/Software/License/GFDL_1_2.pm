@@ -2,9 +2,9 @@ use strict;
 use warnings;
 package Software::License::GFDL_1_2;
 use base 'Software::License';
-# ABSTRACT: The GNU Free Documentation License
+# ABSTRACT: The GNU Free Documentation License v1.2
 
-sub name { 'GNU Free Documentation License' }
+sub name { 'GNU Free Documentation License v1.2' }
 sub url  { 'http://www.gnu.org/copyleft/fdl.html' }
 sub meta_name  { 'open_source' }
 sub meta2_name { 'gfdl_1_2' }

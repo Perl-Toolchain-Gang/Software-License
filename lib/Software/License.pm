@@ -152,6 +152,12 @@ sub _fill_in {
   );
 }
 
+=head1 LOOKING UP LICENSE CLASSES
+
+If you have an entry in a F<META.yml> or F<META.json> file, or similar
+metadata, and want to look up the Software::License class to use, there are
+useful tools in L<Software::LicenseUtils>.
+
 =head1 TODO
 
 =for :list

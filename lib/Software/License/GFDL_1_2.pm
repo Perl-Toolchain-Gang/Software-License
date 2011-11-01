@@ -5,7 +5,7 @@ use base 'Software::License';
 # ABSTRACT: The GNU Free Documentation License v1.2
 
 sub name { 'GNU Free Documentation License v1.2' }
-sub url  { 'http://www.gnu.org/copyleft/fdl.html' }
+sub url  { 'http://www.gnu.org/licenses/fdl-1.2.html' }
 sub meta_name  { 'open_source' }
 sub meta2_name { 'gfdl_1_2' }
 

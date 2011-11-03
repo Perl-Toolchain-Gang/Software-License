@@ -25,7 +25,8 @@ __LICENSE__
 
 
  Copyright (C) 2000,2001,2002  Free Software Foundation, Inc.
-     51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ 51 Franklin St, Suite 500, Boston, MA  02110-1335  USA
+
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 

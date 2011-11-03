@@ -18,7 +18,8 @@ Version 2.1, February 1999
   (The master copy of this license lives on the GNU website.)
 
 Copyright (C) 1991, 1999 Free Software Foundation, Inc. 59
-Temple Place, Suite 330, Boston, MA 02111-1307 USA
+51 Franklin St, Suite 500, Boston, MA  02110-1335  USA
+
 Everyone is permitted to copy and distribute verbatim copies
 of this license document, but changing it is not allowed.
 

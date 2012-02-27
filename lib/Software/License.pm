@@ -180,6 +180,7 @@ The specific license:
 * L<Software::License::GPL_1>
 * L<Software::License::GPL_2>
 * L<Software::License::GPL_3>
+* L<Software::License::ISC>
 * L<Software::License::LGPL_2_1>
 * L<Software::License::LGPL_3_0>
 * L<Software::License::MIT>
@@ -188,6 +189,7 @@ The specific license:
 * L<Software::License::None>
 * L<Software::License::OpenSSL>
 * L<Software::License::Perl_5>
+* L<Software::License::PostgreSQL>
 * L<Software::License::QPL_1_0>
 * L<Software::License::SSLeay>
 * L<Software::License::Sun>

@@ -7,11 +7,6 @@ use base 'Software::License';
 require Software::License::GPL_1;
 require Software::License::Artistic_1_0;
 
-sub name { 'the same terms as the perl 5 programming language system itself' }
-sub url  { 'http://dev.perl.org/licenses/' }
-sub meta_name  { 'perl' }
-sub meta2_name { 'perl_5' }
-
 sub _gpl {
   my ($self) = @_;
   return $self->{_gpl} ||= Software::License::GPL_1->new({
@@ -29,24 +24,3 @@ sub _tal {
 }
 
 1;
-__DATA__
-__NOTICE__
-This software is copyright (c) {{$self->year}} by {{$self->holder}}.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
-__LICENSE__
-Terms of the Perl programming language system itself
-
-a) the GNU General Public License as published by the Free
-   Software Foundation; either version 1, or (at your option) any
-   later version, or
-b) the "Artistic License"
-
---- {{ $self->_gpl->name }} ---
-
-{{$self->_gpl->fulltext}}
-
---- {{ $self->_tal->name }} ---
-
-{{$self->_tal->fulltext}}

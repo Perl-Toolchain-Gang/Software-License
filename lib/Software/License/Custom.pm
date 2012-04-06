@@ -6,7 +6,7 @@ package Software::License::Custom;
 use base 'Software::License';
 
 use Carp;
-use Text::Template;
+use Software::License::Template;
 
 =head1 DESCRIPTION
 
@@ -81,114 +81,22 @@ sub new {
 
    my $filename = delete $arg->{filename};
 
-   my $self = $class->SUPER::new($arg);
+   my $self = $class->SUPER::bare_new($arg);
 
-   $self->load_sections_from($filename) if defined $filename;
-
-   return $self;
-}
-
-=method load_sections_from
-
-   $slc->load_sections_from('MY-LEGAL-ASPECTS');
-
-Loads the different sections of the license from the provided filename.
-
-Returns the input object.
-
-=cut
-
-sub load_sections_from {
-   my ($self, $filename) = @_;
-
-   # Sections are kept inside a hash
-   $self->{'Software::License::Custom'}{section_for} = \my %section_for;
-
-   my $current_section = '';
-   open my $fh, '<', $filename or croak "open('$filename'): $!";
-
-   while (<$fh>) {
-      if (my ($section) = m{\A __ (.*) __ \n\z}mxs) {
-         ($current_section = $section) =~ s/\W+//gmxs;
-      }
-      else {
-         $section_for{$current_section} .= $_;
-      }
+   if (defined $filename) {
+      my $slt = Software::License::Template->new(expand => 1);
+      my $license_data = $slt->load_file($filename);
+      $self->set_license_data($license_data);
    }
-   close $fh;
-
-   # strip last newline from all items
-   s{\n\z}{}mxs for values %section_for;
 
    return $self;
 }
 
-=method section_data
-
-   my $notice_template_reference = $slc->section_data('NOTICE');
-
-Returns a reference to a textual template that can be fed to
-L<Text::Template> (it could be simple text), according to what is
-currently loaded in the object.
-
-=cut
-
-sub section_data {
-   my ($self, $name) = @_;
-   my $section_for = $self->{'Software::License::Custom'}{section_for} ||= {};
-   return unless exists $section_for->{$name};
-   return unless defined $section_for->{$name};
-   return \$section_for->{$name};
-}
-
-=head1 MORE METHODS
-
-The following methods, found in all software license classes, look up and
-render the template with the capitalized form of their name.  In other words,
-the C<license> method looks in the C<LICENSE> template.
-
-For now, the C<meta_name> and C<meta2_name> methods return C<custom> if called
-on the class.  This may become fatal in the future.
-
-=for :list
-* name
-* url
-* meta_name
-* meta2_name
-* license
-* notice
-* fulltext
-* version
-
-=cut
-
-sub name       { shift->_fill_in('NAME') }
-sub url        { shift->_fill_in('URL') }
-
-sub meta_name  {
+sub meta_name {
    my $self = shift;
-   return 'custom' unless ref $self;
-   return $self->_fill_in('META_NAME')
-}
-
-sub meta2_name {
-  my $self = shift;
-  return 'custom' unless ref $self;
-  $self->_fill_in('META2_NAME')
-}
-
-sub license    { shift->_fill_in('LICENSE') }
-sub notice     { shift->_fill_in('NOTICE') }
-
-sub fulltext {
-   my ($self) = @_;
-   return join "\n", $self->notice, $self->license;
-}
-
-sub version {
-   my ($self) = @_;
-   return unless $self->section_data('VERSION');
-   return $self->_fill_in('VERSION')
+   my $meta_name = $self->SUPER::meta_name();
+   return $meta_name if defined $meta_name;
+   return 'custom';
 }
 
 1;

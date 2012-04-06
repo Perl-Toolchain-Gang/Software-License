@@ -4,9 +4,9 @@ use 5.006; # warnings
 package Software::License;
 # ABSTRACT: packages that provide templated software licenses
 
-use Data::Section -setup => { header_re => qr/\A__([^_]+)__\Z/ };
 use Sub::Install ();
 use Text::Template ();
+use Software::License::Template ();
 
 =head1 SYNOPSIS
 
@@ -28,12 +28,37 @@ arguments are:
 
 =cut
 
-sub new {
+sub bare_new {
   my ($class, $arg) = @_;
 
   Carp::croak "no copyright holder specified" unless $arg->{holder};
 
   bless $arg => $class;
+}
+
+sub set_license_data {
+   my ($self, $data) = @_;
+   return $self->{_license_data} = $data;
+}
+
+sub new {
+   my $class = shift;
+   my $self = $class->bare_new(@_);
+   (my $license_name = ref $self) =~ s/.*:://mxs;
+   my $slt = Software::License::Template->new(expand => 1);
+   my $license_data = $slt->load_license($license_name);
+   $self->set_license_data($license_data);
+   return $self;
+}
+
+# Ensure that we'll be dealing with an object even in case of
+# class method calls. This sounds so cargo cult but I'm not sure
+# how many people perform class method calls vs. object method calls.
+sub _object {
+   my $self = shift;
+   $self = $self->new({ holder => 'none' }) unless ref $self;
+   return ($self, @_) if wantarray();
+   return $self;
 }
 
 =method year
@@ -52,11 +77,19 @@ sub holder { $_[0]->{holder}     }
 This method returns the name of the license, suitable for shoving in the middle
 of a sentence, generally with a leading capitalized "The."
 
+=cut
+
+sub name   { _object(@_)->_fill_in('NAME') }
+
 =method url
 
 This method returns the URL at which a canonical text of the license can be
 found, if one is available.  If possible, this will point at plain text, but it
 may point to an HTML resource.
+
+=cut
+
+sub url    { _object(@_)->_fill_in('URL') }
 
 =method notice
 
@@ -66,7 +99,7 @@ under which the software is distributed.
 
 =cut
 
-sub notice { shift->_fill_in('NOTICE') }
+sub notice { _object(@_)->_fill_in('NOTICE') }
 
 =method license
 
@@ -74,7 +107,7 @@ This method returns the full text of the license.
 
 =cut
 
-sub license { shift->_fill_in('LICENSE') }
+sub license { _object(@_)->_fill_in('LICENSE') }
 
 =method fulltext
 
@@ -84,7 +117,7 @@ notice.
 =cut
 
 sub fulltext {
-  my ($self) = @_;
+  my $self = _object(@_);
   return join "\n", $self->notice, $self->license;
 }
 
@@ -96,13 +129,9 @@ versioned, this method will return false.
 =cut
 
 sub version  {
-  my ($self) = @_;
-  my $pkg = ref $self ? ref $self : $self;
-  $pkg =~ s/.+:://;
-  my (undef, @vparts) = split /_/, $pkg;
-
-  return unless @vparts;
-  return join '.', @vparts;
+  my $self = _object(@_);
+  return undef unless $self->section_data('VERSION');
+  return $self->_fill_in('VERSION');
 }
 
 =method meta_name
@@ -112,6 +141,16 @@ META.yml file, according to the CPAN Meta spec v1, or undef if there is no
 known string to use.
 
 This method may also be invoked as C<meta_yml_name> for legacy reasons.
+
+=cut
+
+# sub meta1_name    { return undef; } # sort this out later, should be easy
+sub meta_name  { # only one I'm not sure can be called as class method
+  my $self = _object(@_);
+  return undef unless $self->section_data('META_NAME');
+  return $self->_fill_in('META_NAME')
+}
+sub meta_yml_name { $_[0]->meta_name }
 
 =method meta2_name
 
@@ -123,12 +162,12 @@ value will be used.
 
 =cut
 
-# sub meta1_name    { return undef; } # sort this out later, should be easy
-sub meta_name     { return undef; }
-sub meta_yml_name { $_[0]->meta_name }
-
 sub meta2_name {
-  my ($self) = @_;
+  my $self = _object(@_);
+  return $self->_fill_in('META2_NAME')
+    if $self->section_data('META2_NAME');
+  
+  # old default behaviour
   my $meta1 = $self->meta_name;
 
   return undef unless defined $meta1;
@@ -139,11 +178,31 @@ sub meta2_name {
   return undef;
 }
 
+=method section_data
+
+   my $notice_template_reference = $slc->section_data('NOTICE');
+
+Returns a reference to a textual template that can be fed to
+L<Text::Template> (it could be simple text), according to what is
+currently loaded in the object and to the provided section.
+
+=cut
+
+sub section_data {
+   my ($self, $name) = _object(@_);
+   $name = lc $name;
+   my $section_for = $self->{_license_data} ||= {};
+   return unless exists $section_for->{$name};
+   return unless defined $section_for->{$name};
+   return \$section_for->{$name};
+}
+
+
 sub _fill_in {
   my ($self, $which) = @_;
 
-  Carp::confess "couldn't build $which section" unless
-    my $template = $self->section_data($which);
+  my $template = $self->section_data($which);
+  $template = \'' unless defined $template;
 
   return Text::Template->fill_this_in(
     $$template,

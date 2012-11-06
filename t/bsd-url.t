@@ -8,7 +8,7 @@ use Software::License::Mozilla_1_0;
 
 # TEST
 is (scalar(Software::License::BSD->url()),
-    'http://www.opensource.org/licenses/bsd-license.php',
+    'http://opensource.org/licenses/BSD-3-Clause',
     "BSD->url() is OK."
 );
 

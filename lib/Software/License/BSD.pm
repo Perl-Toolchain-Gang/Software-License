@@ -5,7 +5,7 @@ use parent 'Software::License';
 # ABSTRACT: The (three-clause) BSD License
 
 sub name { 'The (three-clause) BSD License' }
-sub url  { 'http://www.opensource.org/licenses/bsd-license.php' }
+sub url  { 'http://opensource.org/licenses/BSD-3-Clause' }
 sub meta_name  { 'bsd' }
 sub meta2_name { 'bsd' }
 

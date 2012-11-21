@@ -77,19 +77,26 @@ for my $lib (map { "$_/Software/License" } @INC) {
 sub guess_license_from_pod {
   my ($class, $pm_text) = @_;
   die "can't call guess_license_* in scalar context" unless wantarray;
+  return unless $pm_text =~ /
+    (
+      =head \d \s+
+      (?:licen[cs]e|licensing|copyright|legal)\b
+    )
+  /ixmsg;
+
+  my $header = $1;
 
 	if (
 		$pm_text =~ m/
+      \G
       (
-        =head \d \s+
-        (?:licen[cs]e|licensing|copyright|legal)\b
         .*?
       )
       (=head\\d.*|=cut.*|)
       \z
     /ixms
   ) {
-		my $license_text = $1;
+		my $license_text = "$header$1";
 
     for (my $i = 0; $i < @phrases; $i += 2) {
       my ($pattern, $license) = @phrases[ $i .. $i+1 ];

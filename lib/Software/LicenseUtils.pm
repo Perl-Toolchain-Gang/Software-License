@@ -87,7 +87,7 @@ my %meta_keys = (
   bsd          => 'BSD',
   gpl          => [ map { "GPL_$_" } qw(1 2 3) ],
   mit          => 'MIT',
-  mozilla      => [ map { "Mozilla_$_" } qw(1_0 1_1) ],
+  mozilla      => [ map { "Mozilla_$_" } qw(1_0 1_1 2_0) ],
 );
 
 =method guess_license_from_meta

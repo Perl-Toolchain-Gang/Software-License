@@ -185,6 +185,7 @@ The specific license:
 * L<Software::License::MIT>
 * L<Software::License::Mozilla_1_0>
 * L<Software::License::Mozilla_1_1>
+* L<Software::License::Mozilla_2_0>
 * L<Software::License::None>
 * L<Software::License::OpenSSL>
 * L<Software::License::Perl_5>

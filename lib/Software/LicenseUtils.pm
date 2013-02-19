@@ -194,6 +194,54 @@ my %short_name = (
 
 Create a new L<Software::License> object from the license specified
 with C<short_name>. Known short license names are C<GPL-*>, C<LGPL-*> ,
+C<Artistic> and C<Artistic-*>. If the short name is not known, this
+method will try to create a license object with C<Software::License::> and
+the specified short name (e.g. C<Software::License::MIT> with
+C<< short_name => 'MIT' >> or C<Software::License::Apache_2_0> with
+C<< short_name => 'Apapche-2.0' >>).
+
+=cut
+
+sub new_from_short_name {
+  my ( $class, $arg ) = @_;
+
+  Carp::croak "no license short name specified"
+    unless defined $arg->{short_name};
+  my $subclass = my $short = delete $arg->{short_name};
+  $subclass =~ s/[\-.]/_/g;
+
+  my $lic_file = my $lic_class
+      = $short_name{$short} || "Software::License::$subclass";
+
+  $lic_file =~ s!::!/!g;
+  eval { require "$lic_file.pm"; } ;
+  Carp::croak "Unknow license with short name $short ($@)" if $@;
+
+  return $lic_class->new( $arg );
+}
+
+my %short_name = (
+  'GPL-1'      =>  'Software::License::GPL_1',
+  'GPL-2'      =>  'Software::License::GPL_2',
+  'GPL-3'      =>  'Software::License::GPL_3',
+  'LGPL-2'     =>  'Software::License::LGPL_2',
+  'LGPL-2.1'   =>  'Software::License::LGPL_2_1',
+  'LGPL-3'     =>  'Software::License::LGPL_3_0',
+  'LGPL-3.0'   =>  'Software::License::LGPL_3_0',
+  'Artistic'   =>  'Software::License::Artistic_1_0',
+  'Artistic-1' =>  'Software::License::Artistic_1_0',
+  'Artistic-2' =>  'Software::License::Artistic_2_0',
+);
+
+=method new_from_short_name
+
+  my $license_object = Software::LicenseUtils->new_from_short_name( {
+     short_name => 'GPL-1',
+     holder => 'X. Ample'
+  }) ;
+
+Create a new L<Software::License> object from the license specified
+with C<short_name>. Known short license names are C<GPL-*>, C<LGPL-*> ,
 C<Artistic> and C<Artistic-*>
 
 =cut

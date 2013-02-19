@@ -1,5 +1,7 @@
 use strict;
 use warnings;
+use Carp;
+
 package Software::LicenseUtils;
 # ABSTRACT: little useful bits of code for licensey things
 
@@ -112,5 +114,48 @@ sub guess_license_from_meta {
 }
 
 *guess_license_from_meta_yml = \&guess_license_from_meta;
+
+my %short_name = (
+    'GPL-1'      =>  [ 'GPL_1' ],
+    'GPL-2'      =>  [ 'GPL_2' ],
+    'GPL-3'      =>  [ 'GPL_3' ],
+    'LGPL-2'     =>  [ 'LGPL_2' ],
+    'LGPL-2.1'   =>  [ 'LGPL_2_1' ],
+    'LGPL-3'     =>  [ 'LGPL_3_0' ],
+    'LGPL-3.0'   =>  [ 'LGPL_3_0' ],
+    'Artistic'   =>  [ 'Artistic_1_0' ],
+    'Artistic-1' =>  [ 'Artistic_1_0' ],
+    'Artistic-2' =>  [ 'Artistic_2_0' ],
+);
+
+
+=method new_from_short_name
+
+  my $license_object = Software::LicenseUtils->new_from_short_name( {
+     short_name => 'GPL-1',
+     holder => 'X. Ample'
+  }) ;
+
+Create a new L<Software::License> object from the license specified
+with C<short_name>. Known short license names are C<GPL-*>, C<LGPL-*> ,
+C<Artistic> and C<Artistic-*>
+
+=cut
+
+sub new_from_short_name {
+  my ( $class, $arg ) = @_;
+
+  Carp::croak "no license short name specified"
+    unless defined $arg->{short_name};
+  my $short = delete $arg->{short_name};
+  Carp::croak "Unknow license with short name $short"
+    unless $short_name{$short};
+  my @lic_data = @{ $short_name{$short} };
+
+  my $lic_file = my $lic_class = 'Software::License::' . shift @lic_data;
+  $lic_file =~ s!::!/!g;
+  require "$lic_file.pm";
+  return $lic_class->new( { %$arg, @lic_data } );
+}
 
 1;

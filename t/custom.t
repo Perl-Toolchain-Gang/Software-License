@@ -41,4 +41,16 @@ Well... this is only some sample text. I'm true... only sample text!!!
 Yes, spanning more lines and more paragraphs.
 END_OF_FULLTEXT
 
+$slc = Software::License::Custom->new({
+   holder => 'FooBar, Inc.',
+   year   => 1972,
+   filename => 't/custom-license'
+});
+
+is($slc->notice, <<'END_OF_NOTICE', 'strip_trailing_dot($self->holder)');
+Copyright (C) 1972 by FooBar, Inc.
+
+This is free software, licensed under The Foo-Bar License.
+END_OF_NOTICE
+
 done_testing;

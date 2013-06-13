@@ -51,7 +51,7 @@ the end of the file. Example:
    foo_bar_meta2
    __[ NOTICE ]__
    Copyright (C) 2000-2002 by P.R. Evious
-   Copyright (C) {{$self->year}} by {{$self->holder}}.
+   Copyright (C) {{$self->year}} by {{strip_trailing_dot($self->holder)}}.
 
    This is free software, licensed under {{$self->name}}.
 
@@ -159,6 +159,17 @@ on the class.  This may become fatal in the future.
 * notice
 * fulltext
 * version
+
+=head1 TEMPLATE SUBROUTINES
+
+Inside the templates that your license class provides, you can call the
+C<strip_trailing_dot()> subroutine. This is useful when you need to insert the
+copyright holder name at the end of the sentence:
+
+  This software is Copyright (c) {{$self->year}} by {{strip_trailing_dot($self->holder)}}.
+
+That way if the holder value is something like "FooBar, Inc.", you don't end
+the sentence with two dots.
 
 =cut
 

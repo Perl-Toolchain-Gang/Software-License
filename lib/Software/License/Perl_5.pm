@@ -31,7 +31,7 @@ sub _tal {
 1;
 __DATA__
 __NOTICE__
-This software is copyright (c) {{$self->year}} by {{$self->holder}}.
+This software is copyright (c) {{$self->year}} by {{strip_trailing_dot($self->holder)}}.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use Test::More tests => 4;
+use Test::More tests => 5;
 use Software::LicenseUtils;
 
 {
@@ -22,6 +22,33 @@ END_PM
     is_deeply(
       \@guesses,
       [ 'Software::License::Perl_5' ],
+      "guessed okay"
+    );
+}
+
+{
+    my $fake_pm = <<'END_PM';
+
+"magic true value";
+__END__
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is Copyright (c) 2013 by David Golden.
+
+This is free software, licensed under:
+
+  The Apache License, Version 2.0, January 2004
+
+=cut
+
+END_PM
+
+    my @guesses = Software::LicenseUtils->guess_license_from_pod($fake_pm);
+
+    is_deeply(
+      \@guesses,
+      [ 'Software::License::Apache_2_0' ],
       "guessed okay"
     );
 }

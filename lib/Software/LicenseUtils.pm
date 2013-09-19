@@ -141,7 +141,7 @@ sub guess_license_from_meta {
   my ($class, $meta_text) = @_;
   die "can't call guess_license_* in scalar context" unless wantarray;
 
-  my ($license_text) = $meta_text =~ m{\b["']?license["']?\s*:\s*["']?([a-z_]+)["']?}gm
+  my ($license_text) = $meta_text =~ m{\b["']?license["']?\s*:\s*\[?\s*["']?([a-z_]+)["']?}gm
     or return;
 
   return $class->guess_license_from_meta_code($license_text);

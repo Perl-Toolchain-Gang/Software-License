@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use Test::More tests => 4;
+use Test::More tests => 5;
 use Software::LicenseUtils;
 
 {
@@ -164,3 +164,47 @@ END_JSON
     );
 }
 
+{
+    my $fake_json = <<'END_JSON';
+{
+   "abstract" : "yet another distribution builder",
+   "author" : [
+      "Toby Inkster (TOBYINK) <tobyink@cpan.org>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Inkt::Profile::TOBYINK version 0.010, CPAN::Meta::Converter version 2.120921",
+   "keywords" : [
+      "CPAN",
+   ],
+   "license" : [
+      "perl"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Dist-Inkt",
+   "no_index" : {
+   },
+   "optional_features" : {},
+   "prereqs" : {
+   },
+   "provides" : {
+   },
+   "release_status" : "stable",
+   "resources" : {
+   },
+   "version" : "0.011"
+}
+END_JSON
+
+    my @guesses = Software::LicenseUtils->guess_license_from_meta(
+      $fake_json
+    );
+
+    is_deeply(
+      \@guesses,
+      [ 'Software::License::Perl_5' ],
+      "guessed okay"
+    );
+}

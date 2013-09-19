@@ -79,15 +79,52 @@ sub guess_license_from_pod {
 }
 
 my %meta_keys = (
-  perl         => 'Perl_5',
-  apache       => [ map { "Apache_$_" } qw(1_1 2_0) ],
-  artistic     => 'Artistic_1_0',
+  ## CPAN::Meta::Spec 2.0
+  ##
+  agpl_3       => 'AGPL_3',
+  apache_1_1   => 'Apache_1_1',
+  apache_2_0   => 'Apache_2_0',
+  artistic_1   => 'Artistic_1_0',
   artistic_2   => 'Artistic_2_0',
-  lgpl         => [ map { "LGPL_$_" } qw(2_1 3_0) ],
   bsd          => 'BSD',
-  gpl          => [ map { "GPL_$_" } qw(1 2 3) ],
+  freebsd      => 'FreeBSD',
+  gfdl_1_2     => 'GFDL_1_2',
+  gfdl_1_3     => 'GFDL_1_3',
+  gpl_1        => 'GPL_1',
+  gpl_2        => 'GPL_2',
+  gpl_3        => 'GPL_3',
+  lgpl_2_1     => 'LGPL_2_1',
+  lgpl_3_0     => 'LGPL_3_0',
   mit          => 'MIT',
+  mozilla_1_0  => 'Mozilla_1_0',
+  mozilla_1_1  => 'Mozilla_1_1',
+  openssl      => 'OpenSSL',
+  perl_5       => 'Perl_5',
+  qpl_1_0      => 'QPL_1_0',
+  ssleay       => 'SSLeay',
+  sun          => 'Sun',
+  zlib         => 'Zlib',
+  # open_source
+  restricted   => 'None',
+  # unrestricted
+  # unknown
+  
+  ## META-spec 1.4
+  ##
+  apache       => [ map { "Apache_$_" } qw(1_1 2_0) ],
+  # apache_1_1
+  perl         => 'Perl_5',
+  artistic     => 'Artistic_1_0',
+  # artistic_2
+  # bsd
+  gpl          => [ map { "GPL_$_" } qw(1 2 3) ],
+  lgpl         => [ map { "LGPL_$_" } qw(2_1 3_0) ],
+  # mit
   mozilla      => [ map { "Mozilla_$_" } qw(1_0 1_1 2_0) ],
+  # open_source
+  restrictive  => 'None',
+  # unrestricted
+  # unknown
 );
 
 =method guess_license_from_meta
@@ -104,13 +141,32 @@ sub guess_license_from_meta {
   my ($class, $meta_text) = @_;
   die "can't call guess_license_* in scalar context" unless wantarray;
 
-  my ($license_text) = $meta_text =~ m{\b["']?license["']?\s*:\s*["']?([a-z_]+)["']?}gm;
+  my ($license_text) = $meta_text =~ m{\b["']?license["']?\s*:\s*["']?([a-z_]+)["']?}gm
+    or return;
 
-  return unless $license_text and my $license = $meta_keys{ $license_text };
-
-  return map { "Software::License::$_" } ref $license ? @$license : $license;
+  return $class->guess_license_from_meta_code($license_text);
 }
 
 *guess_license_from_meta_yml = \&guess_license_from_meta;
+
+=method guess_license_from_meta_code
+
+  my @guesses = Software::LicenseUtils->guess_license_from_meta_code($code);
+
+Like C<guess_license_from_meta>, but rather than taking an entire
+META.(yml|json) file, takes just the code from the "license" key.
+e.g. "perl_5".
+
+Supports codes from L<CPAN::Meta::Spec> 2.0 and META-spec 1.4.
+
+=cut
+
+sub guess_license_from_meta_code {
+  my ($class, $code) = @_;
+  die "can't call guess_license_* in scalar context" unless wantarray;
+
+  my $license = $meta_keys{$code} or return;
+  return map { "Software::License::$_" } ref $license ? @$license : $license;
+}
 
 1;

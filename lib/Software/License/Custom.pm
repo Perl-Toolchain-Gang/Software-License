@@ -3,7 +3,7 @@ use warnings;
 package Software::License::Custom;
 # ABSTRACT: custom license handler
 
-use base 'Software::License';
+use parent qw(Software::License);
 
 use Carp;
 use Text::Template;

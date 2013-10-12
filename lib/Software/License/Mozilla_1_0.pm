@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Software::License::Mozilla_1_0;
-use base 'Software::License';
+use parent qw(Software::License);
 # ABSTRACT: Mozilla Public License 1.0
 
 sub name { 'The Mozilla Public License 1.0' }

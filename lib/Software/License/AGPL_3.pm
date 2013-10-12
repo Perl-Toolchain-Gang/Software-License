@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Software::License::AGPL_3;
-use base 'Software::License';
+use parent qw(Software::License);
 # ABSTRACT: GNU Affero General Public License, Version 3
 
 sub name { 'The GNU Affero General Public License, Version 3, November 2007' }

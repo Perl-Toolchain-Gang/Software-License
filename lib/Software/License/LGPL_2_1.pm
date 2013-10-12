@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Software::License::LGPL_2_1;
-use base 'Software::License';
+use parent qw(Software::License);
 # ABSTRACT: GNU Lesser General Public License, Version 2.1
 
 sub name { 'The GNU Lesser General Public License, Version 2.1, February 1999' }

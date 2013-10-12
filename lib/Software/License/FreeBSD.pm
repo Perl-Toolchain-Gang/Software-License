@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Software::License::FreeBSD;
-use base 'Software::License';
+use parent qw(Software::License);
 # ABSTRACT: The FreeBSD License (aka two-clause BSD)
 
 sub name { 'The (two-clause) FreeBSD License' }

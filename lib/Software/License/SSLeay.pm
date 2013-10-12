@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Software::License::SSLeay;
-use base 'Software::License';
+use parent qw(Software::License);
 # ABSTRACT: The Original SSLeay License
 
 sub name { 'Original SSLeay License' }

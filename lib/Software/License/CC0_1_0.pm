@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Software::License::CC0_1_0;
-use base 'Software::License';
+use parent qw(Software::License);
 # ABSTRACT: the "public domain"-like CC0 license, version 1.0
 
 =head1 WARNING

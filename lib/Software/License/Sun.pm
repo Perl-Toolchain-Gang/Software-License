@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Software::License::Sun;
-use base 'Software::License';
+use parent qw(Software::License);
 # ABSTRACT: Sun Internet Standards Source License (SISSL)
 
 sub name { 'Sun Internet Standards Source License (SISSL)' }

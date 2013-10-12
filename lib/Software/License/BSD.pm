@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Software::License::BSD;
-use base 'Software::License';
+use parent qw(Software::License);
 # ABSTRACT: The (three-clause) BSD License
 
 sub name { 'The (three-clause) BSD License' }

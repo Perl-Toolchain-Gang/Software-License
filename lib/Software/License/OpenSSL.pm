@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Software::License::OpenSSL;
-use base 'Software::License';
+use parent 'Software::License';
 # ABSTRACT: The OpenSSL License
 
 require Software::License::SSLeay;

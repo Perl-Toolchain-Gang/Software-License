@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Software::License::LGPL_3_0;
-use base 'Software::License';
+use parent 'Software::License';
 # ABSTRACT: GNU Lesser General Public License, Version 3
 
 use Software::License::GPL_3;

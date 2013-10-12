@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Software::License::MIT;
-use base 'Software::License';
+use parent 'Software::License';
 # ABSTRACT: The MIT (aka X11) License
 
 sub name { 'The MIT (X11) License' }

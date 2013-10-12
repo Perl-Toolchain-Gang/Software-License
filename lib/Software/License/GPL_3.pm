@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Software::License::GPL_3;
-use base 'Software::License';
+use parent 'Software::License';
 # ABSTRACT: GNU General Public License, Version 3
 
 sub name { 'The GNU General Public License, Version 3, June 2007' }

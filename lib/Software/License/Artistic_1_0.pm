@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Software::License::Artistic_1_0;
-use base 'Software::License';
+use parent 'Software::License';
 # ABSTRACT: The Artistic License
 
 =head1 OPTIONS

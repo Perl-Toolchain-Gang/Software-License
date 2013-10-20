@@ -1,6 +1,8 @@
 Revision history for Software-License
 
 {{$NEXT}}
+
+0.103006  2013-10-20 14:17:53 America/New_York
           try harder to identify licenses from all installed License classes;
           this is an @INC-scanning change, so be vigilant; thanks, David
           Golden!

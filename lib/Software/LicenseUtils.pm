@@ -47,6 +47,13 @@ my @phrases = (
 my %meta_keys = ();
 
 # find all known Software::License::* modules and get identification data
+#
+# XXX: Grepping over @INC is dangerous, as it means that someone can change the
+# behavior of your code by installing a new library that you don't load.  rjbs
+# is not a fan.  On the other hand, it will solve a real problem.  One better
+# solution is to check "core" licenses first, then fall back, and to skip (but
+# warn about) bogus libraries.  Another is, at least when testing S-L itself,
+# to only scan lib/ blib. -- rjbs, 2013-10-20
 for my $lib (map { "$_/Software/License" } @INC) {
   next unless -d $lib;
   for my $file (IO::Dir->new($lib)->read) {

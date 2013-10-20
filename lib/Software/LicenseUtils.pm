@@ -47,21 +47,22 @@ my @phrases = (
 my %meta_keys = ();
 
 # find all known Software::License::* modules and get identification data
-for my $lib ( map { "$_/Software/License" } @INC ) {
-    next unless -d $lib;
-    for my $file ( IO::Dir->new($lib)->read ) {
-        next unless $file =~ m{\.pm$};
-        # if it fails, ignore it
-        eval {
-            (my $mod = $file ) =~ s{\.pm$}{};
-            my $class = "Software::License::$mod";
-            load $class;
-            $meta_keys{ $class->meta_name  }{$mod} = undef;
-            $meta_keys{ $class->meta2_name }{$mod} = undef;
-            my $name = $class->name;
-            unshift @phrases, qr/\Q$name\E/, [ $mod ];
-        }
-    }
+for my $lib (map { "$_/Software/License" } @INC) {
+  next unless -d $lib;
+  for my $file (IO::Dir->new($lib)->read) {
+    next unless $file =~ m{\.pm$};
+
+    # if it fails, ignore it
+    eval {
+      (my $mod = $file) =~ s{\.pm$}{};
+      my $class = "Software::License::$mod";
+      load $class;
+      $meta_keys{ $class->meta_name }{$mod}  = undef;
+      $meta_keys{ $class->meta2_name }{$mod} = undef;
+      my $name = $class->name;
+      unshift @phrases, qr/\Q$name\E/, [$mod];
+    };
+  }
 }
 
 sub guess_license_from_pod {

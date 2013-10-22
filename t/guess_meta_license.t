@@ -49,13 +49,8 @@ my @cpan_meta_spec_licence_name = qw(
 
 
 foreach my $license_name (@cpan_meta_spec_licence_name) {
-	my @guess_json = _hack_guess_license_from_meta($license_name);
-	if (@guess_json) {
-		ok(1, "$license_name -> @guess_json");
-	}
-	else {
-		ok(0,"$license_name -> license unknown");
-	}
+	my @guess = _hack_guess_license_from_meta($license_name);
+	ok(@guess, "$license_name -> @guess");
 }
 
 

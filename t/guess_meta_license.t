@@ -4,7 +4,6 @@ use strict;
 use warnings;
 
 use Test::More tests => 23;
-# use Data::Printer {caller_info => 1, colored => 1,};
 use Software::LicenseUtils;
 use Try::Tiny;
 
@@ -13,9 +12,7 @@ sub _hack_guess_license_from_meta {
 	my @guess;
 	try {
 		my $hack = 'license : ' . $license_str;
-		# p $hack;
 		@guess = Software::LicenseUtils->guess_license_from_meta($hack);
-		# p @guess;
 	};
 	return @guess;
 
@@ -47,11 +44,9 @@ my @cpan_meta_spec_licence_name = qw(
 	zlib
 );
 
-
 foreach my $license_name (@cpan_meta_spec_licence_name) {
 	my @guess = _hack_guess_license_from_meta($license_name);
 	ok(@guess, "$license_name -> @guess");
 }
-
 
 done_testing;

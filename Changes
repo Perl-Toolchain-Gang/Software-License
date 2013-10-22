@@ -1,108 +1,109 @@
 Revision history for Software-License
 
 {{$NEXT}}
+ - background [1274911]
 
-0.103005  2012-12-08 16:15:30 America/New_York
-          add MPL 2.0 (thanks, Bernhard Amann)
+0.103005 2012-12-08T16:15:30Z America/New_York
+ - add MPL 2.0 (thanks, Bernhard Amann)
 
-0.103004  2011-11-02 21:44:26 America/New_York
-          update FSF's address
+0.103004 2011-11-02T21:44:26Z America/New_York
+ - update FSF's address
 
-0.103003  2011-10-31 23:14:47 America/New_York
-          use more direct links to GFDL 1.2 and 1.3
+0.103003 2011-10-31T23:14:47Z America/New_York
+ - use more direct links to GFDL 1.2 and 1.3
 
-0.103002  2011-06-01 22:34:06 America/New_York
-          add GFDL 1.3
+0.103002 2011-06-01T22:34:06Z America/New_York
+ - add GFDL 1.3
 
-0.103001  2011-04-28 07:20:39 America/New_York
-          re-import text of GPL 1 and 2 to get new FSF address (RT #67795)
+0.103001 2011-04-28T07:20:39Z America/New_York
+ - re-import text of GPL 1 and 2 to get new FSF address (RT #67795)
 
-0.103000  2011-03-31 22:31:03 America/New_York
-          improve method dependency chains (thanks, Flavio Poletti)
+0.103000 2011-03-31T22:31:03Z America/New_York
+ - improve method dependency chains (thanks, Flavio Poletti)
+ - add Custom license to stick the whole license in a file
+ - still probably a bit experiemental -- thanks, Flavio Poletti
 
-          add Custom license to stick the whole license in a file
-          -- still probably a bit experiemental -- thanks, Flavio Poletti
+0.102341 2010-12-11T10:22:56Z America/New_York
+ - add note to Artistic 2 that it's GPL compatible
 
-0.102341  2010-12-11 10:22:56 America/New_York
-          add note to Artistic 2 that it's GPL compatible
+0.102340 2010-08-22T23:25:01Z America/New_York
+ - add PostgreSQL
 
-0.102340  2010-08-22 23:25:01 America/New_York
-          add PostgreSQL
+0.102250 2010-08-13T09:54:29Z America/New_York
+ - alter the output of None to look a bit less repetitive (ABRAXXA)
 
-0.102250  2010-08-13 09:54:29 America/New_York
-          alter the output of None to look a bit less repetitive (ABRAXXA)
+0.101620 2010-06-11T19:14:03Z America/New_York
+ - LGPL_3_0 now includes GPL_3 in its fulltext (RT #47135)
 
-0.101620  2010-06-11 19:14:03 America/New_York
-          LGPL_3_0 now includes GPL_3 in its fulltext (RT #47135)
+0.101600 2010-06-09T07:50:11Z America/New_York
+ - "None" should be "restrictive" on 1.4, not "restricted"
 
-0.101600  2010-06-09 07:50:11 America/New_York
-          "None" should be "restrictive" on 1.4, not "restricted"
+0.101410 2010-05-21T07:41:57Z America/New_York
+ - Artistic licenses' meta2_name should not have a trailing _0
 
-0.101410  2010-05-21 07:41:57 America/New_York
-          Artistic licenses' meta2_name should not have a trailing _0
+0.101370 2010-05-17T19:07:27Z America/New_York
+ - add the meta2_name method for META.json files in schema v2
 
-0.101370  2010-05-17 19:07:27 America/New_York
-          add the meta2_name method for META.json files in schema v2
+0.016 2010-05-01
+ - added the None and CC0_1_0 licenses for the far ends of the spectrum
+ - (thanks to Brian Phillips for None)
 
-0.016     2010-05-01
-          added the None and CC0_1_0 licenses for the far ends of the spectrum
-          (thanks to Brian Phillips for None)
+0.015 2010-03-26
+ - up the Test::More prereq
 
-0.015     2010-03-26
-          up the Test::More prereq
+0.014 2010-03-23
+ - add meta_name to almost all remaining licenses, and add a test
 
-0.014     2010-03-23
-          add meta_name to almost all remaining licenses, and add a test
+0.013 2010-03-18
+ - add meta_name to Artistic 2 (thanks, Bernardo Rechea)
 
-0.013     2010-03-18
-          add meta_name to Artistic 2 (thanks, Bernardo Rechea)
+0.012 2009-05-22
+ - added guess_license_from_meta which is both JSON and YAML compatible
+   (BRICAS)
 
-0.012     2009-05-22
-          added guess_license_from_meta which is both JSON and YAML compatible
-            (BRICAS)
+0.011 2009-05-19
+ - clarify references to Perl in Perl_5 license
+ - rename things that were YAML-specific to just be "meta"
 
-0.011     2009-05-19
-          clarify references to Perl in Perl_5 license
-          rename things that were YAML-specific to just be "meta"
+0.010 2009-04-14
+ - add url methods where they were missing (Shlomi Fish)
 
-0.010     2009-04-14
-          add url methods where they were missing (Shlomi Fish)
+0.009 2009-01-16
+ - add repo loc to metadata
 
-0.009     2009-01-16
-          add repo loc to metadata
+0.008 2008-06-16
+ - fix behavior when guessing multiple items from meta.yml
+ - (RT #36805, thanks bricas!)
 
-0.008     2008-06-16
-          fix behavior when guessing multiple items from meta.yml
-          (RT #36805, thanks bricas!)
+0.007 2008-06-08
+ - fix detection of the various GNU licences
 
-0.007     2008-06-08
-          fix detection of the various GNU licences
+0.006 2008-06-07
+ - refactor inline template logic out to Data::Section
 
-0.006     2008-06-07
-          refactor inline template logic out to Data::Section
+0.005 2008-06-01
+ - add meta_yml_name method
 
-0.005     2008-06-01
-          add meta_yml_name method
+0.004 2008-04-12
+ - documentation fixes
 
-0.004     2008-04-12
-          documentation fixes
+0.003 2008-04-11
+ [CHANGES THAT WILL BREAK YOUR CODE]
+ - _from_pm is now _from_pod
+ - "guess" methods return a list
 
-0.003     2008-04-11
-          [CHANGES THAT WILL BREAK YOUR CODE]
-          _from_pm is now _from_pod
-          "guess" methods return a list
+ [ENHANCEMENTS]
+ - guess_license_from_meta_yml (thanks, Brian Cassidy!)
 
-          [ENHANCEMENTS]
-          guess_license_from_meta_yml (thanks, Brian Cassidy!)
+0.002 2008-04-09
+ - added Software::LicenseUtils (by request)
+ - added ->url method to licenses
+ - fix POD for Mozilla 1.1
+ - add LGPL 3
 
-0.002     2008-04-09
-          added Software::LicenseUtils (by request)
-          added ->url method to licenses
-          fix POD for Mozilla 1.1
-          add LGPL 3
+0.001 2008-03-18
+ - minor packaging fixes
 
-0.001     2008-03-18
-          minor packaging fixes
+0.000 2008-03-18
+ - pre-release for public evaluation
 
-0.000     2008-03-18
-          pre-release for public evaluation

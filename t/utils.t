@@ -1,10 +1,10 @@
 use strict;
 use warnings;
-use Test::More tests => 4;
+use Test::More tests => 5;
 use Software::LicenseUtils;
 
 {
-    my $fake_pm = <<'END_PM';
+  my $fake_pm = <<'END_PM';
 
 "magic true value";
 __END__
@@ -17,13 +17,40 @@ This is released under the same terms as perl itself.
 
 END_PM
 
-    my @guesses = Software::LicenseUtils->guess_license_from_pod($fake_pm);
+  my @guesses = Software::LicenseUtils->guess_license_from_pod($fake_pm);
 
-    is_deeply(
-      \@guesses,
-      [ 'Software::License::Perl_5' ],
-      "guessed okay"
-    );
+  is_deeply(
+    \@guesses,
+    [ 'Software::License::Perl_5' ],
+    "guessed okay"
+  );
+}
+
+{
+  my $fake_pm = <<'END_PM';
+
+"magic true value";
+__END__
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is Copyright (c) 2013 by David Golden.
+
+This is free software, licensed under:
+
+  The Apache License, Version 2.0, January 2004
+
+=cut
+
+END_PM
+
+  my @guesses = Software::LicenseUtils->guess_license_from_pod($fake_pm);
+
+  is_deeply(
+    \@guesses,
+    [ 'Software::License::Apache_2_0' ],
+    "guessed okay"
+  );
 }
 
 {
@@ -64,7 +91,7 @@ END_YAML
 }
 
 {
-    my $fake_yaml = <<'END_YAML';
+  my $fake_yaml = <<'END_YAML';
 ---
 abstract: 'packages that provide templated software licenses'
 author:
@@ -89,23 +116,23 @@ tests: 't/*.t xt/*.t'
 version: 0.002
 END_YAML
 
-    my @guesses = Software::LicenseUtils->guess_license_from_meta(
-      $fake_yaml
-    );
+  my @guesses = Software::LicenseUtils->guess_license_from_meta(
+    $fake_yaml
+  );
 
-    is_deeply(
-      \@guesses,
-      [ qw(
-        Software::License::GPL_1
-        Software::License::GPL_2
-        Software::License::GPL_3
-      ) ],
-      "guessed okay"
-    );
+  is_deeply(
+    \@guesses,
+    [ qw(
+      Software::License::GPL_1
+      Software::License::GPL_2
+      Software::License::GPL_3
+    ) ],
+    "guessed okay"
+  );
 }
 
 {
-    my $fake_json = <<'END_JSON';
+  my $fake_json = <<'END_JSON';
 {
    "resources" : {
       "repository" : "http://github.com/rjbs/dist-zilla"
@@ -153,14 +180,14 @@ END_YAML
 }
 END_JSON
 
-    my @guesses = Software::LicenseUtils->guess_license_from_meta(
-      $fake_json
-    );
+  my @guesses = Software::LicenseUtils->guess_license_from_meta(
+    $fake_json
+  );
 
-    is_deeply(
-      \@guesses,
-      [ 'Software::License::Perl_5' ],
-      "guessed okay"
-    );
+  is_deeply(
+    \@guesses,
+    [ 'Software::License::Perl_5' ],
+    "guessed okay"
+  );
 }
 

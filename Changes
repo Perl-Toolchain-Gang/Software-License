@@ -1,6 +1,10 @@
 Revision history for Software-License
 
 {{$NEXT}}
+          fix regex to allow guessing from meta things like perl_5 (thanks,
+          Kevin Dawson!)
+
+          replace 'use base' with 'use parent'
 
 0.103006  2013-10-20 14:17:53 America/New_York
           try harder to identify licenses from all installed License classes;

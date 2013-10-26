@@ -1,6 +1,8 @@
 Revision history for Software-License
 
 {{$NEXT}}
+
+0.103007  2013-10-26 19:57:05 America/New_York
           fix regex to allow guessing from meta things like perl_5 (thanks,
           Kevin Dawson!)
 

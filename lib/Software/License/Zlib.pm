@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Software::License::Zlib;
-use base 'Software::License';
+use parent 'Software::License';
 # ABSTRACT: The zlib License
 
 sub name { 'The zlib License' }

@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Software::License::PostgreSQL;
-use base 'Software::License';
+use parent 'Software::License';
 # ABSTRACT: The PostgreSQL License
 
 sub name { 'The PostgreSQL License' }

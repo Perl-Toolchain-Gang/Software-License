@@ -2,6 +2,17 @@ Revision history for Software-License
 
 {{$NEXT}}
 
+0.103007  2013-10-26 19:57:05 America/New_York
+          fix regex to allow guessing from meta things like perl_5 (thanks,
+          Kevin Dawson!)
+
+          replace 'use base' with 'use parent'
+
+0.103006  2013-10-20 14:17:53 America/New_York
+          try harder to identify licenses from all installed License classes;
+          this is an @INC-scanning change, so be vigilant; thanks, David
+          Golden!
+
 0.103005  2012-12-08 16:15:30 America/New_York
           add MPL 2.0 (thanks, Bernhard Amann)
 

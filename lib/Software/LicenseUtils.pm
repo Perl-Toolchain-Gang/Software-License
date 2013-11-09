@@ -5,6 +5,10 @@ use Carp;
 package Software::LicenseUtils;
 # ABSTRACT: little useful bits of code for licensey things
 
+use File::Spec;
+use IO::Dir;
+use Module::Load;
+
 =method guess_license_from_pod
 
   my @guesses = Software::LicenseUtils->guess_license_from_pod($pm_text);
@@ -42,6 +46,34 @@ my @phrases = (
   'MIT'                        => 'MIT',
 );
 
+my %meta_keys = ();
+
+# find all known Software::License::* modules and get identification data
+#
+# XXX: Grepping over @INC is dangerous, as it means that someone can change the
+# behavior of your code by installing a new library that you don't load.  rjbs
+# is not a fan.  On the other hand, it will solve a real problem.  One better
+# solution is to check "core" licenses first, then fall back, and to skip (but
+# warn about) bogus libraries.  Another is, at least when testing S-L itself,
+# to only scan lib/ blib. -- rjbs, 2013-10-20
+for my $lib (map { "$_/Software/License" } @INC) {
+  next unless -d $lib;
+  for my $file (IO::Dir->new($lib)->read) {
+    next unless $file =~ m{\.pm$};
+
+    # if it fails, ignore it
+    eval {
+      (my $mod = $file) =~ s{\.pm$}{};
+      my $class = "Software::License::$mod";
+      load $class;
+      $meta_keys{ $class->meta_name }{$mod}  = undef;
+      $meta_keys{ $class->meta2_name }{$mod} = undef;
+      my $name = $class->name;
+      unshift @phrases, qr/\Q$name\E/, [$mod];
+    };
+  }
+}
+
 sub guess_license_from_pod {
   my ($class, $pm_text) = @_;
   die "can't call guess_license_* in scalar context" unless wantarray;
@@ -61,7 +93,8 @@ sub guess_license_from_pod {
 
     for (my $i = 0; $i < @phrases; $i += 2) {
       my ($pattern, $license) = @phrases[ $i .. $i+1 ];
-			$pattern =~ s{\s+}{\\s+}g;
+			$pattern =~ s{\s+}{\\s+}g
+				unless ref $pattern eq 'Regexp';
 			if ( $license_text =~ /$pattern/i ) {
         my $match = $1;
 				# if ( $osi and $license_text =~ /All rights reserved/i ) {
@@ -80,18 +113,6 @@ sub guess_license_from_pod {
 	return;
 }
 
-my %meta_keys = (
-  perl         => 'Perl_5',
-  apache       => [ map { "Apache_$_" } qw(1_1 2_0) ],
-  artistic     => 'Artistic_1_0',
-  artistic_2   => 'Artistic_2_0',
-  lgpl         => [ map { "LGPL_$_" } qw(2_1 3_0) ],
-  bsd          => 'BSD',
-  gpl          => [ map { "GPL_$_" } qw(1 2 3) ],
-  mit          => 'MIT',
-  mozilla      => [ map { "Mozilla_$_" } qw(1_0 1_1 2_0) ],
-);
-
 =method guess_license_from_meta
 
   my @guesses = Software::LicenseUtils->guess_license_from_meta($meta_str);
@@ -106,11 +127,11 @@ sub guess_license_from_meta {
   my ($class, $meta_text) = @_;
   die "can't call guess_license_* in scalar context" unless wantarray;
 
-  my ($license_text) = $meta_text =~ m{\b["']?license["']?\s*:\s*["']?([a-z_]+)["']?}gm;
+  my ($license_text) = $meta_text =~ m{\b["']?license["']?\s*:\s*["']?([a-z_0-9]+)["']?}gm;
 
   return unless $license_text and my $license = $meta_keys{ $license_text };
 
-  return map { "Software::License::$_" } ref $license ? @$license : $license;
+  return map { "Software::License::$_" } sort keys %$license;
 }
 
 *guess_license_from_meta_yml = \&guess_license_from_meta;

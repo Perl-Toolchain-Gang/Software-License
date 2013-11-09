@@ -137,18 +137,17 @@ sub guess_license_from_meta {
 *guess_license_from_meta_yml = \&guess_license_from_meta;
 
 my %short_name = (
-    'GPL-1'      =>  [ 'GPL_1' ],
-    'GPL-2'      =>  [ 'GPL_2' ],
-    'GPL-3'      =>  [ 'GPL_3' ],
-    'LGPL-2'     =>  [ 'LGPL_2' ],
-    'LGPL-2.1'   =>  [ 'LGPL_2_1' ],
-    'LGPL-3'     =>  [ 'LGPL_3_0' ],
-    'LGPL-3.0'   =>  [ 'LGPL_3_0' ],
-    'Artistic'   =>  [ 'Artistic_1_0' ],
-    'Artistic-1' =>  [ 'Artistic_1_0' ],
-    'Artistic-2' =>  [ 'Artistic_2_0' ],
+    'GPL-1'      =>  'Software::License::GPL_1',
+    'GPL-2'      =>  'Software::License::GPL_2',
+    'GPL-3'      =>  'Software::License::GPL_3',
+    'LGPL-2'     =>  'Software::License::LGPL_2',
+    'LGPL-2.1'   =>  'Software::License::LGPL_2_1',
+    'LGPL-3'     =>  'Software::License::LGPL_3_0',
+    'LGPL-3.0'   =>  'Software::License::LGPL_3_0',
+    'Artistic'   =>  'Software::License::Artistic_1_0',
+    'Artistic-1' =>  'Software::License::Artistic_1_0',
+    'Artistic-2' =>  'Software::License::Artistic_2_0',
 );
-
 
 =method new_from_short_name
 
@@ -171,12 +170,11 @@ sub new_from_short_name {
   my $short = delete $arg->{short_name};
   Carp::croak "Unknow license with short name $short"
     unless $short_name{$short};
-  my @lic_data = @{ $short_name{$short} };
 
-  my $lic_file = my $lic_class = 'Software::License::' . shift @lic_data;
+  my $lic_file = my $lic_class = $short_name{$short} ;
   $lic_file =~ s!::!/!g;
   require "$lic_file.pm";
-  return $lic_class->new( { %$arg, @lic_data } );
+  return $lic_class->new( $arg );
 }
 
 1;

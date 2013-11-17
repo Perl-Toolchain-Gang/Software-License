@@ -1,6 +1,8 @@
 Revision history for Software-License
 
 {{$NEXT}}
+
+0.103008  2013-11-16 22:37:14 America/New_York
         - faster!  thanks, charsbar!
         - add new_from_short_name to LicenseUtils for spdx.org-style
           short names; thanks, Dominique Dumont!

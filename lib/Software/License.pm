@@ -174,6 +174,7 @@ The specific license:
 * L<Software::License::Artistic_1_0>
 * L<Software::License::Artistic_2_0>
 * L<Software::License::BSD>
+* L<Software::License::BSD_2_Clause>
 * L<Software::License::CC0>
 * L<Software::License::FreeBSD>
 * L<Software::License::GFDL_1_2>

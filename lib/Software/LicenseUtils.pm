@@ -31,6 +31,7 @@ my @phrases = (
   },
   'GNU (?:lesser|library) (?:general )?public license'  => [ qw(LGPL_2_1 LGPL_3_0) ],
   'BSD license'                => 'BSD',
+  'BSD 2 Clause license'       => 'BSD_2_Clause',
   "Artistic license $_v?(\\d)" => sub { "Artistic_$_[0]_0" },
   'Artistic license'           => [ map { "Artistic_$_\_0" } (1..2) ],
   "LGPL,? $_v?(\\d)"             => sub {

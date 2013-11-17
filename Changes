@@ -1,6 +1,13 @@
 Revision history for Software-License
 
 {{$NEXT}}
+        - faster!  thanks, charsbar!
+        - add new_from_short_name to LicenseUtils for spdx.org-style
+          short names; thanks, Dominique Dumont!
+        - avoid double trailing dots in expanded licenses; thanks, Dave Rolsky!
+        - fix some errors in (3-clause) BSD license text
+        - the 2-clause BSD ("FreeBSD") license no longer incorrectly puts
+          "FreeBSD" as the owner in the license full text
 
 0.103007  2013-10-26 19:57:05 America/New_York
           fix regex to allow guessing from meta things like perl_5 (thanks,

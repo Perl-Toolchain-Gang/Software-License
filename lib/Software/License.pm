@@ -139,6 +139,17 @@ sub meta2_name {
   return undef;
 }
 
+{
+  package
+    Software::License::_Fill;
+
+  sub strip_trailing_dot {
+    my $str = shift;
+    $str =~ s/\.$//;
+    return $str;
+  }
+}
+
 sub _fill_in {
   my ($self, $which) = @_;
 
@@ -149,6 +160,7 @@ sub _fill_in {
     $$template,
     HASH => { self => \$self },
     DELIMITERS => [ qw({{ }}) ],
+    PACKAGE => 'Software::License::_Fill',
   );
 }
 
@@ -200,7 +212,7 @@ The specific license:
 
 __DATA__
 __NOTICE__
-This software is Copyright (c) {{$self->year}} by {{$self->holder}}.
+This software is Copyright (c) {{$self->year}} by {{strip_trailing_dot($self->holder)}}.
 
 This is free software, licensed under:
 

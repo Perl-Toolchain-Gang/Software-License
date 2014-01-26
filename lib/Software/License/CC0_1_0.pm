@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 package Software::License::CC0_1_0;
+
 use parent 'Software::License';
 # ABSTRACT: the "public domain"-like CC0 license, version 1.0
 

@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 package Software::License::LGPL_2_1;
+
 use parent 'Software::License';
 # ABSTRACT: GNU Lesser General Public License, Version 2.1
 

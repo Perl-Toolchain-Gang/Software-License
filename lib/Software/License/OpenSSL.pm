@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 package Software::License::OpenSSL;
+
 use parent 'Software::License';
 # ABSTRACT: The OpenSSL License
 

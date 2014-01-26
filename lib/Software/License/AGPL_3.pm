@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 package Software::License::AGPL_3;
+
 use parent 'Software::License';
 # ABSTRACT: GNU Affero General Public License, Version 3
 

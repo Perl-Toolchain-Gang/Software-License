@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 package Software::License::SSLeay;
+
 use parent 'Software::License';
 # ABSTRACT: The Original SSLeay License
 

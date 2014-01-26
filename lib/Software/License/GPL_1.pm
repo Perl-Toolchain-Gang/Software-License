@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 package Software::License::GPL_1;
+
 use parent 'Software::License';
 # ABSTRACT: GNU General Public License, Version 1
 

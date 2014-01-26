@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 package Software::License::None;
+
 use parent 'Software::License';
 # ABSTRACT: describes a "license" that gives no license for re-use
 

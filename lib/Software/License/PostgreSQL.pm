@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 package Software::License::PostgreSQL;
+
 use parent 'Software::License';
 # ABSTRACT: The PostgreSQL License
 

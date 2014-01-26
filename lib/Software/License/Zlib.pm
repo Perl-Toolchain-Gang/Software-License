@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 package Software::License::Zlib;
+
 use parent 'Software::License';
 # ABSTRACT: The zlib License
 

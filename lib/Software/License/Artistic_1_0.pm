@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 package Software::License::Artistic_1_0;
+
 use parent 'Software::License';
 # ABSTRACT: The Artistic License
 

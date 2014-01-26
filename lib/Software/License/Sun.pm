@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 package Software::License::Sun;
+
 use parent 'Software::License';
 # ABSTRACT: Sun Internet Standards Source License (SISSL)
 

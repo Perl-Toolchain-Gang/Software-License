@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 package Software::License::MIT;
+
 use parent 'Software::License';
 # ABSTRACT: The MIT (aka X11) License
 

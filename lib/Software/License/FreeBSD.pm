@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 package Software::License::FreeBSD;
+
 use parent 'Software::License';
 # ABSTRACT: The FreeBSD License (aka two-clause BSD)
 

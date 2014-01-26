@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 package Software::License::Perl_5;
+
 use parent 'Software::License';
 # ABSTRACT: The Perl 5 License (Artistic 1 & GPL 1)
 

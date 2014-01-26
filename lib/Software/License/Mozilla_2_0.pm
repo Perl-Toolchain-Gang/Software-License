@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 package Software::License::Mozilla_2_0;
+
 use parent 'Software::License';
 # ABSTRACT: Mozilla Public License Version 2.0
 

@@ -46,7 +46,9 @@ my @phrases = (
   'MIT'                        => 'MIT',
 );
 
-my %meta_keys = ();
+my %meta_keys  = ();
+my %meta1_keys = ();
+my %meta2_keys = ();
 
 # find all known Software::License::* modules and get identification data
 #
@@ -66,8 +68,10 @@ for my $lib (map { "$_/Software/License" } @INC) {
       (my $mod = $file) =~ s{\.pm$}{};
       my $class = "Software::License::$mod";
       load $class;
-      $meta_keys{ $class->meta_name }{$mod}  = undef;
-      $meta_keys{ $class->meta2_name }{$mod} = undef;
+      $meta_keys{  $class->meta_name  }{$mod} = undef;
+      $meta1_keys{ $class->meta_name  }{$mod} = undef;
+      $meta_keys{  $class->meta2_name }{$mod} = undef;
+      $meta2_keys{ $class->meta2_name }{$mod} = undef;
       my $name = $class->name;
       unshift @phrases, qr/\Q$name\E/, [$mod];
     };
@@ -141,7 +145,32 @@ sub guess_license_from_meta {
   return map { "Software::License::$_" } sort keys %$license;
 }
 
-*guess_license_from_meta_yml = \&guess_license_from_meta;
+{
+  no warnings 'once';
+  *guess_license_from_meta_yml = \&guess_license_from_meta;
+}
+
+=method guess_license_from_meta_key
+
+  my @guesses = Software::LicenseUtils->guess_license_from_meta_key($key, $v);
+
+This method returns zero or more Software::License classes known to use C<$key>
+as their META key.  If C<$v> is supplied, it specifies whether to treat C<$key>
+as a v1 or v2 meta entry.  Any value other than 1 or 2 will raise an exception.
+
+=cut
+
+sub guess_license_from_meta_key {
+  my ($self, $key, $v) = @_;
+
+  my $src = (! defined $v) ? \%meta_keys
+          : $v eq '1'      ? \%meta1_keys
+          : $v eq '2'      ? \%meta2_keys
+          : Carp::croak("illegal META version: $v");
+
+  return unless $src->{$key};
+  return map { "Software::License::$_" } sort keys %{ $src->{$key} };
+}
 
 my %short_name = (
   'GPL-1'      =>  'Software::License::GPL_1',

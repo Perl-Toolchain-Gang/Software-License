@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 23;
+use Test::More tests => 26;
 use Software::LicenseUtils;
 use Try::Tiny;
 
@@ -48,5 +48,20 @@ foreach my $license_name (@cpan_meta_spec_licence_name) {
 	my @guess = _hack_guess_license_from_meta($license_name);
 	ok(@guess, "$license_name -> @guess");
 }
+
+is_deeply(
+  [ Software::LicenseUtils->guess_license_from_meta_key('artistic_2', 2) ],
+  [ 'Software::License::Artistic_2_0' ],
+);
+
+is_deeply(
+  [ Software::LicenseUtils->guess_license_from_meta_key('gpl_3', 2) ],
+  [ 'Software::License::GPL_3' ],
+);
+
+is_deeply(
+  [ Software::LicenseUtils->guess_license_from_meta_key('gpl_3', 1) ],
+  [ ],
+);
 
 done_testing;

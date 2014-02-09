@@ -5,7 +5,7 @@ use parent 'Software::License';
 # ABSTRACT: The GNU Free Documentation License v1.3
 
 sub name { 'GNU Free Documentation License v1.3' }
-sub url  { 'http://www.gnu.org/licenses/fdl-1.3.html' }
+sub url  { 'http://www.gnu.org/licenses/fdl-1.3.txt' }
 sub meta_name  { 'open_source' }
 sub meta2_name { 'gfdl_1_3' }
 

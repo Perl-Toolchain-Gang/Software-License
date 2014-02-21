@@ -116,7 +116,7 @@ sub guess_license_from_pod {
                    :                                 $license;
 
         return unless @result;
-				return map { "Software::License::$_" } @result;
+				return map { "Software::License::$_" } sort @result;
 			}
 		}
 	}

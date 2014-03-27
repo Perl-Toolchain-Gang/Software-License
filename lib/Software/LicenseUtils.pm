@@ -39,8 +39,8 @@ my @phrases = (
     $_[0] == 2 ? 'LGPL_2_1' : $_[0] == 3 ? 'LGPL_3_0' : ()
   },
   'LGPL'                       => [ qw(LGPL_2_1 LGPL_3_0) ],
-  "GPL,? $_v?(\\d)"              => sub { "GPL_$_[0]_0" },
-  'GPL'                        => [ map { "GPL_$_\_0" } (1..3) ],
+  "GPL,? $_v?(\\d)"              => sub { "GPL_$_[0]" },
+  'GPL'                        => [ map { "GPL_$_" } (1..3) ],
   'BSD'                        => 'BSD',
   'Artistic'                   => [ map { "Artistic_$_\_0" } (1..2) ],
   'MIT'                        => 'MIT',

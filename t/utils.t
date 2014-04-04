@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use Test::More tests => 6;
+use Test::More tests => 8;
 use Software::LicenseUtils;
 
 {
@@ -149,6 +149,7 @@ END_YAML
    },
    "name" : "Software-License",
    "version" : "0.103010"
+}
 END_JSON
 
   my @guesses = Software::LicenseUtils->guess_license_from_meta(
@@ -160,6 +161,13 @@ END_JSON
     [ 'Software::License::Perl_5' ],
     "guessed okay"
   );
+
+  is_deeply(
+    Software::LicenseUtils->guess_license_from_meta_json($fake_json),
+    { perl_5 => [ 'Software::License::Perl_5' ] },
+    "guessed okay from META.json",
+  );
+  
 }
 
 {
@@ -180,6 +188,7 @@ END_JSON
    },
    "name" : "Software-License",
    "version" : "0.103010"
+}
 END_JSON
 
   my @guesses = Software::LicenseUtils->guess_license_from_meta(
@@ -191,5 +200,15 @@ END_JSON
     [ 'Software::License::Perl_5' ],
     "guessed okay from multiple licenses are specified"
   );
+
+  is_deeply(
+    Software::LicenseUtils->guess_license_from_meta_json($fake_json),
+    {
+      perl_5 => [ 'Software::License::Perl_5' ],
+      gpl_1  => [ 'Software::License::GPL_1'  ],
+    },
+    "guessed multiple okay from META.json",
+  );
+
 }
 

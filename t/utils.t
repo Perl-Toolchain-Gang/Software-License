@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use Test::More tests => 5;
+use Test::More tests => 6;
 use Software::LicenseUtils;
 
 {
@@ -134,50 +134,21 @@ END_YAML
 {
   my $fake_json = <<'END_JSON';
 {
-   "resources" : {
-      "repository" : "http://github.com/rjbs/dist-zilla"
-   },
-   "generated_by" : "Dist::Zilla::Plugin::MetaJSON version 1.091370",
-   "version" : "1.091370",
-   "name" : "Dist-Zilla",
-   "requires" : {
-      "DateTime" : "0.44",
-      "Config::INI::MVP::Reader" : "0.018",
-      "Pod::Eventual" : "0",
-      "App::Cmd" : "0.200",
-      "String::RewritePrefix" : "0.002",
-      "Data::Section" : "0.004",
-      "File::chdir" : "0",
-      "YAML::XS" : "0",
-      "String::Formatter" : "0",
-      "Perl::Version" : "0",
-      "autobox" : "2.53",
-      "Software::License" : "0",
-      "Archive::Tar" : "0",
-      "MooseX::ClassAttribute" : "0",
-      "List::MoreUtils" : "0",
-      "Moose" : "0.65",
-      "ExtUtils::Manifest" : "1.54",
-      "String::Flogger" : "1",
-      "File::Find::Rule" : "0",
-      "Mixin::ExtraFields::Param" : "0",
-      "File::HomeDir" : "0",
-      "ExtUtils::MakeMaker" : "0",
-      "CPAN::Uploader" : "0",
-      "Moose::Autobox" : "0.09",
-      "Test::More" : "0",
-      "MooseX::Types::Path::Class" : "0",
-      "Hash::Merge::Simple" : "0",
-      "File::Temp" : "0",
-      "Path::Class" : "0",
-      "Text::Template" : "0"
-   },
-   "abstract" : "distribution builder; installer not included!",
+   "abstract" : "packages that provide templated software licenses",
    "author" : [
-      "Ricardo SIGNES <rjbs@cpan.org>"
+      "Ricardo Signes <rjbs@cpan.org>"
    ],
-   "license" : "perl"
-}
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 5.014, CPAN::Meta::Converter version 2.140640",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Software-License",
+   "version" : "0.103010"
 END_JSON
 
   my @guesses = Software::LicenseUtils->guess_license_from_meta(
@@ -188,6 +159,37 @@ END_JSON
     \@guesses,
     [ 'Software::License::Perl_5' ],
     "guessed okay"
+  );
+}
+
+{
+  my $fake_json = <<'END_JSON';
+{
+   "abstract" : "packages that provide templated software licenses",
+   "author" : [
+      "Ricardo Signes <rjbs@cpan.org>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 5.014, CPAN::Meta::Converter version 2.140640",
+   "license" : [
+      "perl_5", "gpl_1"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Software-License",
+   "version" : "0.103010"
+END_JSON
+
+  my @guesses = Software::LicenseUtils->guess_license_from_meta(
+    $fake_json
+  );
+
+  is_deeply(
+    \@guesses,
+    [ 'Software::License::Perl_5' ],
+    "guessed okay from multiple licenses are specified"
   );
 }
 

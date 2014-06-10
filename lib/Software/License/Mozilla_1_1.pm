@@ -15,70 +15,70 @@ __DATA__
 __LICENSE__
 Mozilla Public License 1.1 (MPL 1.1)
 
-1. Definitions. 
+1. Definitions.
 
      1.0.1. "Commercial Use" means distribution or
      otherwise making the Covered Code available to a third
-     party. 
+     party.
 
      1.1. ''Contributor'' means each entity that creates or
-     contributes to the creation of Modifications. 
+     contributes to the creation of Modifications.
 
      1.2. ''Contributor Version'' means the combination of
      the Original Code, prior Modifications used by a
      Contributor, and the Modifications made by that
-     particular Contributor. 
+     particular Contributor.
 
      1.3. ''Covered Code'' means the Original Code or
      Modifications or the combination of the Original Code
      and Modifications, in each case including portions
-     thereof. 
+     thereof.
 
      1.4. ''Electronic Distribution Mechanism'' means a
      mechanism generally accepted in the software
      development community for the electronic transfer of
-     data. 
+     data.
 
      1.5. ''Executable'' means Covered Code in any form
-     other than Source Code. 
+     other than Source Code.
 
      1.6. ''Initial Developer'' means the individual or entity
      identified as the Initial Developer in the Source Code
-     notice required by Exhibit A. 
+     notice required by Exhibit A.
 
      1.7. ''Larger Work'' means a work which combines
      Covered Code or portions thereof with code not
-     governed by the terms of this License. 
+     governed by the terms of this License.
 
-     1.8. ''License'' means this document. 
+     1.8. ''License'' means this document.
 
      1.8.1. "Licensable" means having the right to grant,
      to the maximum extent possible, whether at the time
      of the initial grant or subsequently acquired, any and
-     all of the rights conveyed herein. 
+     all of the rights conveyed herein.
 
      1.9. ''Modifications'' means any addition to or deletion
      from the substance or structure of either the Original
      Code or any previous Modifications. When Covered
-     Code is released as a series of files, a Modification is: 
+     Code is released as a series of files, a Modification is:
           A. Any addition to or deletion from the contents
           of a file containing Original Code or previous
-          Modifications. 
+          Modifications.
 
           B. Any new file that contains any part of the
-          Original Code or previous Modifications. 
-           
+          Original Code or previous Modifications.
+
      1.10. ''Original Code'' means Source Code of
      computer software code which is described in the
      Source Code notice required by Exhibit A as Original
      Code, and which, at the time of its release under this
      License is not already Covered Code governed by this
-     License. 
+     License.
 
      1.10.1. "Patent Claims" means any patent claim(s),
      now owned or hereafter acquired, including without
      limitation,  method, process, and apparatus claims, in
-     any patent Licensable by grantor. 
+     any patent Licensable by grantor.
 
      1.11. ''Source Code'' means the preferred form of the
      Covered Code for making modifications to it, including
@@ -90,7 +90,7 @@ Mozilla Public License 1.1 (MPL 1.1)
      the Contributor's choice. The Source Code can be in a
      compressed or archival form, provided the appropriate
      decompression or de-archiving software is widely
-     available for no charge. 
+     available for no charge.
 
      1.12. "You'' (or "Your")  means an individual or a legal
      entity exercising rights under, and complying with all of
@@ -105,30 +105,30 @@ Mozilla Public License 1.1 (MPL 1.1)
      outstanding shares or beneficial ownership of such
      entity.
 
-2. Source Code License. 
+2. Source Code License.
 
-     2.1. The Initial Developer Grant. 
+     2.1. The Initial Developer Grant.
      The Initial Developer hereby grants You a world-wide,
      royalty-free, non-exclusive license, subject to third
-     party intellectual property claims: 
+     party intellectual property claims:
           (a)  under intellectual property rights (other than
           patent or trademark) Licensable by Initial
           Developer to use, reproduce, modify, display,
           perform, sublicense and distribute the Original
           Code (or portions thereof) with or without
           Modifications, and/or as part of a Larger Work;
-          and 
+          and
 
           (b) under Patents Claims infringed by the
           making, using or selling of Original Code, to
           make, have made, use, practice, sell, and offer
           for sale, and/or otherwise dispose of the Original
-          Code (or portions thereof). 
-                     
+          Code (or portions thereof).
+
           (c) the licenses granted in this Section 2.1(a)
           and (b) are effective on the date Initial Developer
           first distributes Original Code under the terms of
-          this License. 
+          this License.
 
           (d) Notwithstanding Section 2.1(b) above, no
           patent license is granted: 1) for code that You
@@ -136,13 +136,13 @@ Mozilla Public License 1.1 (MPL 1.1)
           the Original Code;  or 3) for infringements
           caused by: i) the modification of the Original
           Code or ii) the combination of the Original Code
-          with other software or devices. 
-           
-     2.2. Contributor Grant. 
+          with other software or devices.
+
+     2.2. Contributor Grant.
      Subject to third party intellectual property claims, each
      Contributor hereby grants You a world-wide,
-     royalty-free, non-exclusive license 
-            
+     royalty-free, non-exclusive license
+
           (a)  under intellectual property rights (other than
           patent or trademark) Licensable by Contributor,
           to use, reproduce, modify, display, perform,
@@ -150,7 +150,7 @@ Mozilla Public License 1.1 (MPL 1.1)
           created by such Contributor (or portions thereof)
           either on an unmodified basis, with other
           Modifications, as Covered Code and/or as part
-          of a Larger Work; and 
+          of a Larger Work; and
 
           (b) under Patent Claims infringed by the
           making, using, or selling of  Modifications made
@@ -162,18 +162,18 @@ Mozilla Public License 1.1 (MPL 1.1)
           Contributor (or portions thereof); and 2) the
           combination of  Modifications made by that
           Contributor with its Contributor Version (or
-          portions of such combination). 
+          portions of such combination).
 
           (c) the licenses granted in Sections 2.2(a) and
           2.2(b) are effective on the date Contributor first
-          makes Commercial Use of the Covered Code. 
+          makes Commercial Use of the Covered Code.
 
           (d)    Notwithstanding Section 2.2(b) above, no
           patent license is granted: 1) for any code that
           Contributor has deleted from the Contributor
           Version; 2)  separate from the Contributor
           Version;  3)  for infringements caused by: i) third
-          party modifications of Contributor Version or ii) 
+          party modifications of Contributor Version or ii)
           the combination of Modifications made by that
           Contributor with other software  (except as part
           of the Contributor Version) or other devices; or
@@ -182,9 +182,9 @@ Mozilla Public License 1.1 (MPL 1.1)
           that Contributor.
 
 
-3. Distribution Obligations. 
+3. Distribution Obligations.
 
-     3.1. Application of License. 
+     3.1. Application of License.
      The Modifications which You create or to which You
      contribute are governed by the terms of this License,
      including without limitation Section 2.2. The Source
@@ -197,9 +197,9 @@ Mozilla Public License 1.1 (MPL 1.1)
      alters or restricts the applicable version of this License
      or the recipients' rights hereunder. However, You may
      include an additional document offering the additional
-     rights described in Section 3.5. 
+     rights described in Section 3.5.
 
-     3.2. Availability of Source Code. 
+     3.2. Availability of Source Code.
      Any Modification which You create or to which You
      contribute must be made available in Source Code
      form under the terms of this License either on the
@@ -214,9 +214,9 @@ Mozilla Public License 1.1 (MPL 1.1)
      such recipients. You are responsible for ensuring that
      the Source Code version remains available even if the
      Electronic Distribution Mechanism is maintained by a
-     third party. 
+     third party.
 
-     3.3. Description of Modifications. 
+     3.3. Description of Modifications.
      You must cause all Covered Code to which You
      contribute to contain a file documenting the changes
      You made to create that Covered Code and the date of
@@ -226,10 +226,10 @@ Mozilla Public License 1.1 (MPL 1.1)
      including the name of the Initial Developer in (a) the
      Source Code, and (b) in any notice in an Executable
      version or related documentation in which You describe
-     the origin or ownership of the Covered Code. 
+     the origin or ownership of the Covered Code.
 
-     3.4. Intellectual Property Matters 
-          (a) Third Party Claims. 
+     3.4. Intellectual Property Matters
+          (a) Third Party Claims.
           If Contributor has knowledge that a license
           under a third party's intellectual property rights
           is required to exercise the rights granted by
@@ -247,17 +247,17 @@ Mozilla Public License 1.1 (MPL 1.1)
           notifying appropriate mailing lists or
           newsgroups) reasonably calculated to inform
           those who received the Covered Code that new
-          knowledge has been obtained. 
+          knowledge has been obtained.
 
-          (b) Contributor APIs. 
+          (b) Contributor APIs.
           If Contributor's Modifications include an
           application programming interface and
           Contributor has knowledge of patent licenses
           which are reasonably necessary to implement
           that API, Contributor must also include this
-          information in the LEGAL file. 
-           
-               (c)    Representations. 
+          information in the LEGAL file.
+
+               (c)    Representations.
           Contributor represents that, except as disclosed
           pursuant to Section 3.4(a) above, Contributor
           believes that Contributor's Modifications are
@@ -266,7 +266,7 @@ Mozilla Public License 1.1 (MPL 1.1)
           rights conveyed by this License.
 
 
-     3.5. Required Notices. 
+     3.5. Required Notices.
      You must duplicate the notice in Exhibit A in each file
      of the Source Code.  If it is not possible to put such
      notice in a particular Source Code file due to its
@@ -289,9 +289,9 @@ Mozilla Public License 1.1 (MPL 1.1)
      agree to indemnify the Initial Developer and every
      Contributor for any liability incurred by the Initial
      Developer or such Contributor as a result of warranty,
-     support, indemnity or liability terms You offer. 
+     support, indemnity or liability terms You offer.
 
-     3.6. Distribution of Executable Versions. 
+     3.6. Distribution of Executable Versions.
      You may distribute Covered Code in Executable form
      only if the requirements of Section 3.1-3.5 have been
      met for that Covered Code, and if You include a notice
@@ -317,9 +317,9 @@ Mozilla Public License 1.1 (MPL 1.1)
      You hereby agree to indemnify the Initial Developer and
      every Contributor for any liability incurred by the Initial
      Developer or such Contributor as a result of any such
-     terms You offer. 
+     terms You offer.
 
-     3.7. Larger Works. 
+     3.7. Larger Works.
      You may create a Larger Work by combining Covered
      Code with other code not governed by the terms of this
      License and distribute the Larger Work as a single
@@ -327,7 +327,7 @@ Mozilla Public License 1.1 (MPL 1.1)
      requirements of this License are fulfilled for the Covered
      Code.
 
-4. Inability to Comply Due to Statute or Regulation. 
+4. Inability to Comply Due to Statute or Regulation.
 
      If it is impossible for You to comply with any of the
      terms of this License with respect to some or all of the
@@ -342,21 +342,21 @@ Mozilla Public License 1.1 (MPL 1.1)
      must be sufficiently detailed for a recipient of ordinary
      skill to be able to understand it.
 
-5. Application of this License. 
+5. Application of this License.
 
      This License applies to code to which the Initial
      Developer has attached the notice in Exhibit A and to
      related Covered Code.
 
-6. Versions of the License. 
+6. Versions of the License.
 
-     6.1. New Versions. 
+     6.1. New Versions.
      Netscape Communications Corporation (''Netscape'')
      may publish revised and/or new versions of the License
      from time to time. Each version will be given a
-     distinguishing version number. 
+     distinguishing version number.
 
-     6.2. Effect of New Versions. 
+     6.2. Effect of New Versions.
      Once Covered Code has been published under a
      particular version of the License, You may always
      continue to use it under the terms of that version. You
@@ -364,9 +364,9 @@ Mozilla Public License 1.1 (MPL 1.1)
      terms of any subsequent version of the License
      published by Netscape. No one other than Netscape
      has the right to modify the terms applicable to Covered
-     Code created under this License. 
+     Code created under this License.
 
-     6.3. Derivative Works. 
+     6.3. Derivative Works.
      If You create or use a modified version of this License
      (which you may only do in order to apply it to code
      which is not already Covered Code governed by this
@@ -383,7 +383,7 @@ Mozilla Public License 1.1 (MPL 1.1)
      not of themselves be deemed to be modifications of
      this License.)
 
-7. DISCLAIMER OF WARRANTY. 
+7. DISCLAIMER OF WARRANTY.
 
      COVERED CODE IS PROVIDED UNDER THIS
      LICENSE ON AN "AS IS'' BASIS, WITHOUT
@@ -405,7 +405,7 @@ Mozilla Public License 1.1 (MPL 1.1)
      AUTHORIZED HEREUNDER EXCEPT UNDER THIS
      DISCLAIMER.
 
-8. TERMINATION. 
+8. TERMINATION.
 
      8.1.  This License and the rights granted hereunder will
      terminate automatically if You fail to comply with terms
@@ -414,21 +414,21 @@ Mozilla Public License 1.1 (MPL 1.1)
      Covered Code which are properly granted shall survive
      any termination of this License. Provisions which, by
      their nature, must remain in effect beyond the
-     termination of this License shall survive. 
+     termination of this License shall survive.
 
      8.2.  If You initiate litigation by asserting a patent
      infringement claim (excluding declatory judgment
      actions) against Initial Developer or a Contributor (the
      Initial Developer or Contributor against whom You file
      such action is referred to as "Participant")  alleging
-     that: 
+     that:
 
      (a)  such Participant's Contributor Version directly or
      indirectly infringes any patent, then any and all rights
      granted by such Participant to You under Sections 2.1
      and/or 2.2 of this License shall, upon 60 days notice
      from Participant terminate prospectively, unless if
-     within 60 days after receipt of notice You either: (i) 
+     within 60 days after receipt of notice You either: (i)
      agree in writing to pay Participant a mutually agreeable
      reasonable royalty for Your past and future use of
      Modifications made by such Participant, or (ii)
@@ -439,7 +439,7 @@ Mozilla Public License 1.1 (MPL 1.1)
      the parties or the litigation claim is not withdrawn, the
      rights granted by Participant to You under Sections 2.1
      and/or 2.2 automatically terminate at the expiration of
-     the 60 day notice period specified above. 
+     the 60 day notice period specified above.
 
      (b)  any software, hardware, or device, other than such
      Participant's Contributor Version, directly or indirectly
@@ -447,7 +447,7 @@ Mozilla Public License 1.1 (MPL 1.1)
      such Participant under Sections 2.1(b) and 2.2(b) are
      revoked effective as of the date You first made, used,
      sold, distributed, or had made, Modifications made by
-     that Participant. 
+     that Participant.
 
      8.3.  If You assert a patent infringement claim against
      Participant alleging that such Participant's Contributor
@@ -457,7 +457,7 @@ Mozilla Public License 1.1 (MPL 1.1)
      litigation, then the reasonable value of the licenses
      granted by such Participant under Sections 2.1 or 2.2
      shall be taken into account in determining the amount
-     or value of any payment or license. 
+     or value of any payment or license.
 
      8.4.  In the event of termination under Sections 8.1 or
      8.2 above,  all end user license agreements (excluding
@@ -465,7 +465,7 @@ Mozilla Public License 1.1 (MPL 1.1)
      granted by You or any distributor hereunder prior to
      termination shall survive termination.
 
-9. LIMITATION OF LIABILITY. 
+9. LIMITATION OF LIABILITY.
 
      UNDER NO CIRCUMSTANCES AND UNDER NO
      LEGAL THEORY, WHETHER TORT (INCLUDING
@@ -492,7 +492,7 @@ Mozilla Public License 1.1 (MPL 1.1)
      CONSEQUENTIAL DAMAGES, SO THIS EXCLUSION
      AND LIMITATION MAY NOT APPLY TO YOU.
 
-10. U.S. GOVERNMENT END USERS. 
+10. U.S. GOVERNMENT END USERS.
 
      The Covered Code is a ''commercial item,'' as that term
      is defined in 48 C.F.R. 2.101 (Oct. 1995), consisting of
@@ -504,7 +504,7 @@ Mozilla Public License 1.1 (MPL 1.1)
      Users acquire Covered Code with only those rights set
      forth herein.
 
-11. MISCELLANEOUS. 
+11. MISCELLANEOUS.
 
      This License represents the complete agreement
      concerning subject matter hereof. If any provision of
@@ -529,7 +529,7 @@ Mozilla Public License 1.1 (MPL 1.1)
      construed against the drafter shall not apply to this
      License.
 
-12. RESPONSIBILITY FOR CLAIMS. 
+12. RESPONSIBILITY FOR CLAIMS.
 
      As between Initial Developer and the Contributors,
      each party is responsible for claims and damages
@@ -540,7 +540,7 @@ Mozilla Public License 1.1 (MPL 1.1)
      intended or shall be deemed to constitute any
      admission of liability.
 
-13. MULTIPLE-LICENSED CODE. 
+13. MULTIPLE-LICENSED CODE.
 
      Initial Developer may designate portions of the Covered
      Code as "Multiple-Licensed".  "Multiple-Licensed"
@@ -550,31 +550,31 @@ Mozilla Public License 1.1 (MPL 1.1)
      Initial Developer in the file described in Exhibit A.
 
 
-EXHIBIT A -Mozilla Public License. 
+EXHIBIT A -Mozilla Public License.
 
      ``The contents of this file are subject to the Mozilla
      Public License Version 1.1 (the "License"); you may
      not use this file except in compliance with the License.
-     You may obtain a copy of the License at 
-     http://www.mozilla.org/MPL/ 
+     You may obtain a copy of the License at
+     http://www.mozilla.org/MPL/
 
      Software distributed under the License is distributed on
-     an "AS IS" basis, WITHOUT WARRANTY OF 
+     an "AS IS" basis, WITHOUT WARRANTY OF
      ANY KIND, either express or implied. See the License
-     for the specific language governing rights and 
-     limitations under the License. 
+     for the specific language governing rights and
+     limitations under the License.
 
      The Original Code is
-     ______________________________________. 
+     ______________________________________.
 
      The Initial Developer of the Original Code is
-     ________________________. Portions created by 
+     ________________________. Portions created by
       ______________________ are Copyright (C) ______
-     _______________________. All Rights 
-     Reserved. 
+     _______________________. All Rights
+     Reserved.
 
      Contributor(s):
-     ______________________________________. 
+     ______________________________________.
 
      Alternatively, the contents of this file may be used
      under the terms of the _____ license (the  "[___]
@@ -587,10 +587,10 @@ EXHIBIT A -Mozilla Public License.
      replace  them with the notice and other provisions
      required by the [___] License.  If you do not delete the
      provisions above, a recipient may use your version of
-     this file under either the MPL or the [___] License." 
+     this file under either the MPL or the [___] License."
 
      [NOTE: The text of this Exhibit A may differ slightly
      from the text of the notices in the Source Code files of
      the Original Code. You should use the text of this
      Exhibit A rather than the text found in the Original
-     Code Source Code for Your Modifications.] 
+     Code Source Code for Your Modifications.]

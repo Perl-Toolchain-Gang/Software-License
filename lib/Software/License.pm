@@ -47,6 +47,12 @@ These methods are attribute readers.
 sub year   { defined $_[0]->{year} ? $_[0]->{year} : (localtime)[5]+1900 }
 sub holder { $_[0]->{holder}     }
 
+sub _dotless_holder {
+    my $holder = $_[0]->holder;
+    $holder =~ s/\.$//;
+    return $holder;
+}
+
 =method name
 
 This method returns the name of the license, suitable for shoving in the middle
@@ -200,7 +206,7 @@ The specific license:
 
 __DATA__
 __NOTICE__
-This software is Copyright (c) {{$self->year}} by {{$self->holder}}.
+This software is Copyright (c) {{$self->year}} by {{$self->_dotless_holder}}.
 
 This is free software, licensed under:
 

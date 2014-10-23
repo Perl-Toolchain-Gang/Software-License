@@ -13,7 +13,7 @@ sub meta2_name { 'gfdl_1_3' }
 1;
 __DATA__
 __NOTICE__
- Copyright (C)  {{$self->year}}  {{$self->holder}}.
+ Copyright (C)  {{$self->year}}  {{$self->_dotless_holder}}.
   Permission is granted to copy, distribute and/or modify this document
   under the terms of the GNU Free Documentation License, Version 1.3
   or any later version published by the Free Software Foundation;

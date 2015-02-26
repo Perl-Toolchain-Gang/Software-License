@@ -184,6 +184,7 @@ The specific license:
 * L<Software::License::Custom>
 * L<Software::License::FreeBSD>
 * L<Software::License::GFDL_1_2>
+* L<Software::License::GFDL_1_3>
 * L<Software::License::GPL_1>
 * L<Software::License::GPL_2>
 * L<Software::License::GPL_3>

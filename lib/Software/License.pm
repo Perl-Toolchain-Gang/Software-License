@@ -181,8 +181,10 @@ The specific license:
 * L<Software::License::Artistic_2_0>
 * L<Software::License::BSD>
 * L<Software::License::CC0_1_0>
+* L<Software::License::Custom>
 * L<Software::License::FreeBSD>
 * L<Software::License::GFDL_1_2>
+* L<Software::License::GFDL_1_3>
 * L<Software::License::GPL_1>
 * L<Software::License::GPL_2>
 * L<Software::License::GPL_3>
@@ -195,6 +197,7 @@ The specific license:
 * L<Software::License::None>
 * L<Software::License::OpenSSL>
 * L<Software::License::Perl_5>
+* L<Software::License::PostgreSQL>
 * L<Software::License::QPL_1_0>
 * L<Software::License::SSLeay>
 * L<Software::License::Sun>

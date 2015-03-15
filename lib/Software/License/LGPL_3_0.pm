@@ -28,7 +28,7 @@ sub fulltext {
 1;
 __DATA__
 __LICENSE__
-		   GNU LESSER GENERAL PUBLIC LICENSE
+                   GNU LESSER GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
  Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
@@ -40,7 +40,7 @@ __LICENSE__
 the terms and conditions of version 3 of the GNU General Public
 License, supplemented by the additional permissions listed below.
 
-  0. Additional Definitions. 
+  0. Additional Definitions.
 
   As used herein, "this License" refers to version 3 of the GNU Lesser
 General Public License, and the "GNU GPL" refers to version 3 of the GNU
@@ -141,7 +141,7 @@ the following:
        a copy of the Library already present on the user's computer
        system, and (b) will operate properly with a modified version
        of the Library that is interface-compatible with the Linked
-       Version. 
+       Version.
 
    e) Provide Installation Information, but only if you would otherwise
    be required to provide such information under section 6 of the

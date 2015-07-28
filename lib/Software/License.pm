@@ -5,7 +5,6 @@ package Software::License;
 # ABSTRACT: packages that provide templated software licenses
 
 use Data::Section -setup => { header_re => qr/\A__([^_]+)__\Z/ };
-use Sub::Install ();
 use Text::Template ();
 
 =head1 SYNOPSIS

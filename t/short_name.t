@@ -7,9 +7,9 @@ use Test::More tests => 6;
 my $class = 'Software::LicenseUtils';
 require_ok($class);
 
-my $license = $class->new_from_short_name({ 
-    short_name => 'GPL-1', 
-    holder => 'X. Ample' 
+my $license = $class->new_from_short_name({
+    short_name => 'GPL-1',
+    holder => 'X. Ample'
 });
 
 is($license->holder, 'X. Ample', '(c) holder');

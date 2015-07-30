@@ -13,7 +13,7 @@ my @round_trippable = qw(
   GPL_1 GPL_2 GPL_3
   LGPL_2_1 LGPL_3_0
   MIT
-  Perl_5 
+  Perl_5
 );
 
 plan tests => 2 * @round_trippable;

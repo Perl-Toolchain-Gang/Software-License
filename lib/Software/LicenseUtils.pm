@@ -21,7 +21,7 @@ Calling this method in scalar context is a fatal error.
 
 =cut
 
-my $_v = qr/(?:v(?:er(?:sion|\.))(?: |\.)?)/i;
+my $_v = qr/(?:v(?:er(?:sion|\.))?(?: |\.)?)/i;
 my @phrases = (
   "under the same (?:terms|license) as perl $_v?6" => [],
   'under the same (?:terms|license) as (?:the )?perl'    => 'Perl_5',

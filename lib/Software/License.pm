@@ -22,8 +22,19 @@ use Text::Template ();
 This method returns a new license object for the given license class.  Valid
 arguments are:
 
-  holder - the holder of the copyright; required
-  year   - the year of copyright; defaults to current year
+=for :list
+= holder  
+the holder of the copyright; required
+= year    
+the year of copyright; defaults to current year
+= program 
+the name of software for use in the middle of a sentence
+= Program 
+the name of software for use in the beginning of a sentence
+
+C<program> and C<Program> arguments may be specified both, either one or none. Each argument, if 
+not specified, is defaulted to another one, or to properly capitalized "this program", if both 
+arguments are omitted.
 
 =cut
 
@@ -45,6 +56,29 @@ These methods are attribute readers.
 
 sub year   { defined $_[0]->{year} ? $_[0]->{year} : (localtime)[5]+1900 }
 sub holder { $_[0]->{holder}     }
+
+=method program
+
+Name of software for using in the middle of a sentence.
+
+The method returns value of C<program> constructor argument (if it evaluates as true, i. e.
+defined, non-empty, non-zero), or value of C<Program> constructor argument (if it is true), or
+"this program" as the last resort.
+
+=cut
+
+sub program { $_[0]->{program} || $_[0]->{Program} || 'this program' }
+
+=method Program
+
+Name of software for using in the middle of a sentence.
+
+The method returns value of C<Program> constructor argument (if it is true), or value of C<program>
+constructor argument (if it is true), or "This program" as the last resort.
+
+=cut
+
+sub Program { $_[0]->{Program} || $_[0]->{program} || 'This program' }
 
 sub _dotless_holder {
     my $holder = $_[0]->holder;

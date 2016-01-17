@@ -2,6 +2,10 @@ Revision history for Software-License
 
 {{$NEXT}}
 
+0.103011  2016-01-16 21:27:53-05:00 America/New_York
+        - do not load Sub::Install, since it isn't used!
+        - eliminate superfluous FULL STOP characters (".")
+
 0.103010  2014-03-29 22:13:19-04:00 America/New_York
         - fix guess_license_from_pod's return on GPL licenses
           (thanks, Syohei YOSHIDA!)

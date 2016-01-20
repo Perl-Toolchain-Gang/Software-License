@@ -1,6 +1,7 @@
 Revision history for Software-License
 
 {{$NEXT}}
+        - guess_license_from_pod() now knows about Software::License::CC0_1_0
 
 0.103012  2016-04-23 14:57:59+01:00 Europe/London
         - consider license names without parentheses when scanning text for

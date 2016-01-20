@@ -44,6 +44,8 @@ my @phrases = (
   'BSD'                        => 'BSD',
   'Artistic'                   => [ map { "Artistic_$_\_0" } (1..2) ],
   'MIT'                        => 'MIT',
+  'has dedicated the work to the Commons' => 'CC0_1_0',
+  'waiving all of his or her rights to the work worldwide under copyright law' => 'CC0_1_0',
 );
 
 my %meta_keys  = ();

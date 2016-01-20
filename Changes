@@ -1,6 +1,7 @@
 Revision history for Software-License
 
 {{$NEXT}}
+        - guess_license_from_pod() now knows about Software::License::CC0_1_0
 
 0.103011  2016-01-16 21:27:53-05:00 America/New_York
         - do not load Sub::Install, since it isn't used!

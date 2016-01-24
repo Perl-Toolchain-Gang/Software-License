@@ -106,7 +106,7 @@ sub guess_license_from_pod {
       my ($pattern, $license) = @phrases[ $i .. $i+1 ];
 			$pattern =~ s{\s+}{\\s+}g
 				unless ref $pattern eq 'Regexp';
-			if ( $license_text =~ /$pattern/i ) {
+			if ( $license_text =~ /\b$pattern\b/i ) {
         my $match = $1;
 				# if ( $osi and $license_text =~ /All rights reserved/i ) {
 				# 	warn "LEGAL WARNING: 'All rights reserved' may invalidate Open Source licenses. Consider removing it.";

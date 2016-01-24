@@ -74,6 +74,9 @@ for my $lib (map { "$_/Software/License" } @INC) {
       $meta2_keys{ $class->meta2_name }{$mod} = undef;
       my $name = $class->name;
       unshift @phrases, qr/\Q$name\E/, [$mod];
+      if ((my $name_without_space = $name) =~ s/\s+\(.+?\)//) {
+        unshift @phrases, qr/\Q$name_without_space\E/, [$mod];
+      }
     };
   }
 }

@@ -26,7 +26,7 @@ my @phrases = (
   "under the same (?:terms|license) as perl $_v?6" => [],
   'under the same (?:terms|license) as (?:the )?perl'    => 'Perl_5',
   'affero g'                                    => 'AGPL_3',
-  "GNU (?:general )?public license,? $_v?([123])" => sub { "GPL_$_[0]" },
+  "GNU (?:general )?public license,? .*?$_v?([123])" => sub { "GPL_$_[0]" },
   'GNU (?:general )?public license'             => [ map {"GPL_$_"} (1..3) ],
   "GNU (?:lesser|library) (?:general )?public license,? $_v?([23])\\D"  => sub {
     $_[0] == 2 ? 'LGPL_2_1' : $_[0] == 3 ? 'LGPL_3_0' : ()
@@ -106,7 +106,7 @@ sub guess_license_from_pod {
       my ($pattern, $license) = @phrases[ $i .. $i+1 ];
 			$pattern =~ s{\s+}{\\s+}g
 				unless ref $pattern eq 'Regexp';
-			if ( $license_text =~ /$pattern/i ) {
+			if ( $license_text =~ /$pattern/ism ) {
         my $match = $1;
 				# if ( $osi and $license_text =~ /All rights reserved/i ) {
 				# 	warn "LEGAL WARNING: 'All rights reserved' may invalidate Open Source licenses. Consider removing it.";

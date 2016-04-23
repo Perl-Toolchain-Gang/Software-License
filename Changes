@@ -1,6 +1,10 @@
 Revision history for Software-License
 
 {{$NEXT}}
+        - consider license names without parentheses when scanning text for
+          license (thanks, charsbar!)
+        - when scanning text for license, put known substrings inside \b..\b
+          (thanks, charsbar!)
 
 0.103011  2016-01-16 21:27:53-05:00 America/New_York
         - do not load Sub::Install, since it isn't used!

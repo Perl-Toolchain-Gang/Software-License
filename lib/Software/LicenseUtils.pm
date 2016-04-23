@@ -93,8 +93,8 @@ sub guess_license_from_pod {
 
   my $header = $1;
 
-	if (
-		$pm_text =~ m/
+  if (
+    $pm_text =~ m/
       \G
       (
         .*?
@@ -103,28 +103,28 @@ sub guess_license_from_pod {
       \z
     /ixms
   ) {
-		my $license_text = "$header$1";
+    my $license_text = "$header$1";
 
     for (my $i = 0; $i < @phrases; $i += 2) {
       my ($pattern, $license) = @phrases[ $i .. $i+1 ];
-			$pattern =~ s{\s+}{\\s+}g
-				unless ref $pattern eq 'Regexp';
-			if ( $license_text =~ /\b$pattern\b/i ) {
+      $pattern =~ s{\s+}{\\s+}g
+        unless ref $pattern eq 'Regexp';
+      if ( $license_text =~ /\b$pattern\b/i ) {
         my $match = $1;
-				# if ( $osi and $license_text =~ /All rights reserved/i ) {
-				# 	warn "LEGAL WARNING: 'All rights reserved' may invalidate Open Source licenses. Consider removing it.";
-				# }
+        # if ( $osi and $license_text =~ /All rights reserved/i ) {
+        #   warn "LEGAL WARNING: 'All rights reserved' may invalidate Open Source licenses. Consider removing it.";
+        # }
         my @result = (ref $license||'') eq 'CODE'  ? $license->($match)
                    : (ref $license||'') eq 'ARRAY' ? @$license
                    :                                 $license;
 
         return unless @result;
-				return map { "Software::License::$_" } sort @result;
-			}
-		}
-	}
+        return map { "Software::License::$_" } sort @result;
+      }
+    }
+  }
 
-	return;
+  return;
 }
 
 =method guess_license_from_meta

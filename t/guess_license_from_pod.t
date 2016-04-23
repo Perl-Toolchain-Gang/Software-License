@@ -7,8 +7,8 @@ use Test::More;
 use Software::LicenseUtils;
 
 {
-	# excerpt from BSD License
-	my $license = <<'LICENSE';
+  # excerpt from BSD License
+  my $license = <<'LICENSE';
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
 met:
@@ -25,11 +25,11 @@ met:
     this software without specific prior written permission.
 LICENSE
 
-	my $pod = "=head1 LICENSE\n\n".$license."\n=cut\n";
-	is_deeply(
-		[ Software::LicenseUtils->guess_license_from_pod($pod) ],
-		[ ], # should eventually be [ 'Software::License::BSD' ],
-	);
+  my $pod = "=head1 LICENSE\n\n".$license."\n=cut\n";
+  is_deeply(
+    [ Software::LicenseUtils->guess_license_from_pod($pod) ],
+    [ ], # should eventually be [ 'Software::License::BSD' ],
+  );
 }
 
 done_testing;

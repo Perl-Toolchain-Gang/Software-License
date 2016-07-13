@@ -14,8 +14,7 @@ __DATA__
 __LICENSE__
 The ISC License
 
-Copyright (c) 2004-2011 by Internet Systems Consortium, Inc. ("ISC")
-Copyright (c) 1995-2003 by Internet Software Consortium
+Copyright (c) {{$self->year}} by {{$self->holder}}
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above

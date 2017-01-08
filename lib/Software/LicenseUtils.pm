@@ -7,7 +7,7 @@ package Software::LicenseUtils;
 
 use File::Spec;
 use IO::Dir;
-use Module::Load;
+use Module::Runtime ();
 
 =method guess_license_from_pod
 
@@ -67,7 +67,7 @@ for my $lib (map { "$_/Software/License" } @INC) {
     eval {
       (my $mod = $file) =~ s{\.pm$}{};
       my $class = "Software::License::$mod";
-      load $class;
+      Module::Runtime::require_module $class;
       $meta_keys{  $class->meta_name  }{$mod} = undef;
       $meta1_keys{ $class->meta_name  }{$mod} = undef;
       $meta_keys{  $class->meta2_name }{$mod} = undef;

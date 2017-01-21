@@ -144,6 +144,15 @@ sub meta2_name {
   return undef;
 }
 
+=method spx_name
+
+This method returns the string with the spdx name as indicated by
+L<https://spdx.org/licenses/>
+
+=cut
+
+sub sdpx_name { return undef; }
+
 sub _fill_in {
   my ($self, $which) = @_;
 

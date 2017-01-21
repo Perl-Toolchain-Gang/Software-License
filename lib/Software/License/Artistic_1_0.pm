@@ -47,6 +47,7 @@ sub name {
 
 sub meta_name  { 'artistic' }
 sub meta2_name { 'artistic_1' }
+sub spdx_name { 'Artistic-1.0' }
 
 1;
 __DATA__

@@ -10,6 +10,7 @@ sub url  { 'http://trolltech.com/products/qt/licenses/licensing/qpl' }
 
 sub meta_name  { 'open_source' }
 sub meta2_name { 'qpl_1_0' }
+sub spdx_name  { 'QPL-1.0' }
 
 1;
 __DATA__

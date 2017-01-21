@@ -11,6 +11,7 @@ sub name { 'The GNU Lesser General Public License, Version 3, June 2007' }
 sub url  { 'http://www.gnu.org/licenses/lgpl-3.0.txt' }
 sub meta_name  { 'lgpl' }
 sub meta2_name { 'lgpl_3_0' }
+sub spdx_name  { 'LGPL-3.0' }
 
 sub fulltext {
   my ($self) = @_;

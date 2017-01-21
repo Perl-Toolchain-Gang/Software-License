@@ -10,6 +10,7 @@ sub url  { 'http://www.opensource.org/licenses/postgresql' }
 
 sub meta_name  { 'open_source' }
 sub meta2_name { 'open_source' }
+sub spdx_name  { 'PostgreSQL' }
 
 1;
 __DATA__

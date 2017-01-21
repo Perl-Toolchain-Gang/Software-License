@@ -9,6 +9,7 @@ sub name { 'Mozilla Public License Version 2.0' }
 sub url  { 'http://www.mozilla.org/MPL/2.0/index.txt' }
 sub meta_name  { 'mozilla' }
 sub meta2_name { 'open_source' }
+sub spdx_name  { 'MPL-2.0' }
 
 1;
 __DATA__

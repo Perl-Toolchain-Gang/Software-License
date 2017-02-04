@@ -32,7 +32,9 @@ my @phrases = (
     $_[0] == 2 ? 'LGPL_2_1' : $_[0] == 3 ? 'LGPL_3_0' : ()
   },
   'GNU (?:lesser|library) (?:general )?public license'  => [ qw(LGPL_2_1 LGPL_3_0) ],
+  '(?:the )?2[-\s]clause (?:Free)?BSD' => 'FreeBSD',
   'BSD license'                => 'BSD',
+  'FreeBSD license'            => 'FreeBSD',
   "Artistic license $_v?(\\d)" => sub { "Artistic_$_[0]_0" },
   'Artistic license'           => [ map { "Artistic_$_\_0" } (1..2) ],
   "LGPL,? $_v?(\\d)"             => sub {
@@ -41,6 +43,7 @@ my @phrases = (
   'LGPL'                       => [ qw(LGPL_2_1 LGPL_3_0) ],
   "GPL,? $_v?(\\d)"              => sub { "GPL_$_[0]" },
   'GPL'                        => [ map { "GPL_$_" } (1..3) ],
+  'FreeBSD'                    => 'FreeBSD',
   'BSD'                        => 'BSD',
   'Artistic'                   => [ map { "Artistic_$_\_0" } (1..2) ],
   'MIT'                        => 'MIT',

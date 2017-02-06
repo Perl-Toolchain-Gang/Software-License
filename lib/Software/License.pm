@@ -150,9 +150,11 @@ sub _fill_in {
   Carp::confess "couldn't build $which section" unless
     my $template = $self->section_data($which);
 
+  my $later_text = $self->{or_later} ? ", or (at\nyour option) any later version" : '';
+
   return Text::Template->fill_this_in(
     $$template,
-    HASH => { self => \$self },
+    HASH => { self => \$self, or_later_clause => $later_text },
     DELIMITERS => [ qw({{ }}) ],
   );
 }

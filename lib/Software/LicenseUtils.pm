@@ -186,6 +186,13 @@ my %short_name = (
   'Artistic'   =>  'Software::License::Artistic_1_0',
   'Artistic-1' =>  'Software::License::Artistic_1_0',
   'Artistic-2' =>  'Software::License::Artistic_2_0',
+  'GPL-1+'     =>  [ 'Software::License::GPL_1',    or_later => 1 ],
+  'GPL-2+'     =>  [ 'Software::License::GPL_2',    or_later => 1 ],
+  'GPL-3+'     =>  [ 'Software::License::GPL_3',    or_later => 1 ],
+  'LGPL-2+'    =>  [ 'Software::License::LGPL_2',   or_later => 1 ],
+  'LGPL-2.1+'  =>  [ 'Software::License::LGPL_2_1', or_later => 1 ],
+  'LGPL-3+'    =>  [ 'Software::License::LGPL_3_0', or_later => 1 ],
+  'LGPL-3.0+'  =>  [ 'Software::License::LGPL_3_0', or_later => 1 ],
 );
 
 =method new_from_short_name
@@ -210,10 +217,12 @@ sub new_from_short_name {
   Carp::croak "Unknow license with short name $short"
     unless $short_name{$short};
 
-  my $lic_file = my $lic_class = $short_name{$short} ;
+  my $info = $short_name{$short} ;
+  my @infos = ref $info ? @$info : ($info);
+  my $lic_file = my $lic_class = shift @infos;
   $lic_file =~ s!::!/!g;
   require "$lic_file.pm";
-  return $lic_class->new( $arg );
+  return $lic_class->new( { %$arg, @infos } );
 }
 
 1;

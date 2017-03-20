@@ -181,6 +181,7 @@ The specific license:
 * L<Software::License::BSD>
 * L<Software::License::CC0_1_0>
 * L<Software::License::Custom>
+* L<Software::License::EUPL>
 * L<Software::License::FreeBSD>
 * L<Software::License::GFDL_1_2>
 * L<Software::License::GFDL_1_3>

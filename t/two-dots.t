@@ -13,6 +13,7 @@ my @licenses = qw(
     BSD
     CC0_1_0
     EUPL_1_1
+    EUPL_1_2
     FreeBSD
     GFDL_1_2
     GPL_1

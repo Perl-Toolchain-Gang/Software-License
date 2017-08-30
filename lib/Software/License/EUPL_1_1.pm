@@ -4,9 +4,9 @@ package Software::License::EUPL_1_1;
 use utf8;
 
 use parent 'Software::License';
-# ABSTRACT: The European Union Public License (EUPL)
+# ABSTRACT: The European Union Public License (EUPL) v1.1
 
-sub name      { 'The European Union Public License (EUPL)' }
+sub name      { 'The European Union Public License (EUPL) v1.1' }
 sub url       { 'https://joinup.ec.europa.eu/software/page/eupl' }
 
 sub meta_name  { 'open_source' }

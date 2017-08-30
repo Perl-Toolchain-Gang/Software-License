@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-package Software::License::EUPL;
+package Software::License::EUPL_1_1;
 use utf8;
 
 use parent 'Software::License';

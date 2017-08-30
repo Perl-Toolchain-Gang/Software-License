@@ -12,7 +12,7 @@ my @licenses = qw(
     Artistic_2_0
     BSD
     CC0_1_0
-    EUPL
+    EUPL_1_1
     FreeBSD
     GFDL_1_2
     GPL_1

@@ -14,8 +14,10 @@ use Module::Load;
   my @guesses = Software::LicenseUtils->guess_license_from_pod($pm_text);
 
 Given text containing POD, like a .pm file, this method will attempt to guess
-at the license under which the code is available.  This method will either
-a list of Software::License classes (or instances) or false.
+at the license under which the code is available.  This method will return
+either a list of Software::License classes names (as strings) or false.
+
+This method looks for a POD heading like 'license', 'copyright', or 'legal'.
 
 Calling this method in scalar context is a fatal error.
 

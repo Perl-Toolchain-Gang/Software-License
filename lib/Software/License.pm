@@ -202,6 +202,8 @@ The specific license:
 * L<Software::License::Sun>
 * L<Software::License::Zlib>
 
+Extra licenses are maintained on CPAN in separate modules.
+
 The L<App::Software::License> module comes with a script
 L<software-license|https://metacpan.org/pod/distribution/App-Software-License/script/software-license>,
 which provides a command-line interface

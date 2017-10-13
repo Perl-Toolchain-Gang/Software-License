@@ -4,6 +4,7 @@ use strict;
 use warnings;
 
 use Test::More tests => 26;
+use Test::Deep;
 use Software::LicenseUtils;
 use Try::Tiny;
 
@@ -49,19 +50,19 @@ foreach my $license_name (@cpan_meta_spec_licence_name) {
   ok(@guess, "$license_name -> @guess");
 }
 
-is_deeply(
+cmp_deeply(
   [ Software::LicenseUtils->guess_license_from_meta_key('artistic_2', 2) ],
-  [ 'Software::License::Artistic_2_0' ],
+  supersetof('Software::License::Artistic_2_0'),
 );
 
-is_deeply(
+cmp_deeply(
   [ Software::LicenseUtils->guess_license_from_meta_key('gpl_3', 2) ],
-  [ 'Software::License::GPL_3' ],
+  supersetof('Software::License::GPL_3'),
 );
 
-is_deeply(
+cmp_deeply(
   [ Software::LicenseUtils->guess_license_from_meta_key('gpl_3', 1) ],
-  [ ],
+  supersetof(),
 );
 
 done_testing;

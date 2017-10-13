@@ -4,6 +4,7 @@ use strict;
 use warnings;
 
 use Test::More;
+use Test::Deep;
 use Software::LicenseUtils;
 
 {
@@ -26,9 +27,9 @@ met:
 LICENSE
 
   my $pod = "=head1 LICENSE\n\n".$license."\n=cut\n";
-  is_deeply(
+  cmp_deeply(
     [ Software::LicenseUtils->guess_license_from_pod($pod) ],
-    [ ], # should eventually be [ 'Software::License::BSD' ],
+    supersetof(), # should eventually be [ 'Software::License::BSD' ],
   );
 }
 

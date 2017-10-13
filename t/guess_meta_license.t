@@ -3,19 +3,27 @@
 use strict;
 use warnings;
 
-use Test::More tests => 26;
+use Test::More tests => 23 * 2 + 3;
 use Software::LicenseUtils;
 use Try::Tiny;
 
 sub _hack_guess_license_from_meta {
-  my $license_str = shift;
+  my $license_meta_str = shift;
   my @guess;
   try {
-    my $hack = 'license : ' . $license_str;
-    @guess = Software::LicenseUtils->guess_license_from_meta($hack);
+    @guess = Software::LicenseUtils->guess_license_from_meta($license_meta_str);
   };
   return @guess;
+}
 
+sub _hack_meta_yaml {
+  my $license_str = shift;
+  "license: $license_str\n";
+}
+
+sub _hack_meta_json {
+  my $license_str = shift;
+  qq({"license": "$license_str"});
 }
 
 my @cpan_meta_spec_licence_name = qw(
@@ -45,8 +53,13 @@ my @cpan_meta_spec_licence_name = qw(
 );
 
 foreach my $license_name (@cpan_meta_spec_licence_name) {
-  my @guess = _hack_guess_license_from_meta($license_name);
-  ok(@guess, "$license_name -> @guess");
+  my $meta_yaml = _hack_meta_yaml($license_name);
+  my @guess_yaml = _hack_guess_license_from_meta($meta_yaml);
+  ok(@guess_yaml, "yaml: $license_name -> @guess_yaml");
+
+  my $meta_json = _hack_meta_json($license_name);
+  my @guess_json = _hack_guess_license_from_meta($meta_json);
+  ok(@guess_json, "json: $license_name -> @guess_json");
 }
 
 is_deeply(

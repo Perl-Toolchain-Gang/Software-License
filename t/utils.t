@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 use Test::More tests => 5;
+use Test::Deep;
 use Software::LicenseUtils;
 
 {
@@ -19,9 +20,9 @@ END_PM
 
   my @guesses = Software::LicenseUtils->guess_license_from_pod($fake_pm);
 
-  is_deeply(
+  cmp_deeply(
     \@guesses,
-    [ 'Software::License::Perl_5' ],
+    supersetof('Software::License::Perl_5'),
     "guessed okay"
   );
 }
@@ -46,9 +47,9 @@ END_PM
 
   my @guesses = Software::LicenseUtils->guess_license_from_pod($fake_pm);
 
-  is_deeply(
+  cmp_deeply(
     \@guesses,
-    [ 'Software::License::Apache_2_0' ],
+    supersetof('Software::License::Apache_2_0'),
     "guessed okay"
   );
 }
@@ -83,9 +84,9 @@ END_YAML
       $fake_yaml
     );
 
-    is_deeply(
+    cmp_deeply(
       \@guesses,
-      [ 'Software::License::Perl_5' ],
+      supersetof('Software::License::Perl_5'),
       "guessed okay"
     );
 }
@@ -120,13 +121,13 @@ END_YAML
     $fake_yaml
   );
 
-  is_deeply(
+  cmp_deeply(
     \@guesses,
-    [ qw(
-      Software::License::GPL_1
-      Software::License::GPL_2
-      Software::License::GPL_3
-    ) ],
+    supersetof(
+      'Software::License::GPL_1',
+      'Software::License::GPL_2',
+      'Software::License::GPL_3'
+    ),
     "guessed okay"
   );
 }
@@ -184,9 +185,9 @@ END_JSON
     $fake_json
   );
 
-  is_deeply(
+  cmp_deeply(
     \@guesses,
-    [ 'Software::License::Perl_5' ],
+    supersetof('Software::License::Perl_5'),
     "guessed okay"
   );
 }

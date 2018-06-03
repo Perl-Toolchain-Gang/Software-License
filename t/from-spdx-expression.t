@@ -7,8 +7,8 @@ use Test::More tests => 6;
 my $class = 'Software::LicenseUtils';
 require_ok($class);
 
-my $license = $class->new_from_spdx_name({ 
-    spdx_name => 'GPL-1.0', 
+my $license = $class->new_from_spdx_expression({ 
+    spdx_expression => 'GPL-1.0', 
     holder => 'X. Ample' 
 });
 

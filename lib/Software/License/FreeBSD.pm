@@ -10,7 +10,7 @@ sub url  { 'http://www.freebsd.org/copyright/freebsd-license.html' }
 
 sub meta_name  { 'open_source' }
 sub meta2_name { 'freebsd' }
-sub spdx_name  { 'BSD-2-Clause-FreeBSD' }
+sub spdx_expression  { 'BSD-2-Clause-FreeBSD' }
 
 1;
 __DATA__

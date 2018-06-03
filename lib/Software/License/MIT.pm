@@ -9,7 +9,7 @@ sub name { 'The MIT (X11) License' }
 sub url  { 'http://www.opensource.org/licenses/mit-license.php' }
 sub meta_name  { 'mit' }
 sub meta2_name { 'mit' }
-sub spdx_name  { 'MIT' }
+sub spdx_expression  { 'MIT' }
 
 1;
 __DATA__

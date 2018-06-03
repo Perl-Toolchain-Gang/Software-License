@@ -9,7 +9,7 @@ sub name { 'GNU Free Documentation License v1.2' }
 sub url  { 'http://www.gnu.org/licenses/fdl-1.2.txt' }
 sub meta_name  { 'open_source' }
 sub meta2_name { 'gfdl_1_2' }
-sub spdx_name  { 'GFDL-1.2' }
+sub spdx_expression  { 'GFDL-1.2' }
 
 1;
 __DATA__

@@ -9,7 +9,7 @@ sub name { 'The Mozilla Public License 1.0' }
 sub url  { 'http://www.mozilla.org/MPL/MPL-1.0.txt' }
 sub meta_name  { 'mozilla' }
 sub meta2_name { 'mozilla_1_0' }
-sub spdx_name  { 'MPL-1.0' }
+sub spdx_expression  { 'MPL-1.0' }
 
 1;
 __DATA__

@@ -9,7 +9,7 @@ sub name { 'The (three-clause) BSD License' }
 sub url  { 'http://opensource.org/licenses/BSD-3-Clause' }
 sub meta_name  { 'bsd' }
 sub meta2_name { 'bsd' }
-sub spdx_name  { 'BSD' }
+sub spdx_expression  { 'BSD' }
 
 1;
 __DATA__

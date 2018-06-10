@@ -148,21 +148,10 @@ sub meta2_name {
 
 This method should return the string with the spdx identifier as indicated by
 L<https://spdx.org/licenses/>
-If there is no such spdx identifier then fallback to module name.
 
 =cut
 
-sub spdx_expression { 
-    my ($self) = @_;
-    my $class_name = $self;
-    $class_name = ref $self if ref $self;
-    my $spdx_default_expression = (split /::/, $class_name)[-1];
-
-    return $spdx_default_expression 
-        if ($spdx_default_expression ne 'License');
-
-    return undef; 
-}
+sub spdx_expression { return undef; }
 
 sub _fill_in {
   my ($self, $which) = @_;

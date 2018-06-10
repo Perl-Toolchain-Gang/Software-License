@@ -73,7 +73,9 @@ for my $lib (map { "$_/Software/License" } @INC) {
       $meta1_keys{ $class->meta_name  }{$mod} = undef;
       $meta_keys{  $class->meta2_name }{$mod} = undef;
       $meta2_keys{ $class->meta2_name }{$mod} = undef;
-      $spdx_expression{  $class->spdx_expression   }{$class} = undef;
+      if (defined $class->spdx_expression) {
+        $spdx_expression{  $class->spdx_expression   }{$class} = undef;
+      }
       my $name = $class->name;
       unshift @phrases, qr/\Q$name\E/, [$mod];
       if ((my $name_without_space = $name) =~ s/\s+\(.+?\)//) {

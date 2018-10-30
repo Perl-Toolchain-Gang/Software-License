@@ -197,6 +197,7 @@ The specific license:
 * L<Software::License::Mozilla_2_0>
 * L<Software::License::None>
 * L<Software::License::OpenSSL>
+* L<Software::License::OpenLDAP_2_7>
 * L<Software::License::Perl_5>
 * L<Software::License::PostgreSQL>
 * L<Software::License::QPL_1_0>

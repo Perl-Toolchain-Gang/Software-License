@@ -82,27 +82,27 @@ is (scalar(Software::License::FreeBSD->spdx_expression()),
 );
 
 is (scalar(Software::License::GFDL_1_2->spdx_expression()),
-    'GFDL-1.2',
+    'GFDL-1.2-or-later',
     "GFDL-1_2->spdx_expression() is OK."
 );
 
 is (scalar(Software::License::GFDL_1_3->spdx_expression()),
-    'GFDL-1.3',
+    'GFDL-1.3-or-later',
     "GFDL_1_3->spdx_expression() is OK."
 );
 
 is (scalar(Software::License::GPL_1->spdx_expression()),
-    'GPL-1.0',
+    'GPL-1.0-only',
     "GPL_1->spdx_expression() is OK."
 );
 
 is (scalar(Software::License::GPL_2->spdx_expression()),
-    'GPL-2.0',
+    'GPL-2.0-only',
     "GPL_2->spdx_expression() is OK."
 );
 
 is (scalar(Software::License::GPL_3->spdx_expression()),
-    'GPL-3.0',
+    'GPL-3.0-only',
     "GPL_3->spdx_expression() is OK."
 );
 

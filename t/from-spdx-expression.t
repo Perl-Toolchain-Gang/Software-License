@@ -8,7 +8,7 @@ my $class = 'Software::LicenseUtils';
 require_ok($class);
 
 my $license = $class->new_from_spdx_expression({
-    spdx_expression => 'GPL-1.0',
+    spdx_expression => 'GPL-1.0-only',
     holder => 'X. Ample'
 });
 

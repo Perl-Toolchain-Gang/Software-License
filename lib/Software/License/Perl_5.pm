@@ -12,7 +12,7 @@ sub name { 'the same terms as the perl 5 programming language system itself' }
 sub url  { 'http://dev.perl.org/licenses/' }
 sub meta_name  { 'perl' }
 sub meta2_name { 'perl_5' }
-sub spdx_expression  { 'Artistic-1.0-Perl OR GPL-1.0+' }
+sub spdx_expression  { 'Artistic-1.0-Perl OR GPL-1.0-or-later' }
 
 sub _gpl {
   my ($self) = @_;

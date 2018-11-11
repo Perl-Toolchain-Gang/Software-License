@@ -181,7 +181,7 @@ sub meta2_name {
 
 sub spdx_expression  {
    my $self = shift;
-   return 'custom' unless ref $self;
+   return undef unless ref $self;
    return $self->_fill_in('SPDX_EXPRESSION')
 }
 

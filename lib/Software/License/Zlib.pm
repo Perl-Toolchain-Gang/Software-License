@@ -10,6 +10,7 @@ sub url  { 'http://www.zlib.net/zlib_license.html' }
 
 sub meta_name  { 'open_source' }
 sub meta2_name { 'zlib' }
+sub spdx_expression  { 'Zlib' }
 
 1;
 __DATA__

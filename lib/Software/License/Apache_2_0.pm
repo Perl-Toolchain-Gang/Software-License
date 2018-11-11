@@ -9,6 +9,7 @@ sub name { 'The Apache License, Version 2.0, January 2004' }
 sub url  { 'http://www.apache.org/licenses/LICENSE-2.0.txt' }
 sub meta_name  { 'apache' }
 sub meta2_name { 'apache_2_0' }
+sub spdx_expression { 'Apache-2.0' }
 
 1;
 __DATA__

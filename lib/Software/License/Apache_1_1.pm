@@ -9,6 +9,7 @@ sub name { 'The Apache Software License, Version 1.1' }
 sub url  { 'http://www.apache.org/licenses/LICENSE-1.1' }
 sub meta_name  { 'apache' }
 sub meta2_name { 'apache_1_1' }
+sub spdx_expression { 'Apache-1.1' }
 
 1;
 __DATA__

@@ -10,6 +10,7 @@ sub url       { undef }
 
 sub meta_name  { 'restrictive' }
 sub meta2_name { 'restricted'  }
+sub spdx_expression  { 'No license' }
 
 1;
 __DATA__

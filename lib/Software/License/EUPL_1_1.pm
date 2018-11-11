@@ -11,6 +11,7 @@ sub url       { 'https://joinup.ec.europa.eu/software/page/eupl' }
 
 sub meta_name  { 'open_source' }
 sub meta2_name { 'open_source' }
+sub spdx_expression { 'EUPL-1.1' }
 
 1;
 

@@ -1,7 +1,7 @@
 #!perl
 use strict;
 use warnings;
-use Test::More tests => 23;
+use Test::More tests => 25;
 
 # spdx names can be found: https://github.com/OpenSourceOrg/licenses/blob/master/licenses/spdx/spdx.json
 
@@ -12,6 +12,8 @@ use Software::License::Artistic_1_0;
 use Software::License::Artistic_2_0;
 use Software::License::BSD;
 use Software::License::CC0_1_0;
+use Software::License::EUPL_1_1;
+use Software::License::EUPL_1_2;
 use Software::License::FreeBSD;
 use Software::License::GFDL_1_2;
 use Software::License::GFDL_1_3;
@@ -62,6 +64,16 @@ is (scalar(Software::License::BSD->spdx_expression()),
 is (scalar(Software::License::CC0_1_0->spdx_expression()),
     'CC0-1.0',
     "CC0_1_0->spdx_expression() is OK."
+);
+
+is (scalar(Software::License::EUPL_1_1->spdx_expression()),
+    'EUPL-1.1',
+    "EUPL_1_1->spdx_expression() is OK."
+);
+
+is (scalar(Software::License::EUPL_1_2->spdx_expression()),
+    'EUPL-1.2',
+    "EUPL_1_2->spdx_expression() is OK."
 );
 
 is (scalar(Software::License::FreeBSD->spdx_expression()),

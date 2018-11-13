@@ -12,6 +12,7 @@ sub meta2_name { 'unlicense' }
 
 1;
 __DATA__
+__NOTICE__
 __LICENSE__
 This is free and unencumbered software released into the public domain.
 

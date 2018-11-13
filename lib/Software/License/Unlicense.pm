@@ -7,8 +7,7 @@ use parent 'Software::License';
 
 sub name      { q(Unlicense) }
 sub url       { q(http://unlicense.org/) }
-sub meta_name  { 'unlicense' }
-sub meta2_name { 'unlicense' }
+sub meta_name  { 'unrestricted' }
 
 1;
 __DATA__

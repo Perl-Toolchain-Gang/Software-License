@@ -1,6 +1,7 @@
 Revision history for Software-License
 
 {{$NEXT}}
+        - Added SPDX license expression support
 
 0.103013  2017-10-27 17:45:23+02:00 Europe/Amsterdam
         - guess_license_from_pod() now knows about Software::License::CC0_1_0

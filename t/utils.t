@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use Test::More tests => 7;
+use Test::More tests => 8;
 use Software::LicenseUtils;
 
 {
@@ -239,3 +239,26 @@ END_PM
   );
 }
 
+{
+  my $fake_pm = <<'END_PM';
+
+"magic true value";
+__END__
+
+=head1 LICENSE
+
+To the extent possible under law, Kang-min Liu has waived all copyright and related or neighboring rights to JSON::Feed. This work is published from: Taiwan.
+
+https://creativecommons.org/publicdomain/zero/1.0/
+
+=cut
+
+END_PM
+
+  my @guesses = Software::LicenseUtils->guess_license_from_pod($fake_pm);
+  is_deeply(
+    \@guesses,
+    [ 'Software::License::CC0_1_0' ],
+    "guessed okay"
+  );
+}

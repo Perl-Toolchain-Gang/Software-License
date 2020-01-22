@@ -49,6 +49,7 @@ my @phrases = (
   'MIT'                        => 'MIT',
   'has dedicated the work to the Commons' => 'CC0_1_0',
   'waiving all of his or her rights to the work worldwide under copyright law' => 'CC0_1_0',
+  'No license is granted to other entities' => 'None',
 );
 
 my %meta_keys  = ();

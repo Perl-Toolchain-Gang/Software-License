@@ -25,11 +25,25 @@ met:
     this software without specific prior written permission.
 LICENSE
 
-  my $pod = "=head1 LICENSE\n\n".$license."\n=cut\n";
   is_deeply(
-    [ Software::LicenseUtils->guess_license_from_pod($pod) ],
+    [ Software::LicenseUtils->guess_license_from_pod(build_pod($license)) ],
     [ ], # should eventually be [ 'Software::License::BSD' ],
   );
 }
 
+{
+  # excerpt from Software::License::None
+  my $license = <<'LICENSE';
+This software is copyright (c) 2020 by Holder.  No
+license is granted to other entities.
+LICENSE
+
+  is_deeply(
+    [ Software::LicenseUtils->guess_license_from_pod(build_pod($license)) ],
+    [ 'Software::License::None' ],
+  );
+}
+
 done_testing;
+
+sub build_pod { "=head1 LICENSE\n\n" . shift . "\n=cut\n" }

@@ -28,7 +28,19 @@ LICENSE
   my $pod = "=head1 LICENSE\n\n".$license."\n=cut\n";
   is_deeply(
     [ Software::LicenseUtils->guess_license_from_pod($pod) ],
-    [ ], # should eventually be [ 'Software::License::BSD' ],
+    [ 'Software::License::None' ], # should eventually be [ 'Software::License::BSD' ],
+  );
+}
+
+{
+  my $license = <<'LICENSE';
+Do what you want.
+LICENSE
+
+  my $pod = "=head1 LICENSE\n\n".$license."\n=cut\n";
+  is_deeply(
+    [ Software::LicenseUtils->guess_license_from_pod($pod) ],
+    [ ],
   );
 }
 

@@ -216,7 +216,7 @@ sub new_from_short_name {
   Carp::croak "no license short name specified"
     unless defined $arg->{short_name};
   my $short = delete $arg->{short_name};
-  Carp::croak "Unknow license with short name $short"
+  Carp::croak "Unknown license with short name $short"
     unless $short_name{$short};
 
   my $lic_file = my $lic_class = $short_name{$short} ;
@@ -246,7 +246,7 @@ sub new_from_spdx_expression {
   Carp::croak "no license spdx name specified"
     unless defined $arg->{spdx_expression};
   my $spdx = delete $arg->{spdx_expression};
-  Carp::croak "Unknow license with spdx name $spdx"
+  Carp::croak "Unknown license with spdx name $spdx"
     unless $spdx_expression{$spdx};
 
   my ($lic_file) = my ($lic_class) = keys %{$spdx_expression{$spdx}} ;

@@ -16,57 +16,57 @@ __DATA__
 __LICENSE__
 Mozilla Public License (Version 1.0)
 
-1. Definitions. 
+1. Definitions.
 
      1.1. "Contributor" means each entity that creates or
-     contributes to the creation of Modifications. 
+     contributes to the creation of Modifications.
 
      1.2. "Contributor Version" means the combination of
      the Original Code, prior Modifications used by a
      Contributor, and the Modifications made by that
-     particular Contributor. 
+     particular Contributor.
 
      1.3. "Covered Code" means the Original Code or
      Modifications or the combination of the Original Code
      and Modifications, in each case including portions
-     thereof. 
+     thereof.
 
      1.4. "Electronic Distribution Mechanism" means a
      mechanism generally accepted in the software
      development community for the electronic transfer of
-     data. 
+     data.
 
      1.5. "Executable" means Covered Code in any form
-     other than Source Code. 
+     other than Source Code.
 
      1.6. "Initial Developer" means the individual or entity
      identified as the Initial Developer in the Source Code
-     notice required by Exhibit A. 
+     notice required by Exhibit A.
 
      1.7. "Larger Work" means a work which combines
      Covered Code or portions thereof with code not
-     governed by the terms of this License. 
+     governed by the terms of this License.
 
-     1.8. "License" means this document. 
+     1.8. "License" means this document.
 
      1.9. "Modifications" means any addition to or deletion
      from the substance or structure of either the Original
      Code or any previous Modifications. When Covered
-     Code is released as a series of files, a Modification is: 
+     Code is released as a series of files, a Modification is:
 
           A. Any addition to or deletion from the contents
           of a file containing Original Code or previous
-          Modifications. 
+          Modifications.
 
           B. Any new file that contains any part of the
-          Original Code or previous Modifications. 
+          Original Code or previous Modifications.
 
      1.10. "Original Code" means Source Code of
      computer software code which is described in the
      Source Code notice required by Exhibit A as Original
      Code, and which, at the time of its release under this
      License is not already Covered Code governed by this
-     License. 
+     License.
 
      1.11. "Source Code" means the preferred form of the
      Covered Code for making modifications to it, including
@@ -78,7 +78,7 @@ Mozilla Public License (Version 1.0)
      the Contributor's choice. The Source Code can be in a
      compressed or archival form, provided the appropriate
      decompression or de-archiving software is widely
-     available for no charge. 
+     available for no charge.
 
      1.12. "You" means an individual or a legal entity
      exercising rights under, and complying with all of the
@@ -91,19 +91,19 @@ Mozilla Public License (Version 1.0)
      entity, whether by contract or otherwise, or (b)
      ownership of fifty percent (50%) or more of the
      outstanding shares or beneficial ownership of such
-     entity. 
+     entity.
 
-2. Source Code License. 
+2. Source Code License.
 
-     2.1. The Initial Developer Grant. 
+     2.1. The Initial Developer Grant.
      The Initial Developer hereby grants You a world-wide,
      royalty-free, non-exclusive license, subject to third
-     party intellectual property claims: 
+     party intellectual property claims:
 
           (a) to use, reproduce, modify, display, perform,
           sublicense and distribute the Original Code (or
           portions thereof) with or without Modifications, or
-          as part of a Larger Work; and 
+          as part of a Larger Work; and
 
           (b) under patents now or hereafter owned or
           controlled by Initial Developer, to make, have
@@ -113,19 +113,19 @@ Mozilla Public License (Version 1.0)
           enable You to Utilize the Original Code (or
           portions thereof) and not to any greater extent
           that may be necessary to Utilize further
-          Modifications or combinations. 
+          Modifications or combinations.
 
-     2.2. Contributor Grant. 
+     2.2. Contributor Grant.
      Each Contributor hereby grants You a world-wide,
      royalty-free, non-exclusive license, subject to third
-     party intellectual property claims: 
+     party intellectual property claims:
 
           (a) to use, reproduce, modify, display, perform,
           sublicense and distribute the Modifications
           created by such Contributor (or portions thereof)
           either on an unmodified basis, with other
           Modifications, as Covered Code or as part of a
-          Larger Work; and 
+          Larger Work; and
 
           (b) under patents now or hereafter owned or
           controlled by Contributor, to Utilize the
@@ -134,11 +134,11 @@ Mozilla Public License (Version 1.0)
           reasonably necessary to enable You to Utilize
           the Contributor Version (or portions thereof), and
           not to any greater extent that may be necessary
-          to Utilize further Modifications or combinations. 
+          to Utilize further Modifications or combinations.
 
-3. Distribution Obligations. 
+3. Distribution Obligations.
 
-     3.1. Application of License. 
+     3.1. Application of License.
      The Modifications which You create or to which You
      contribute are governed by the terms of this License,
      including without limitation Section 2.2. The Source
@@ -151,9 +151,9 @@ Mozilla Public License (Version 1.0)
      alters or restricts the applicable version of this License
      or the recipients' rights hereunder. However, You may
      include an additional document offering the additional
-     rights described in Section 3.5. 
+     rights described in Section 3.5.
 
-     3.2. Availability of Source Code. 
+     3.2. Availability of Source Code.
      Any Modification which You create or to which You
      contribute must be made available in Source Code form
      under the terms of this License either on the same
@@ -168,9 +168,9 @@ Mozilla Public License (Version 1.0)
      recipients. You are responsible for ensuring that the
      Source Code version remains available even if the
      Electronic Distribution Mechanism is maintained by a
-     third party. 
+     third party.
 
-     3.3. Description of Modifications. 
+     3.3. Description of Modifications.
      You must cause all Covered Code to which you
      contribute to contain a file documenting the changes
      You made to create that Covered Code and the date of
@@ -180,11 +180,11 @@ Mozilla Public License (Version 1.0)
      including the name of the Initial Developer in (a) the
      Source Code, and (b) in any notice in an Executable
      version or related documentation in which You describe
-     the origin or ownership of the Covered Code. 
+     the origin or ownership of the Covered Code.
 
-     3.4. Intellectual Property Matters 
+     3.4. Intellectual Property Matters
 
-          (a) Third Party Claims. 
+          (a) Third Party Claims.
           If You have knowledge that a party claims an
           intellectual property right in particular
           functionality or code (or its utilization under this
@@ -200,16 +200,16 @@ Mozilla Public License (Version 1.0)
           steps (such as notifying appropriate mailing lists
           or newsgroups) reasonably calculated to inform
           those who received the Covered Code that new
-          knowledge has been obtained. 
+          knowledge has been obtained.
 
-          (b) Contributor APIs. 
+          (b) Contributor APIs.
           If Your Modification is an application
           programming interface and You own or control
           patents which are reasonably necessary to
           implement that API, you must also include this
-          information in the LEGAL file. 
+          information in the LEGAL file.
 
-     3.5. Required Notices. 
+     3.5. Required Notices.
      You must duplicate the notice in Exhibit A in each file
      of the Source Code, and this License in any
      documentation for the Source Code, where You
@@ -231,9 +231,9 @@ Mozilla Public License (Version 1.0)
      indemnify the Initial Developer and every Contributor for
      any liability incurred by the Initial Developer or such
      Contributor as a result of warranty, support, indemnity
-     or liability terms You offer. 
+     or liability terms You offer.
 
-     3.6. Distribution of Executable Versions. 
+     3.6. Distribution of Executable Versions.
      You may distribute Covered Code in Executable form
      only if the requirements of Section 3.1-3.5 have been
      met for that Covered Code, and if You include a notice
@@ -258,17 +258,17 @@ Mozilla Public License (Version 1.0)
      Initial Developer or any Contributor. You hereby agree
      to indemnify the Initial Developer and every Contributor
      for any liability incurred by the Initial Developer or such
-     Contributor as a result of any such terms You offer. 
+     Contributor as a result of any such terms You offer.
 
-     3.7. Larger Works. 
+     3.7. Larger Works.
      You may create a Larger Work by combining Covered
      Code with other code not governed by the terms of this
      License and distribute the Larger Work as a single
      product. In such a case, You must make sure the
      requirements of this License are fulfilled for the Covered
-     Code. 
+     Code.
 
-4. Inability to Comply Due to Statute or Regulation. 
+4. Inability to Comply Due to Statute or Regulation.
 
      If it is impossible for You to comply with any of the
      terms of this License with respect to some or all of the
@@ -281,23 +281,23 @@ Mozilla Public License (Version 1.0)
      of the Source Code. Except to the extent prohibited by
      statute or regulation, such description must be
      sufficiently detailed for a recipient of ordinary skill to be
-     able to understand it. 
+     able to understand it.
 
-5. Application of this License. 
+5. Application of this License.
 
      This License applies to code to which the Initial
      Developer has attached the notice in Exhibit A, and to
-     related Covered Code. 
+     related Covered Code.
 
-6. Versions of the License. 
+6. Versions of the License.
 
-     6.1. New Versions. 
+     6.1. New Versions.
      Netscape Communications Corporation ("Netscape")
      may publish revised and/or new versions of the License
      from time to time. Each version will be given a
-     distinguishing version number. 
+     distinguishing version number.
 
-     6.2. Effect of New Versions. 
+     6.2. Effect of New Versions.
      Once Covered Code has been published under a
      particular version of the License, You may always
      continue to use it under the terms of that version. You
@@ -305,9 +305,9 @@ Mozilla Public License (Version 1.0)
      terms of any subsequent version of the License
      published by Netscape. No one other than Netscape
      has the right to modify the terms applicable to Covered
-     Code created under this License. 
+     Code created under this License.
 
-     6.3. Derivative Works. 
+     6.3. Derivative Works.
      If you create or use a modified version of this License
      (which you may only do in order to apply it to code
      which is not already Covered Code governed by this
@@ -320,9 +320,9 @@ Mozilla Public License (Version 1.0)
      Netscape Public License. (Filling in the name of the
      Initial Developer, Original Code or Contributor in the
      notice described in Exhibit A shall not of themselves
-     be deemed to be modifications of this License.) 
+     be deemed to be modifications of this License.)
 
-7. DISCLAIMER OF WARRANTY. 
+7. DISCLAIMER OF WARRANTY.
 
      COVERED CODE IS PROVIDED UNDER THIS
      LICENSE ON AN "AS IS" BASIS, WITHOUT
@@ -342,9 +342,9 @@ Mozilla Public License (Version 1.0)
      CONSTITUTES AN ESSENTIAL PART OF THIS
      LICENSE. NO USE OF ANY COVERED CODE IS
      AUTHORIZED HEREUNDER EXCEPT UNDER THIS
-     DISCLAIMER. 
+     DISCLAIMER.
 
-8. TERMINATION. 
+8. TERMINATION.
 
      This License and the rights granted hereunder will
      terminate automatically if You fail to comply with terms
@@ -353,9 +353,9 @@ Mozilla Public License (Version 1.0)
      Covered Code which are properly granted shall survive
      any termination of this License. Provisions which, by
      their nature, must remain in effect beyond the
-     termination of this License shall survive. 
+     termination of this License shall survive.
 
-9. LIMITATION OF LIABILITY. 
+9. LIMITATION OF LIABILITY.
 
      UNDER NO CIRCUMSTANCES AND UNDER NO
      LEGAL THEORY, WHETHER TORT (INCLUDING
@@ -381,9 +381,9 @@ Mozilla Public License (Version 1.0)
      ALLOW THE EXCLUSION OR LIMITATION OF
      INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO
      THAT EXCLUSION AND LIMITATION MAY NOT
-     APPLY TO YOU. 
+     APPLY TO YOU.
 
-10. U.S. GOVERNMENT END USERS. 
+10. U.S. GOVERNMENT END USERS.
 
      The Covered Code is a "commercial item," as that term
      is defined in 48 C.F.R. 2.101 (Oct. 1995), consisting of
@@ -393,9 +393,9 @@ Mozilla Public License (Version 1.0)
      48 C.F.R. 12.212 and 48 C.F.R. 227.7202-1 through
      227.7202-4 (June 1995), all U.S. Government End
      Users acquire Covered Code with only those rights set
-     forth herein. 
+     forth herein.
 
-11. MISCELLANEOUS. 
+11. MISCELLANEOUS.
 
      This License represents the complete agreement
      concerning subject matter hereof. If any provision of
@@ -425,9 +425,9 @@ Mozilla Public License (Version 1.0)
      Goods is expressly excluded. Any law or regulation
      which provides that the language of a contract shall be
      construed against the drafter shall not apply to this
-     License. 
+     License.
 
-12. RESPONSIBILITY FOR CLAIMS. 
+12. RESPONSIBILITY FOR CLAIMS.
 
      Except in cases where another Contributor has failed to
      comply with Section 3.4, You are responsible for
@@ -437,29 +437,29 @@ Mozilla Public License (Version 1.0)
      the revenues you received from utilizing such rights,
      and other relevant factors. You agree to work with
      affected parties to distribute responsibility on an
-     equitable basis. 
+     equitable basis.
 
-EXHIBIT A. 
+EXHIBIT A.
 
      "The contents of this file are subject to the Mozilla
      Public License Version 1.0 (the "License"); you may
      not use this file except in compliance with the License.
      You may obtain a copy of the License at
-     http://www.mozilla.org/MPL/ 
+     http://www.mozilla.org/MPL/
 
      Software distributed under the License is distributed on
      an "AS IS" basis, WITHOUT WARRANTY OF ANY
      KIND, either express or implied. See the License for
      the specific language governing rights and limitations
-     under the License. 
+     under the License.
 
      The Original Code is
-     ______________________________________. 
+     ______________________________________.
 
      The Initial Developer of the Original Code is
      ________________________. Portions created by
      ______________________ are Copyright (C) ______
-     _______________________. All Rights Reserved. 
+     _______________________. All Rights Reserved.
 
      Contributor(s):
-     ______________________________________." 
+     ______________________________________."

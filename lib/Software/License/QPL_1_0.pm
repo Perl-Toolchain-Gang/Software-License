@@ -20,7 +20,7 @@ Version 1.0
 
 Copyright (C) 1999 Trolltech AS, Norway.
 Everyone is permitted to copy and distribute this license
-document. 
+document.
 
 The intent of this license is to establish freedom to share and
 change the software regulated by this license under the open

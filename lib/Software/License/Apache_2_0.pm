@@ -11,6 +11,20 @@ sub meta_name  { 'apache' }
 sub meta2_name { 'apache_2_0' }
 sub spdx_expression { 'Apache-2.0' }
 
+sub fulltext {
+    my ($self) = @_;
+
+    my $txt = $self->SUPER::fulltext();
+
+    my $year = $self->year;
+    my $holder = $self->holder;
+
+    $txt =~ s{\Q[yyyy]\E}{$year}g;
+    $txt =~ s{\Q[name of copyright owner]\E}{$holder}g;
+
+    return $txt;
+}
+
 1;
 __DATA__
 __LICENSE__

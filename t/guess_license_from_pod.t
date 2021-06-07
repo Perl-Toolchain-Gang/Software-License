@@ -32,4 +32,55 @@ LICENSE
   );
 }
 
+subtest 'apache_1_1' => sub {
+  my $license = << 'LICENSE';
+Apache Software License
+Version 1.1
+
+Copyright (c) 2000 The Apache Software Foundation.  All rights reserved.
+LICENSE
+
+  my @license_strings = (
+    $license,
+    "apache 1.1", "Apache 1.1", "APACHE 1.1",
+    "apache-1.1", "Apache-1.1", "APACHE-1.1",
+  );
+
+  foreach my $license_text (@license_strings) {
+    my $pod = "=head1 LICENSE\n\n" . $license_text . "\n=cut\n";
+
+    is_deeply(
+      [ Software::LicenseUtils->guess_license_from_pod($pod) ],
+      [ 'Software::License::Apache_1_1' ],
+      $license_text
+    );
+  }
+};
+
+subtest 'apache_2_0' => sub {
+  my $license = << 'LICENSE';
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+LICENSE
+
+  my @license_strings = (
+    $license,
+    "apache 2.0", "Apache 2.0", "APACHE 2.0",
+    "apache-2.0", "Apache-2.0", "APACHE-2.0",
+  );
+
+  foreach my $license_text (@license_strings) {
+    my $pod = "=head1 LICENSE\n\n" . $license_text . "\n=cut\n";
+
+    is_deeply(
+      [ Software::LicenseUtils->guess_license_from_pod($pod) ],
+      [ 'Software::License::Apache_2_0' ],
+      $license_text
+    );
+  }
+};
+
 done_testing;

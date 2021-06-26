@@ -1,6 +1,8 @@
 Revision history for Software-License
 
 {{$NEXT}}
+
+0.103015  2021-06-25 21:54:19-04:00 America/New_York (TRIAL RELEASE)
         - update the text of Artistic License 1.0 to match upstream source
         - when using Apache 2.0, replace year and copyright holder
         - improve guessing at CC0

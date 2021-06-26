@@ -1,6 +1,10 @@
 Revision history for Software-License
 
 {{$NEXT}}
+        - update the text of Artistic License 1.0 to match upstream source
+        - when using Apache 2.0, replace year and copyright holder
+        - improve guessing at CC0
+        - update author contact info
 
 0.103014  2018-11-27 23:14:43+01:00 Europe/Amsterdam
         - Added SPDX license expression support

@@ -23,18 +23,18 @@ This method returns a new license object for the given license class.  Valid
 arguments are:
 
 =for :list
-= holder  
+= holder
 the holder of the copyright; required
-= year    
+= year
 the year of copyright; defaults to current year
-= program 
+= program
 the name of software for use in the middle of a sentence
-= Program 
+= Program
 the name of software for use in the beginning of a sentence
 
-C<program> and C<Program> arguments may be specified both, either one or none. Each argument, if 
-not specified, is defaulted to another one, or to properly capitalized "this program", if both 
-arguments are omitted.
+C<program> and C<Program> arguments may be specified both, either one or none.
+Each argument, if not specified, is defaulted to another one, or to properly
+capitalized "this program", if both arguments are omitted.
 
 =cut
 

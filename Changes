@@ -1,7 +1,7 @@
 Revision history for Software-License
 
 {{$NEXT}}
-        - no changes since previous (trial) release
+        - add "program" and "Program" arguments
 
 0.104000  2021-06-25 21:56:24-04:00 America/New_York (TRIAL RELEASE)
         - documentation tweaks about non-core licenses and the use of

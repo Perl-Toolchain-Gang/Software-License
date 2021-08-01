@@ -57,6 +57,12 @@ These methods are attribute readers.
 sub year   { defined $_[0]->{year} ? $_[0]->{year} : (localtime)[5]+1900 }
 sub holder { $_[0]->{holder}     }
 
+sub _dotless_holder {
+  my $holder = $_[0]->holder;
+  $holder =~ s/\.$//;
+  return $holder;
+}
+
 =method program
 
 Name of software for using in the middle of a sentence.
@@ -79,12 +85,6 @@ constructor argument (if it is true), or "This program" as the last resort.
 =cut
 
 sub Program { $_[0]->{Program} || $_[0]->{program} || 'This program' }
-
-sub _dotless_holder {
-    my $holder = $_[0]->holder;
-    $holder =~ s/\.$//;
-    return $holder;
-}
 
 =method name
 

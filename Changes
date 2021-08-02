@@ -1,6 +1,8 @@
 Revision history for Software-License
 
 {{$NEXT}}
+
+0.104001  2021-08-02 09:33:25-04:00 America/New_York
         - add "program" and "Program" arguments; this allows text generation
           like "CoolClient is license..." instead of "This software is..."
           (thanks, Van de Bugger)

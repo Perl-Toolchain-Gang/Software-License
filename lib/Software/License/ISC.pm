@@ -8,6 +8,7 @@ sub name { 'The ISC License' }
 sub url  { 'http://www.isc.org/software/license' }
 sub meta_name  { 'open_source' }
 sub meta2_name { 'open_source' }
+sub spdx_expression { 'ISC' }
 
 1;
 __DATA__

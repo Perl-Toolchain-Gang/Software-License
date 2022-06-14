@@ -1,7 +1,8 @@
 use strict;
 use warnings;
 package Software::License::ISC;
-use base 'Software::License';
+
+use parent 'Software::License';
 # ABSTRACT: The ISC License
 
 sub name { 'The ISC License' }

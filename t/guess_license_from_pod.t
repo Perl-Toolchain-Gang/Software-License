@@ -123,10 +123,8 @@ OTHER DEALINGS IN THE SOFTWARE.
 For more information, please refer to <https://unlicense.org>
 LICENSE
 
-    my $pod = "=head1 LICENSE\n\n" . $license . "\n=cut\n";
-
     is_deeply(
-        [ Software::LicenseUtils->guess_license_from_pod($pod) ],
+        [ Software::LicenseUtils->guess_license_from_pod( build_pod($license) ) ],
         [ 'Software::License::Unlicense' ],
         $license
     );

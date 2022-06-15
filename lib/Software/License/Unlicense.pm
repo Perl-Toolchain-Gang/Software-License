@@ -8,6 +8,7 @@ use parent 'Software::License';
 sub name      { q(Unlicense) }
 sub url       { q(http://unlicense.org/) }
 sub meta_name  { 'unrestricted' }
+sub spdx_expression { 'Unlicense' }
 
 1;
 __DATA__

@@ -49,6 +49,8 @@ the end of the file. Example:
    foo_bar_meta
    __{ META2_NAME }__
    foo_bar_meta2
+   __{ SPDX_EXPRESSION }__
+   foo_bar_spdx_expression
    __[ NOTICE ]__
    Copyright (C) 2000-2002 by P.R. Evious
    Copyright (C) {{$self->year}} by {{$self->holder}}.
@@ -175,6 +177,12 @@ sub meta2_name {
   my $self = shift;
   return 'custom' unless ref $self;
   $self->_fill_in('META2_NAME')
+}
+
+sub spdx_expression  {
+   my $self = shift;
+   return undef unless ref $self;
+   return $self->_fill_in('SPDX_EXPRESSION')
 }
 
 sub license    { shift->_fill_in('LICENSE') }

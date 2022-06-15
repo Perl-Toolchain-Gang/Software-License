@@ -9,6 +9,7 @@ sub name { 'The GNU Lesser General Public License, Version 2.1, February 1999' }
 sub url  { 'http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt' }
 sub meta_name  { 'lgpl' }
 sub meta2_name { 'lgpl_2_1' }
+sub spdx_expression  { 'LGPL-2.1' }
 
 1;
 __DATA__

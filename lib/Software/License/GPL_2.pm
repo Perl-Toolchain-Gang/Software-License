@@ -9,6 +9,7 @@ sub name { 'The GNU General Public License, Version 2, June 1991' }
 sub url  { 'http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt' }
 sub meta_name  { 'gpl' }
 sub meta2_name { 'gpl_2' }
+sub spdx_expression  { 'GPL-2.0-only' }
 
 1;
 __DATA__

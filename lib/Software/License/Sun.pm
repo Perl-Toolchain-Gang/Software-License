@@ -10,6 +10,7 @@ sub url  { 'http://www.openoffice.org/licenses/sissl_license.html' }
 
 sub meta_name  { 'open_source' }
 sub meta2_name { 'sun' }
+sub spdx_expression  { 'SISSL' }
 
 1;
 __DATA__

@@ -14,8 +14,10 @@ use Module::Load;
   my @guesses = Software::LicenseUtils->guess_license_from_pod($pm_text);
 
 Given text containing POD, like a .pm file, this method will attempt to guess
-at the license under which the code is available.  This method will either
-a list of Software::License classes (or instances) or false.
+at the license under which the code is available.  This method will return
+either a list of Software::License classes names (as strings) or false.
+
+This method looks for a POD heading like 'license', 'copyright', or 'legal'.
 
 Calling this method in scalar context is a fatal error.
 
@@ -49,11 +51,18 @@ my @phrases = (
   'MIT'                        => 'MIT',
   'has dedicated the work to the Commons' => 'CC0_1_0',
   'waiving all of his or her rights to the work worldwide under copyright law' => 'CC0_1_0',
+  'has waived all copyright and related or neighboring rights to' => 'CC0_1_0',
+  'apache(?: |-)1.1' => "Apache_1_1",
+  "Apache Software License(\\s)+Version 1.1" => "Apache_1_1",
+  'apache(?: |-)2.0' => "Apache_2_0",
+  "Apache License(\\s)+Version 2.0" => "Apache_2_0",
+  'No license is granted to other entities' => 'None',
 );
 
 my %meta_keys  = ();
 my %meta1_keys = ();
 my %meta2_keys = ();
+my %spdx_expression  = ();
 
 # find all known Software::License::* modules and get identification data
 #
@@ -77,6 +86,9 @@ for my $lib (map { "$_/Software/License" } @INC) {
       $meta1_keys{ $class->meta_name  }{$mod} = undef;
       $meta_keys{  $class->meta2_name }{$mod} = undef;
       $meta2_keys{ $class->meta2_name }{$mod} = undef;
+      if (defined $class->spdx_expression) {
+        $spdx_expression{  $class->spdx_expression   }{$class} = undef;
+      }
       my $name = $class->name;
       unshift @phrases, qr/\Q$name\E/, [$mod];
       if ((my $name_without_space = $name) =~ s/\s+\(.+?\)//) {
@@ -212,10 +224,40 @@ sub new_from_short_name {
   Carp::croak "no license short name specified"
     unless defined $arg->{short_name};
   my $short = delete $arg->{short_name};
-  Carp::croak "Unknow license with short name $short"
+  Carp::croak "Unknown license with short name $short"
     unless $short_name{$short};
 
   my $lic_file = my $lic_class = $short_name{$short} ;
+  $lic_file =~ s!::!/!g;
+  require "$lic_file.pm";
+  return $lic_class->new( $arg );
+}
+
+=method new_from_spdx_expression
+
+  my $license_object = Software::LicenseUtils->new_from_spdx_expression( {
+     spdx_expression => 'MPL-2.0',
+     holder => 'X. Ample'
+  }) ;
+
+Create a new L<Software::License> object from the license specified
+with C<spdx_expression>. Some licenses doesn't have an spdx
+identifier (for example L<Software::License::Perl_5>), so you can pass
+spdx identifier but also expressions.
+Known spdx license identifiers are C<BSD>, C<MPL-1.0>.
+
+=cut
+
+sub new_from_spdx_expression {
+  my ( $class, $arg ) = @_;
+
+  Carp::croak "no license spdx name specified"
+    unless defined $arg->{spdx_expression};
+  my $spdx = delete $arg->{spdx_expression};
+  Carp::croak "Unknown license with spdx name $spdx"
+    unless $spdx_expression{$spdx};
+
+  my ($lic_file) = my ($lic_class) = keys %{$spdx_expression{$spdx}} ;
   $lic_file =~ s!::!/!g;
   require "$lic_file.pm";
   return $lic_class->new( $arg );

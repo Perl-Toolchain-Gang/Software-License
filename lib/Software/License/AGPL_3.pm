@@ -10,6 +10,7 @@ sub url  { 'http://www.gnu.org/licenses/agpl-3.0.txt' }
 
 sub meta_name  { 'open_source' }
 sub meta2_name { 'agpl_3' }
+sub spdx_expression { 'AGPL-3.0' }
 
 1;
 __DATA__

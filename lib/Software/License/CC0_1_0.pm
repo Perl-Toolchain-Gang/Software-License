@@ -23,6 +23,7 @@ sub url       { q{http://creativecommons.org/publicdomain/zero/1.0/} }
 
 sub meta_name  { 'unrestricted' }
 sub meta2_name { 'unrestricted' }
+sub spdx_expression { 'CC0-1.0' }
 
 1;
 __DATA__

@@ -11,6 +11,7 @@ sub name { 'OpenSSL License' }
 sub url  { 'http://www.openssl.org/source/license.html' }
 sub meta_name  { 'open_source' }
 sub meta2_name { 'openssl' }
+sub spdx_expression  { 'OpenSSL' }
 
 sub _ssleay {
   my ($self) = @_;

@@ -6,7 +6,7 @@ use parent 'Software::License';
 # ABSTRACT: The Perl 5 License (Artistic 1 & GPL 1)
 
 require Software::License::GPL_1;
-require Software::License::Artistic_1_0;
+require Software::License::Artistic_1_0_Perl;
 
 sub name { 'the same terms as the perl 5 programming language system itself' }
 sub url  { 'http://dev.perl.org/licenses/' }
@@ -24,7 +24,7 @@ sub _gpl {
 
 sub _tal {
   my ($self) = @_;
-  return $self->{_tal} ||= Software::License::Artistic_1_0->new({
+  return $self->{_tal} ||= Software::License::Artistic_1_0_Perl->new({
     year   => $self->year,
     holder => $self->holder,
   });

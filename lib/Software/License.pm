@@ -220,6 +220,7 @@ The specific license:
 * L<Software::License::Apache_1_1>
 * L<Software::License::Apache_2_0>
 * L<Software::License::Artistic_1_0>
+* L<Software::License::Artistic_1_0_Perl>
 * L<Software::License::Artistic_2_0>
 * L<Software::License::BSD>
 * L<Software::License::CC0_1_0>

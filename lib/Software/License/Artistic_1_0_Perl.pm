@@ -5,7 +5,7 @@ package Software::License::Artistic_1_0_Perl;
 use parent 'Software::License';
 # ABSTRACT: The Perl Artistic License
 
-sub name { 'The Artistic License 1.0 (Perl)' }
+sub name { 'The Perl Artistic License 1.0' }
 sub url  { 'https://dev.perl.org/licenses/artistic.html' }
 sub meta_name  { 'open_source' }
 sub meta2_name { 'open_source' }

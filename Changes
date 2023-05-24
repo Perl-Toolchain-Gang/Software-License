@@ -1,6 +1,8 @@
 Revision history for Software-License
 
 {{$NEXT}}
+
+0.104004  2023-05-24 02:28:55+02:00 Europe/Amsterdam
         - Rename Perl Artistic License to avoid confusion in detecting license
 
 0.104003  2023-05-19 12:50:19+02:00 Europe/Amsterdam

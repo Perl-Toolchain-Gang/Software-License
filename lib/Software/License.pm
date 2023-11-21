@@ -1,6 +1,5 @@
 use strict;
 use warnings;
-use 5.006; # warnings
 package Software::License;
 # ABSTRACT: packages that provide templated software licenses
 

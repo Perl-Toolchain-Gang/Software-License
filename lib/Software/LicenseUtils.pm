@@ -8,6 +8,7 @@ package Software::LicenseUtils;
 use File::Spec;
 use IO::Dir;
 use Module::Load;
+use Parse::CPAN::Meta;
 
 =method guess_license_from_pod
 
@@ -158,8 +159,10 @@ sub guess_license_from_meta {
   my ($class, $meta_text) = @_;
   die "can't call guess_license_* in scalar context" unless wantarray;
 
-  my ($license_text) = $meta_text =~ m{\b["']?license["']?\s*:\s*["']?([a-z_0-9]+)["']?}gm;
+  my $meta = Parse::CPAN::Meta->load_string($meta_text);
+  return unless $meta;
 
+  my $license_text = $meta->{license};
   return unless $license_text and my $license = $meta_keys{ $license_text };
 
   return map { "Software::License::$_" } sort keys %$license;

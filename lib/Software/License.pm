@@ -53,7 +53,7 @@ These methods are attribute readers.
 
 =cut
 
-sub year   { defined $_[0]->{year} ? $_[0]->{year} : (localtime)[5]+1900 }
+sub year   { $_[0]->{year} // (localtime)[5]+1900 }
 sub holder { $_[0]->{holder}     }
 
 sub _dotless_holder {

@@ -1,6 +1,9 @@
 Revision history for Software-License
 
 {{$NEXT}}
+        - require perl v5.12.0, which was already effectively required because
+          of upstream libraries
+        - update author metadata
 
 0.104004  2023-05-24 02:28:55+02:00 Europe/Amsterdam
         - Rename Perl Artistic License to avoid confusion in detecting license

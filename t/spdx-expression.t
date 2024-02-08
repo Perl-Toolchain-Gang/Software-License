@@ -57,7 +57,7 @@ is (scalar(Software::License::Artistic_2_0->spdx_expression()),
 );
 
 is (scalar(Software::License::BSD->spdx_expression()),
-    'BSD',
+    'BSD-3-Clause',
     "BSD->spdx_expression() is OK."
 );
 

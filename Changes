@@ -1,6 +1,8 @@
 Revision history for Software-License
 
 {{$NEXT}}
+
+0.104006  2024-02-09 23:53:52+01:00 Europe/Brussels
         - use valid SPDX identifier for BSD license
         - Undefine SSLeay spdx expression
         - Update URL to SSLeay license

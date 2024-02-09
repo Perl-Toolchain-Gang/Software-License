@@ -1,6 +1,7 @@
 Revision history for Software-License
 
 {{$NEXT}}
+        - use valid SPDX identifier for BSD license
 
 0.104005  2023-11-20 21:09:56-05:00 America/New_York
         - require perl v5.12.0, which was already effectively required because

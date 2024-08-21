@@ -7,7 +7,7 @@ use parent 'Software::License';
 
 sub name { 'The GNU General Public License, Version 1, February 1989' }
 sub url  { 'http://www.gnu.org/licenses/old-licenses/gpl-1.0.txt' }
-sub meta_name  { 'gpl' }
+sub meta_name  { 'open_source' }
 sub meta2_name { 'gpl_1' }
 sub spdx_expression  { 'GPL-1.0-only' }
 

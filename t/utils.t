@@ -142,9 +142,7 @@ END_YAML
   is_deeply(
     \@guesses,
     [ qw(
-      Software::License::GPL_1
       Software::License::GPL_2
-      Software::License::GPL_3
     ) ],
     "guessed okay"
   );

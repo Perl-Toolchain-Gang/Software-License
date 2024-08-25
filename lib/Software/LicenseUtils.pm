@@ -52,10 +52,10 @@ my @phrases = (
   'has dedicated the work to the Commons' => 'CC0_1_0',
   'waiving all of his or her rights to the work worldwide under copyright law' => 'CC0_1_0',
   'has waived all copyright and related or neighboring rights to' => 'CC0_1_0',
-  'apache(?: |-)1.1' => "Apache_1_1",
-  "Apache Software License(\\s)+Version 1.1" => "Apache_1_1",
-  'apache(?: |-)2.0' => "Apache_2_0",
-  "Apache License(\\s)+Version 2.0" => "Apache_2_0",
+  'apache[- ]1.1' => "Apache_1_1",
+  "Apache Software License[,\\s]+Version 1.1" => "Apache_1_1",
+  'apache[- ]2.0' => "Apache_2_0",
+  "Apache License[,\\s]+Version 2.0" => "Apache_2_0",
   'No license is granted to other entities' => 'None',
 );
 

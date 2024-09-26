@@ -57,6 +57,7 @@ my @phrases = (
   'apache(?: |-)2.0' => "Apache_2_0",
   "Apache License(\\s)+Version 2.0" => "Apache_2_0",
   'No license is granted to other entities' => 'None',
+  'free and unencumbered software' => 'Unlicense',
 );
 
 my %meta_keys  = ();

@@ -14,6 +14,7 @@ sub spdx_expression  { 'GPL-1.0-only' }
 1;
 __DATA__
 __LICENSE__
+
                     GNU GENERAL PUBLIC LICENSE
                      Version 1, February 1989
 
@@ -63,7 +64,7 @@ authors' reputations.
 
   The precise terms and conditions for copying, distribution and
 modification follow.
-
+
                     GNU GENERAL PUBLIC LICENSE
    TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
@@ -114,7 +115,7 @@ it, and copy and distribute such modifications under the terms of Paragraph
 Mere aggregation of another independent work with the Program (or its
 derivative) on a volume of a storage or distribution medium does not bring
 the other work under the scope of these terms.
-
+
   3. You may copy and distribute the Program (or a portion or derivative of
 it, under Paragraph 2) in object code or executable form under the terms of
 Paragraphs 1 and 2 above provided that you also do one of the following:
@@ -160,7 +161,7 @@ Program), the recipient automatically receives a license from the original
 licensor to copy, distribute or modify the Program subject to these
 terms and conditions.  You may not impose any further restrictions on the
 recipients' exercise of the rights granted herein.
-
+
   7. The Free Software Foundation may publish revised and/or new versions
 of the General Public License from time to time.  Such new versions will
 be similar in spirit to the present version, but may differ in detail to
@@ -205,7 +206,7 @@ PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGES.
 
                      END OF TERMS AND CONDITIONS
-
+
         Appendix: How to Apply These Terms to Your New Programs
 
   If you develop a new program, and you want it to be of the greatest

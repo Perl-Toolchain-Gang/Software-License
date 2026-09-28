@@ -82,12 +82,12 @@ is (scalar(Software::License::FreeBSD->spdx_expression()),
 );
 
 is (scalar(Software::License::GFDL_1_2->spdx_expression()),
-    'GFDL-1.2-or-later',
+    'GFDL-1.2-no-invariants-or-later',
     "GFDL-1_2->spdx_expression() is OK."
 );
 
 is (scalar(Software::License::GFDL_1_3->spdx_expression()),
-    'GFDL-1.3-or-later',
+    'GFDL-1.3-no-invariants-or-later',
     "GFDL_1_3->spdx_expression() is OK."
 );
 
@@ -155,4 +155,3 @@ is (scalar(Software::License::Zlib->spdx_expression()),
     'Zlib',
     "Zlib->spdx_expression() is OK."
 );
-

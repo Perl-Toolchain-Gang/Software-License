@@ -9,7 +9,7 @@ sub name { 'GNU Free Documentation License v1.3' }
 sub url  { 'http://www.gnu.org/licenses/fdl-1.3.txt' }
 sub meta_name  { 'open_source' }
 sub meta2_name { 'gfdl_1_3' }
-sub spdx_expression  { 'GFDL-1.3-or-later' }
+sub spdx_expression  { 'GFDL-1.3-no-invariants-or-later' }
 
 1;
 __DATA__
@@ -430,4 +430,3 @@ If your document contains nontrivial examples of program code, we recommend
 releasing these examples in parallel under your choice of free software
 license, such as the GNU General Public License, to permit their use in free
 software.
-
